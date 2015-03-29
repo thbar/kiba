@@ -7,7 +7,7 @@ class TestCsvSource
 
   def each
     @csv.each do |row|
-      yield(row.to_h)
+      yield(row.to_hash)
     end
     @csv.close
   end
