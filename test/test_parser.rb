@@ -1,22 +1,61 @@
 require_relative 'helper'
 
-class TestParser < Minitest::Test
-  # first experiment at row-based DSL declaration and parsing
-  def test_block_parsing
+require_relative 'support/test_csv_source'
+require_relative 'support/test_csv_destination'
+
+class TestParser < Kiba::Test
+  let(:output_file) { 'test/tmp/output.csv' }
+  let(:input_file) { 'test/tmp/input.csv' }
+
+  let(:sample_csv_data) do <<CSV
+first_name,last_name,sex
+John,Doe,M
+Mary,Johnson,F
+Cindy,Backgammon,F
+Patrick,McWire,M
+CSV
+  end
+
+  def setup
+    remove_files(input_file, output_file)
+    IO.write(input_file, sample_csv_data)
+  end
+
+  def teardown
+    remove_files(input_file, output_file)
+  end
+  
+  def test_parse_process
+    # parse the ETL script (this won't run it)  
     control = Kiba.parse do
-      source {
-        (1..5).each do |i|
-          yield(number: i)
+      source TestCsvSource, 'test/tmp/input.csv'
+
+      transform do |row|
+        row[:sex] = case row[:sex]
+        when 'M'; 'Male'
+        when 'F'; 'Female'
+        else 'Unknown'
         end
-      }
-      
-      transform { |r|
-        r[:sentence] = "Number #{r[:number]} is there"
-        r
-      }
+        row # must be returned
+      end
+
+      # returning nil dismisses the row
+      transform do |row|
+        row[:sex] == 'Female' ? row : nil
+      end
+
+      destination TestCsvDestination, 'test/tmp/output.csv'
     end
 
-    assert_equal control.sources.size, 1
-    assert_equal control.transforms.size, 1
+    # run the parsed ETL script
+    Kiba.process(control)
+
+    # verify the output
+    assert_equal <<CSV, IO.read(output_file)
+first_name,last_name,sex
+Mary,Johnson,Female
+Cindy,Backgammon,Female
+CSV
   end
+
 end
