@@ -3,7 +3,8 @@ require_relative 'helper'
 require_relative 'support/test_csv_source'
 require_relative 'support/test_csv_destination'
 
-class TestParser < Kiba::Test
+# End-to-end tests go here
+class TestIntegration < Kiba::Test
   let(:output_file) { 'test/tmp/output.csv' }
   let(:input_file) { 'test/tmp/input.csv' }
 
@@ -25,7 +26,7 @@ CSV
     remove_files(input_file, output_file)
   end
   
-  def test_parse_process
+  def test_csv_to_csv
     # parse the ETL script (this won't run it)  
     control = Kiba.parse do
       source TestCsvSource, 'test/tmp/input.csv'
@@ -57,5 +58,5 @@ Mary,Johnson,Female
 Cindy,Backgammon,Female
 CSV
   end
-
+  
 end
