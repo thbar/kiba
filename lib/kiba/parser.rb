@@ -40,12 +40,10 @@ module Kiba
   end
 
   def self.process(control)
-    destinations = control.destinations.map do |destination_def|
-      destination_def[:klass].new(*destination_def[:args])
-    end
-
-    control.sources.each do |source_def|
-      source = source_def[:klass].new(*source_def[:args])
+    sources = to_instances(control.sources)
+    destinations = to_instances(control.destinations)
+    
+    sources.each do |source|
       source.each do |row|
         # TODO: catch errors and redirect row to error handler
         # TODO: assert that we have a Hash here?
@@ -61,5 +59,9 @@ module Kiba
     end
 
     destinations.each(&:close)
+  end
+  
+  def self.to_instances(definitions)
+    definitions.map { |d| d[:klass].new(*d[:args]) }
   end
 end
