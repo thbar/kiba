@@ -49,7 +49,7 @@ CSV
     end
 
     # run the parsed ETL script
-    Kiba.process(control)
+    Kiba.run(control)
 
     # verify the output
     assert_equal <<CSV, IO.read(output_file)
