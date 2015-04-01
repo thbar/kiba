@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-
-require_relative '../lib/kiba'
+require 'kiba'
 
 class Kiba::Test < Minitest::Test
   extend Minitest::Spec::DSL
