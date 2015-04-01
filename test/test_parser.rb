@@ -39,4 +39,27 @@ RUBY
     assert_equal DummyClass, control.sources[0][:klass]
     assert_equal ['from', 'file'], control.sources[0][:args]
   end
+  
+  def test_source_as_file_doing_require
+    IO.write 'test/tmp/etl-common.rb', <<RUBY
+      def common_source_declaration
+        source DummyClass, 'from', 'common'
+      end
+RUBY
+    IO.write 'test/tmp/etl-main.rb', <<RUBY
+      require './test/tmp/etl-common.rb'
+      
+      source DummyClass, 'from', 'main'
+      common_source_declaration
+RUBY
+    control = Kiba.parse IO.read('test/tmp/etl-main.rb')
+    
+    assert_equal 2, control.sources.size
+
+    assert_equal ['from', 'main'], control.sources[0][:args]
+    assert_equal ['from', 'common'], control.sources[1][:args]
+    
+  ensure
+    remove_files('test/tmp/etl-common.rb', 'test/tmp/etl-main.rb')
+  end
 end
