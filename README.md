@@ -157,11 +157,33 @@ The main reason for this is that a Kiba ETL script can `require` shared Ruby cod
 - substitute a component by another (eg: try a variant of a destination)
 - use a centralized place for configuration (credentials, IP addresses etc)
 
-The fact that the DSL evaluation "runs" the script also allows for simple meta-programming techniques, like pre-reading a source files.
+The fact that the DSL evaluation "runs" the script also allows for simple meta-programming techniques, like pre-reading a source file to extract field names, to be used in transform definitions.
 
 The ability to support that DSL, but also check command line arguments, environment variables and tweak behaviour as needed, or call other/faster specialized tools make Ruby an asset to implement ETL jobs.
 
 Make sure to subscribe to my [Ruby ETL blog](http://thibautbarrere.com) where I'll demonstrate such techniques over time!
+
+## History & Credits
+
+Wow, you're still there? Nice to meet you. I'm [Thibaut](http://thibautbarrere.com), author of Kiba.
+
+I first met the idea of row-based syntax when I started using [Anthony Eden](https://github.com/aeden)'s [Activewarehouse-ETL](https://github.com/activewarehouse/activewarehouse-etl), first published around 2006 (I think), in which Anthony applied the core principles defined by Ralph Kimball in [The Data Warehouse ETL Toolkit](http://www.amazon.com/gp/product/0764567578).
+
+I've been writing and maintaining a number of production ETL systems using Activewarehouse-ETL, then later with an ancestor of Kiba which was named TinyTL.
+
+I took over the maintenance of Activewarehouse-ETL circa 2009/2010, but over time, I could not properly update & document it, given the gradual failure of a large number of dependencies and components. Ultimately in 2014 I had to stop maintaining it, after an already long yiatus.
+
+That said using Activewarehouse-ETL for so long made me realize the row-based processing syntax was great and provided some great assets for maintainability on long timespans.
+
+Kiba is a completely fresh & minimalistic-on-purpose implementation of that row-based processing pattern.
+
+It is minimalistic to make it more likely that I will be able to maintain it over time.
+
+It makes strong simplicity assumptions (like letting you define the sources, transforms & destinations). MiniTest is an inspiration.
+
+As I developed Kiba, I realize how much this simplicity opens the road for interesting developments such as multi-threaded & multi-processes processing.
+
+Last word: Kiba is 100% sponsored by my company LoGeek SARL (also provider of [WiseCash, a lightweight cash-flow forecasting app](https://www.wisecashhq.com)).
 
 ## License
 
