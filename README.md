@@ -146,3 +146,19 @@ class MyCsvDestination
   end
 end
 ```
+
+## Composability, reusability, testability of Kiba components
+
+The way Kiba works makes it easy to create reusable, well-tested ETL components and jobs.
+
+The main reason for this is that a Kiba ETL script can `require` shared Ruby code, which allows to:
+- create well-tested, reusable sources & destinations
+- create macro-transforms as methods, to be reused across sister scripts
+- substitute a component by another (eg: try a variant of a destination)
+- use a centralized place for configuration (credentials, IP addresses etc)
+
+The fact that the DSL evaluation "runs" the script also allows for simple meta-programming techniques, like pre-reading a source files.
+
+The ability to support that DSL, but also check command line arguments, environment variables and tweak behaviour as needed, or call other/faster specialized tools make Ruby an asset to implement ETL jobs.
+
+Make sure to subscribe to my [Ruby ETL blog](http://thibautbarrere.com) where I'll demonstrate such techniques over time!
