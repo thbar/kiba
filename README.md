@@ -13,7 +13,7 @@ Kiba provides you with a DSL to define ETL jobs:
 ```ruby
 # declare a ruby method here, for quick reusable logic
 def parse_french_date(date)
-  Date.strptime('27/02/1979', '%d/%m/%Y')
+  Date.strptime(date, '%d/%m/%Y')
 end
 
 # or better, include a ruby file which loads reusable assets
