@@ -64,9 +64,9 @@ Dir['to_be_processed/*.csv'].each do |f|
 end
 ```
 
-Once the job definition is loaded, `Kiba.run` will use that information to do the actual row-by-row processing.
+Once the job definition is loaded, `Kiba.run` will use that information to do the actual row-by-row processing. It currently uses a simple row-by-row, single-threaded processing that will stop at the first error encountered.
 
-## Implementing sources
+## Implementing ETL sources
 
 In Kiba, you are responsible for implementing the sources that do the extraction of data.
 
@@ -97,7 +97,7 @@ class MyCsvSource
 end
 ```
 
-## Implementing row tranforms
+## Implementing row transforms
 
 Row transforms are blocks (although classes will likely be supported later) which accept a row parameter:
 
@@ -115,11 +115,9 @@ To dismiss a row from the pipeline, simply return nil from a transform:
 transform { |row| row[:index] % 2 == 0 ? row : nil }
 ```
 
-## Implementing destinations
+## Implementing ETL destinations
 
-Like sources, destinations are classes that you are providing.
-
-Destinations must implement:
+Like sources, destinations are classes that you are providing. Destinations must implement:
 - a constructor (to which Kiba will pass the provided arguments in the DSL)
 - a `write(row)` method that will be called for each non-dismissed row
 - a `close` method that will be called at the end of the processing
