@@ -6,8 +6,6 @@ module Kiba
       
       sources.each do |source|
         source.each do |row|
-          # TODO: catch errors and redirect row to error handler
-          # TODO: assert that we have a Hash here?
           control.transforms.each do |transform|
             row = transform.call(row)
             next unless row
