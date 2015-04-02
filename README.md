@@ -54,9 +54,7 @@ job_definition = Kiba.parse(IO.read('my-etl-job.rb'))
 Kiba.run(job_definition)
 ```
 
-`Kiba.parse` evaluates your ETL Ruby code to register sources, transforms and destinations in a job definition.
-
-It is important to understand that you can use Ruby logic at the DSL parsing time. This means such code is possible:
+`Kiba.parse` evaluates your ETL Ruby code to register sources, transforms and destinations in a job definition. It is important to understand that you can use Ruby logic at the DSL parsing time. This means that such code is possible, provided the csv files are available at parsing time:
 
 ```ruby
 Dir['to_be_processed/*.csv'].each do |f|
