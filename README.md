@@ -46,7 +46,7 @@ The combination of sources, transforms and destinations defines the data process
 
 ## How do you parse then run an ETL job definition?
 
-You define ETL job in standalone Ruby files, which you parse and run using the Kiba API:
+Define your ETL jobs as standalone Ruby files, to be parsed then run with the Kiba API:
 
 ```
 require 'kiba'
