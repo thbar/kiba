@@ -30,7 +30,7 @@ transform do |row|
   row
 end
 
-# declare another row transform, dismissing rows conditionally
+# declare another row transform, dismissing rows conditionally by returning nil
 transform do |row|
   row[:birth_date].year < 2000 ? row : nil
 end
@@ -104,7 +104,7 @@ Row transforms are blocks (although classes will likely be supported later) whic
 ```ruby
 transform do |row|
   row[:this_field] = row[:that_field] * 10
-  # always return the row at the end
+  # make sure to return the row to keep it in the pipeline
   row
 end
 ```
