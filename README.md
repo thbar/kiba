@@ -6,7 +6,7 @@ Kiba lets you define and run such high-quality ETL jobs, using Ruby.
 
 [![Build Status](https://travis-ci.org/thbar/kiba.svg?branch=master)](https://travis-ci.org/thbar/kiba) [![Code Climate](https://codeclimate.com/github/thbar/kiba/badges/gpa.svg)](https://codeclimate.com/github/thbar/kiba) [![Dependency Status](https://gemnasium.com/thbar/kiba.svg)](https://gemnasium.com/thbar/kiba)
 
-# How do you define ETL jobs with Kiba?
+## How do you define ETL jobs with Kiba?
 
 Kiba provides you with a DSL to define ETL jobs:
 
@@ -44,7 +44,7 @@ destination MyDatabaseDestination, config['my_database']
 
 The combination of sources, transforms and destinations defines the data processing pipeline.
 
-# How do you parse then run an ETL job definition?
+## How do you parse then run an ETL job definition?
 
 You define ETL job in standalone Ruby files, which you parse and run using the Kiba API:
 
@@ -66,7 +66,7 @@ end
 
 Once the job definition is loaded, `Kiba.run` will use that information to do the actual row-by-row processing.
 
-# Implementing sources
+## Implementing sources
 
 In Kiba, you are responsible for implementing the sources that do the extraction of data.
 
@@ -97,7 +97,7 @@ class MyCsvSource
 end
 ```
 
-# Implementing row tranforms
+## Implementing row tranforms
 
 Row transforms are blocks (although classes will likely be supported later) which accept a row parameter:
 
@@ -115,7 +115,7 @@ To dismiss a row from the pipeline, simply return nil from a transform:
 transform { |row| row[:index] % 2 == 0 ? row : nil }
 ```
 
-# Implementing destinations
+## Implementing destinations
 
 Like sources, destinations are classes that you are providing.
 
