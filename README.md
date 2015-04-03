@@ -54,7 +54,7 @@ job_definition = Kiba.parse(IO.read('my-etl-job.rb'))
 Kiba.run(job_definition)
 ```
 
-`Kiba.parse` evaluates your ETL Ruby code to register sources, transforms and destinations in a job definition. It is important to understand that you can use Ruby logic at the DSL parsing time. This means that such code is possible, provided the csv files are available at parsing time:
+`Kiba.parse` evaluates your ETL Ruby code to register sources, transforms and destinations in a job definition. It is important to understand that you can use Ruby logic at the DSL parsing time. This means that such code is possible, provided the CSV files are available at parsing time:
 
 ```ruby
 Dir['to_be_processed/*.csv'].each do |f|
@@ -152,8 +152,8 @@ The way Kiba works makes it easy to create reusable, well-tested ETL components 
 The main reason for this is that a Kiba ETL script can `require` shared Ruby code, which allows to:
 - create well-tested, reusable sources & destinations
 - create macro-transforms as methods, to be reused across sister scripts
-- substitute a component by another (eg: try a variant of a destination)
-- use a centralized place for configuration (credentials, IP addresses etc)
+- substitute a component by another (e.g.: try a variant of a destination)
+- use a centralized place for configuration (credentials, IP addresses, etc.)
 
 The fact that the DSL evaluation "runs" the script also allows for simple meta-programming techniques, like pre-reading a source file to extract field names, to be used in transform definitions.
 
@@ -169,9 +169,9 @@ I first met the idea of row-based syntax when I started using [Anthony Eden](htt
 
 I've been writing and maintaining a number of production ETL systems using Activewarehouse-ETL, then later with an ancestor of Kiba which was named TinyTL.
 
-I took over the maintenance of Activewarehouse-ETL circa 2009/2010, but over time, I could not properly update & document it, given the gradual failure of a large number of dependencies and components. Ultimately in 2014 I had to stop maintaining it, after an already long yiatus.
+I took over the maintenance of Activewarehouse-ETL circa 2009/2010, but over time, I could not properly update & document it, given the gradual failure of a large number of dependencies and components. Ultimately in 2014 I had to stop maintaining it, after an already long hiatus.
 
-That said using Activewarehouse-ETL for so long made me realize the row-based processing syntax was great and provided some great assets for maintainability on long timespans.
+That said using Activewarehouse-ETL for so long made me realize the row-based processing syntax was great and provided some great assets for maintainability on long time-spans.
 
 Kiba is a completely fresh & minimalistic-on-purpose implementation of that row-based processing pattern.
 
