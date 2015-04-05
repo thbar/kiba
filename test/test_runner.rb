@@ -16,4 +16,12 @@ class TestRunner < Kiba::Test
     Kiba.run(control)
     assert_equal true, @called
   end
+
+  def test_dismissed_row_not_passed_to_next_transform
+    control.transforms << lambda { |r| nil }
+    control.transforms << lambda { |r| @called = true; nil}
+    Kiba.run(control)
+    assert_nil @called
+  end
+
 end

@@ -8,7 +8,7 @@ module Kiba
         source.each do |row|
           control.transforms.each do |transform|
             row = transform.call(row)
-            next unless row
+            break unless row
           end
           next unless row
           destinations.each do |destination|
