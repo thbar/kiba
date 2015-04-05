@@ -48,7 +48,7 @@ The combination of sources, transforms and destinations defines the data process
 
 Define your ETL jobs as standalone Ruby files, to be parsed then run with the Kiba API:
 
-```
+```ruby
 require 'kiba'
 job_definition = Kiba.parse(IO.read('my-etl-job.rb'))
 Kiba.run(job_definition)
