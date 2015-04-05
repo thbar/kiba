@@ -2,6 +2,7 @@ require_relative 'helper'
 
 require_relative 'support/test_csv_source'
 require_relative 'support/test_csv_destination'
+require_relative 'support/test_rename_field_transform'
 
 # End-to-end tests go here
 class TestIntegration < Kiba::Test
@@ -45,6 +46,8 @@ CSV
         row[:sex] == 'Female' ? row : nil
       end
 
+      transform TestRenameFieldTransform, :sex, :sex_2015
+
       destination TestCsvDestination, 'test/tmp/output.csv'
     end
 
@@ -53,7 +56,7 @@ CSV
 
     # verify the output
     assert_equal <<CSV, IO.read(output_file)
-first_name,last_name,sex
+first_name,last_name,sex_2015
 Mary,Johnson,Female
 Cindy,Backgammon,Female
 CSV

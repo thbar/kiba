@@ -97,7 +97,11 @@ end
 
 ## Implementing row transforms
 
-Row transforms are blocks (although classes will likely be supported later) which accept a row parameter:
+Row transforms can implemented in two ways: as blocks, or as classes.
+
+### Row transform as a block
+
+When writing a row transform as a block, it will be passed the row as parameter:
 
 ```ruby
 transform do |row|
@@ -107,11 +111,36 @@ transform do |row|
 end
 ```
 
-To dismiss a row from the pipeline, simply return nil from a transform:
+To dismiss a row from the pipeline, simply return `nil` from a transform:
 
 ```ruby
 transform { |row| row[:index] % 2 == 0 ? row : nil }
 ```
+
+### Row transform as a class
+
+If you implement the transform as a class, it must respond to `process(row)`:
+
+```ruby
+class SamplingTransform
+  def initialize(modulo_value)
+    @modulo_value = modulo_value
+  end
+
+  def process(row)
+    row[:index] % @modulo_value == 0 ? row : nil
+  end
+end
+```
+
+You'll use it this way in your ETL declaration (the parameters will be passed to initialize):
+
+```ruby
+# only keep 1 row over 10
+transform SamplingTransform, 10
+```
+
+Like the block form, it can return `nil` to dismiss the row. The class form allows better testability and reusability across your(s) ETL script(s).
 
 ## Implementing ETL destinations
 

@@ -1,5 +1,7 @@
 require_relative 'helper'
 
+require_relative 'support/test_rename_field_transform'
+
 class DummyClass
 end
 
@@ -13,12 +15,21 @@ class TestParser < Kiba::Test
     assert_equal ['has', 'args'], control.sources[0][:args]
   end
   
-  def test_transform_definition
+  def test_block_transform_definition
     control = Kiba.parse do
       transform { |row| row }
     end
 
     assert_instance_of Proc, control.transforms[0]
+  end
+
+  def test_class_transform_definition
+    control = Kiba.parse do
+      transform TestRenameFieldTransform, :last_name, :name
+    end
+
+    assert_equal TestRenameFieldTransform, control.transforms[0][:klass]
+    assert_equal [:last_name, :name], control.transforms[0][:args]
   end
   
   def test_destination_definition

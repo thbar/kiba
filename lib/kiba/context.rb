@@ -9,8 +9,12 @@ module Kiba
       @control.sources << {klass: klass, args: initialization_params}
     end
 
-    def transform(&block)
-      @control.transforms << block
+    def transform(klass = nil, *initialization_params, &block)
+      if klass
+        @control.transforms << {klass: klass, args: initialization_params}
+      else
+        @control.transforms << block
+      end
     end
 
     def destination(klass, *initialization_params)
