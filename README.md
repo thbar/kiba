@@ -58,7 +58,8 @@ This command essentially starts a two-step process:
 
 ```ruby
 script_content = IO.read(filename)
-job_definition = Kiba.parse(script_content)
+# pass the filename to get for line numbers on errors
+job_definition = Kiba.parse(script_content, filename)
 Kiba.run(job_definition)
 ```
 

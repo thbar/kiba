@@ -1,0 +1,2 @@
+# this should fail because we have an unknown class
+source UnknownThing
