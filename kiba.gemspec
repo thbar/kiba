@@ -12,6 +12,7 @@ Gem::Specification.new do |gem|
   gem.name          = "kiba"
   gem.require_paths = ["lib"]
   gem.version       = Kiba::VERSION
+  gem.executables   = ['kiba']
   
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'minitest'

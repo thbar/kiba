@@ -10,4 +10,8 @@ class Kiba::Test < Minitest::Test
       File.delete(file) if File.exists?(file)
     end
   end
+
+  def fixture(file)
+    File.join(File.dirname(__FILE__), 'fixtures', file)
+  end
 end

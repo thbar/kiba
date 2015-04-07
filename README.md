@@ -44,13 +44,21 @@ destination MyDatabaseDestination, config['my_database']
 
 The combination of sources, transforms and destinations defines the data processing pipeline.
 
-## How do you parse then run an ETL job definition?
+Note: you are advised to store your ETL definitions as files with the extension `.etl` (rather than `.rb`). This will make sure you do not end up loading them by mistake from another component (eg: a Rails app).
 
-Define your ETL jobs as standalone Ruby files, to be parsed then run with the Kiba API:
+## How do you run your ETL jobs?
+
+You can use the provided command-line:
+
+```
+bundle exec kiba my-data-processing-script.etl
+```
+
+This command essentially starts a two-step process:
 
 ```ruby
-require 'kiba'
-job_definition = Kiba.parse(IO.read('my-etl-job.rb'))
+script_content = IO.read(filename)
+job_definition = Kiba.parse(script_content)
 Kiba.run(job_definition)
 ```
 
