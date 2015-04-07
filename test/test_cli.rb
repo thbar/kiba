@@ -12,6 +12,6 @@ class TestCli < Kiba::Test
     end
 
     assert_match /uninitialized constant (.*)UnknownThing/, exception.message
-    assert_includes exception.backtrace.to_s, 'test/fixtures/bogus.etl:2:in `parse\''
+    assert_includes exception.backtrace.to_s, 'test/fixtures/bogus.etl:2:in'
   end
 end
