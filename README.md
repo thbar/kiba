@@ -35,6 +35,9 @@ transform do |row|
   row[:birth_date].year < 2000 ? row : nil
 end
 
+# declare a row transform as a class, which can be tested properly
+transform ComplianceCheckTransform, eula: 2015
+
 # before declaring a definition, maybe you'll want to retrieve credentials
 config = YAML.load(IO.read('config.yml'))
 
