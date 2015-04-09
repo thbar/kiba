@@ -18,7 +18,7 @@ end
 
 # or better, include a ruby file which loads reusable assets
 # eg: commonly used sources / destinations / transforms, under unit-test
-require 'common.rb'
+require_relative 'common'
 
 # declare a source where to take data from (you implement it - see notes below)
 source MyCsvSource, 'input.csv'
