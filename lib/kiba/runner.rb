@@ -1,23 +1,17 @@
 module Kiba
   module Runner
     def run(control)
-      sources = to_instances(control.sources)
-      destinations = to_instances(control.destinations)
-      transforms = to_instances(control.transforms, true)
-      
+      sources      = instantiate(control.sources)
+      destinations = instantiate(control.destinations)
+      transforms   = control.transforms
+      transforms.each(&:prepare)
+
       sources.each do |source|
-        source.each do |row|
-          transforms.each_with_index do |transform, index|
-            if transform.is_a?(Proc)
-              row = transform.call(row)
-            else
-              row = transform.process(row)
+        source.each do |original_row|
+          apply_transforms(transforms, original_row) do |transformed_row|
+            destinations.each do |destination|
+              destination.write(transformed_row)
             end
-            break unless row
-          end
-          next unless row
-          destinations.each do |destination|
-            destination.write(row)
           end
         end
       end
@@ -25,16 +19,19 @@ module Kiba
       destinations.each(&:close)
     end
 
-    def to_instances(definitions, allow_block = false)
-      definitions.map do |d|
-        case d
-        when Proc
-          raise "Block form is not allowed here" unless allow_block
-          d
-        else
-          d[:klass].new(*d[:args])
-        end
+    protected
+
+    def instantiate(definitions)
+      definitions.map { |d| d[:klass].new(*d[:args]) }
+    end
+
+    def apply_transforms(transforms, row)
+      transforms.each do |transform|
+        row = transform.process(row)
+        return unless row # We are done here, do not write this row
       end
+
+      yield row
     end
   end
 end
