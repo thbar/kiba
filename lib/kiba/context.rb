@@ -10,11 +10,7 @@ module Kiba
     end
 
     def transform(klass = nil, *initialization_params, &block)
-      if klass
-        @control.transforms << {klass: klass, args: initialization_params}
-      else
-        @control.transforms << block
-      end
+      @control.transforms << Transform.new(klass, *initialization_params, &block)
     end
 
     def destination(klass, *initialization_params)

@@ -3,6 +3,7 @@ require 'kiba/version'
 
 require 'kiba/control'
 require 'kiba/context'
+require 'kiba/transform'
 require 'kiba/parser'
 require 'kiba/runner'
 

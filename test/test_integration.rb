@@ -26,9 +26,9 @@ CSV
   def teardown
     remove_files(input_file, output_file)
   end
-  
+
   def test_csv_to_csv
-    # parse the ETL script (this won't run it)  
+    # parse the ETL script (this won't run it)
     control = Kiba.parse do
       source TestCsvSource, 'test/tmp/input.csv'
 
@@ -61,5 +61,5 @@ Mary,Johnson,Female
 Cindy,Backgammon,Female
 CSV
   end
-  
+
 end
