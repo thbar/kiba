@@ -40,7 +40,15 @@ class TestParser < Kiba::Test
     assert_equal DummyClass, control.destinations[0][:klass]
     assert_equal ['has', 'args'], control.destinations[0][:args]
   end
-
+  
+  def test_block_post_process_definition
+    control = Kiba.parse do
+      post_process { }
+    end
+    
+    assert_instance_of Proc, control.post_processes[0]
+  end
+  
   def test_source_as_string_parsing
     control = Kiba.parse <<RUBY
       source DummyClass, 'from', 'file'

@@ -11,5 +11,9 @@ module Kiba
     def destinations
       @destinations ||= []
     end
+
+    def post_processes
+      @post_processes ||= []
+    end
   end
 end

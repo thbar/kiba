@@ -43,9 +43,14 @@ config = YAML.load(IO.read('config.yml'))
 
 # declare a destination - like source, you implement it (see below)
 destination MyDatabaseDestination, config['my_database']
+
+# declare a post-processor: a block called after all rows are successfully processed
+post_process do
+  # do something
+end
 ```
 
-The combination of sources, transforms and destinations defines the data processing pipeline.
+The combination of sources, transforms, destinations and post-processors defines the data processing pipeline.
 
 Note: you are advised to store your ETL definitions as files with the extension `.etl` (rather than `.rb`). This will make sure you do not end up loading them by mistake from another component (eg: a Rails app).
 
@@ -66,7 +71,7 @@ job_definition = Kiba.parse(script_content, filename)
 Kiba.run(job_definition)
 ```
 
-`Kiba.parse` evaluates your ETL Ruby code to register sources, transforms and destinations in a job definition. It is important to understand that you can use Ruby logic at the DSL parsing time. This means that such code is possible, provided the CSV files are available at parsing time:
+`Kiba.parse` evaluates your ETL Ruby code to register sources, transforms, destinations and post-processors in a job definition. It is important to understand that you can use Ruby logic at the DSL parsing time. This means that such code is possible, provided the CSV files are available at parsing time:
 
 ```ruby
 Dir['to_be_processed/*.csv'].each do |f|
@@ -183,6 +188,24 @@ class MyCsvDestination
   def close
     @csv.close
   end
+end
+```
+
+## Implementing post-processors
+
+Post-processors are currently blocks, which get called once, after the ETL
+successfully processed all the rows. It won't get called if an error occurred.
+
+```ruby
+count = 0
+
+transform do |row|
+  count += 1
+  row
+end
+
+post_process do
+  Email.send(supervisor_address, "#{count} rows successfully processed")
 end
 ```
 

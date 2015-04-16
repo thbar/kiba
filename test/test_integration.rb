@@ -62,4 +62,27 @@ Cindy,Backgammon,Female
 CSV
   end
   
+  def test_variable_access
+    message = nil
+    
+    control = Kiba.parse do
+      source TestEnumerableSource, [1, 2, 3]
+      
+      count = 0
+      
+      transform do |r|
+        count += 1
+        r
+      end
+      
+      post_process do
+        message = "#{count} rows processed"
+      end
+    end
+    
+    Kiba.run(control)
+    
+    assert_equal '3 rows processed', message
+  end
+  
 end

@@ -20,5 +20,9 @@ module Kiba
     def destination(klass, *initialization_params)
       @control.destinations << {klass: klass, args: initialization_params}
     end
+
+    def post_process(&block)
+      @control.post_processes << block
+    end
   end
 end
