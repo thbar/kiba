@@ -2,8 +2,7 @@ Writing reliable, concise, well-tested & maintainable data-processing code is tr
 
 Kiba lets you define and run such high-quality ETL jobs, using Ruby.
 
-**Note: this is EARLY WORK - the API/syntax may change at any time.**
-
+[![Gem Version](https://badge.fury.io/rb/kiba.svg)](http://badge.fury.io/rb/kiba)
 [![Build Status](https://travis-ci.org/thbar/kiba.svg?branch=master)](https://travis-ci.org/thbar/kiba) [![Code Climate](https://codeclimate.com/github/thbar/kiba/badges/gpa.svg)](https://codeclimate.com/github/thbar/kiba) [![Dependency Status](https://gemnasium.com/thbar/kiba.svg)](https://gemnasium.com/thbar/kiba)
 
 ## How do you define ETL jobs with Kiba?
