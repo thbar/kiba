@@ -369,3 +369,59 @@ footer a:hover {
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) {}
+
+/* Misc */
+
+.text-centered {
+	text-align: center;
+}
+
+/* CTA & buttons */
+
+.cta-button {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.tone-down {
+	font-size: 13px;
+	font-weight: 200;
+	opacity: 0.7;
+	margin-bottom: 60px;
+}
+
+.cta-button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px 24px;
+    border: 2px solid #b82b10;
+    border-radius: 18px;
+    background: #ff501e;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ff501e), to(#b82b10));
+    background: -moz-linear-gradient(top, #ff501e, #b82b10);
+    background: linear-gradient(to bottom, #ff501e, #b82b10);
+    -webkit-box-shadow: #805d51 0px 0px 1px 0px;
+    -moz-box-shadow: #805d51 0px 0px 1px 0px;
+    box-shadow: #805d51 0px 0px 1px 0px;
+    text-shadow: #6d190a 1px 1px 1px;
+    font: normal normal bold 20px arial;
+		color: #ddd;
+    text-decoration: none;
+}
+.cta-button:hover,
+.cta-button:focus {
+    border: 2px solid ##d93213;
+    background: #ff6024;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ff6024), to(#dd3413));
+    background: -moz-linear-gradient(top, #ff6024, #dd3413);
+    background: linear-gradient(to bottom, #ff6024, #dd3413);
+    color: #ffffff;
+    text-decoration: none;
+}
+.cta-button:active {
+    background: #b82b10;
+    background: -webkit-gradient(linear, left top, left bottom, from(#b82b10), to(#b82b10));
+    background: -moz-linear-gradient(top, #b82b10, #b82b10);
+    background: linear-gradient(to bottom, #b82b10, #b82b10);
+}
