@@ -48,7 +48,7 @@ table {
 
 /* LAYOUT STYLES */
 body {
-  font-size: 1em;
+  font-size: 1.05em;
   line-height: 1.5; 
   background: #e7e7e7 url(../images/body-bg.png) 0 0 repeat;
   font-family: 'Helvetica Neue', Helvetica, Arial, serif;
@@ -390,38 +390,90 @@ footer a:hover {
 	margin-bottom: 60px;
 }
 
-.cta-button {
-    display: inline-block;
-    text-align: center;
-    vertical-align: middle;
-    padding: 12px 24px;
-    border: 2px solid #b82b10;
-    border-radius: 18px;
-    background: #ff501e;
-    background: -webkit-gradient(linear, left top, left bottom, from(#ff501e), to(#b82b10));
-    background: -moz-linear-gradient(top, #ff501e, #b82b10);
-    background: linear-gradient(to bottom, #ff501e, #b82b10);
-    -webkit-box-shadow: #805d51 0px 0px 1px 0px;
-    -moz-box-shadow: #805d51 0px 0px 1px 0px;
-    box-shadow: #805d51 0px 0px 1px 0px;
-    text-shadow: #6d190a 1px 1px 1px;
-    font: normal normal bold 20px arial;
-		color: #ddd;
-    text-decoration: none;
+.testimonial {
+	margin-top: 10px;
+	margin-bottom: 40px;
 }
-.cta-button:hover,
-.cta-button:focus {
-    border: 2px solid ##d93213;
-    background: #ff6024;
-    background: -webkit-gradient(linear, left top, left bottom, from(#ff6024), to(#dd3413));
-    background: -moz-linear-gradient(top, #ff6024, #dd3413);
-    background: linear-gradient(to bottom, #ff6024, #dd3413);
-    color: #ffffff;
-    text-decoration: none;
+
+.testimonials {
+	margin-top: 30px;
+	margin-bottom: 100px;
+}
+
+.cta-button {
+	margin-left: 3px;
+	margin-right: 3px;
+	
+	-moz-box-shadow:inset 0px 1px 0px 0px #54a3f7;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #54a3f7;
+	box-shadow:inset 0px 1px 0px 0px #54a3f7;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #007dc1), color-stop(1, #0061a7));
+	background:-moz-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+	background:-webkit-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+	background:-o-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+	background:-ms-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+	background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#007dc1', endColorstr='#0061a7',GradientType=0);
+	background-color:#007dc1;
+	-moz-border-radius:9px;
+	-webkit-border-radius:9px;
+	border-radius:9px;
+	border:1px solid #124d77;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	padding:6px 12px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #154682;
+}
+.cta-button:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0061a7), color-stop(1, #007dc1));
+	background:-moz-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+	background:-webkit-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+	background:-o-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+	background:-ms-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+	background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0061a7', endColorstr='#007dc1',GradientType=0);
+	background-color:#0061a7;
+	color: #ffffff;
 }
 .cta-button:active {
-    background: #b82b10;
-    background: -webkit-gradient(linear, left top, left bottom, from(#b82b10), to(#b82b10));
-    background: -moz-linear-gradient(top, #b82b10, #b82b10);
-    background: linear-gradient(to bottom, #b82b10, #b82b10);
+	position:relative;
+	top:1px;
+}
+
+.testimonials {
+	font-size: 14px;
+}
+
+.testimonials td {
+	margin-right: 10px;
+}
+
+.sig a {
+	margin-left: 5px;
+	font-weight: 300;
+	font-style: italic;
+	color: #777;
+}
+
+.circular {
+	float: left;
+	margin-left: 40px;
+	margin-right: 15px;
+	width: 80px;
+	height: 80px;
+	border-radius: 40px;
+	-webkit-border-radius: 40px;
+	-moz-border-radius: 40px;
+	background-repeat: no-repeat;
+	box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
+.cta {
+	margin-bottom: 30px;
 }
