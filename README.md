@@ -1,6 +1,8 @@
 Writing reliable, concise, well-tested & maintainable data-processing code is tricky.
 
-Kiba lets you define and run such high-quality ETL jobs, using Ruby.
+Kiba lets you define and run such high-quality ETL jobs, using Ruby (see [supported versions](#supported-ruby-versions)).
+
+Learn more on the [Kiba blog](http://thibautbarrere.com).
 
 [![Gem Version](https://badge.fury.io/rb/kiba.svg)](http://badge.fury.io/rb/kiba)
 [![Build Status](https://travis-ci.org/thbar/kiba.svg?branch=master)](https://travis-ci.org/thbar/kiba) [![Code Climate](https://codeclimate.com/github/thbar/kiba/badges/gpa.svg)](https://codeclimate.com/github/thbar/kiba) [![Dependency Status](https://gemnasium.com/thbar/kiba.svg)](https://gemnasium.com/thbar/kiba)
@@ -223,6 +225,10 @@ The fact that the DSL evaluation "runs" the script also allows for simple meta-p
 The ability to support that DSL, but also check command line arguments, environment variables and tweak behaviour as needed, or call other/faster specialized tools make Ruby an asset to implement ETL jobs.
 
 Make sure to subscribe to my [Ruby ETL blog](http://thibautbarrere.com) where I'll demonstrate such techniques over time!
+
+## Supported Ruby versions
+
+Kiba currently supports Ruby 2.0+ and JRuby (with its default 1.9 syntax).
 
 ## History & Credits
 
