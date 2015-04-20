@@ -6,7 +6,10 @@ class TestRunner < Kiba::Test
   let(:control) do
     control = Kiba::Control.new
     # this will yield a single row for testing
-    control.sources << {klass: TestEnumerableSource, args: [[{field: 'value'}]]} 
+    control.sources << {
+      klass: TestEnumerableSource,
+      args: [[{ field: 'value' }]]
+    }
     control
   end
 
@@ -18,23 +21,22 @@ class TestRunner < Kiba::Test
   end
 
   def test_dismissed_row_not_passed_to_next_transform
-    control.transforms << lambda { |r| nil }
-    control.transforms << lambda { |r| @called = true; nil}
+    control.transforms << lambda { |_| nil }
+    control.transforms << lambda { |_| @called = true; nil }
     Kiba.run(control)
     assert_nil @called
   end
-  
+
   def test_post_process_runs
     control.post_processes << lambda { @called = true }
     Kiba.run(control)
     assert_equal true, @called
   end
-  
+
   def test_post_process_not_called_after_row_failure
-    control.transforms << lambda { |r| raise 'FAIL' }
+    control.transforms << lambda { |_| fail 'FAIL' }
     control.post_processes << lambda { @called = true }
     assert_raises(RuntimeError, 'FAIL') { Kiba.run(control) }
     assert_nil @called
   end
-
 end

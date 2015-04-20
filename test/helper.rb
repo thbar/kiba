@@ -7,7 +7,7 @@ class Kiba::Test < Minitest::Test
 
   def remove_files(*files)
     files.each do |file|
-      File.delete(file) if File.exists?(file)
+      File.delete(file) if File.exist?(file)
     end
   end
 

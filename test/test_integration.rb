@@ -9,7 +9,8 @@ class TestIntegration < Kiba::Test
   let(:output_file) { 'test/tmp/output.csv' }
   let(:input_file) { 'test/tmp/input.csv' }
 
-  let(:sample_csv_data) do <<CSV
+  let(:sample_csv_data) do
+    <<CSV
 first_name,last_name,sex
 John,Doe,M
 Mary,Johnson,F
@@ -26,17 +27,17 @@ CSV
   def teardown
     remove_files(input_file, output_file)
   end
-  
+
   def test_csv_to_csv
-    # parse the ETL script (this won't run it)  
+    # parse the ETL script (this won't run it)
     control = Kiba.parse do
       source TestCsvSource, 'test/tmp/input.csv'
 
       transform do |row|
         row[:sex] = case row[:sex]
-        when 'M'; 'Male'
-        when 'F'; 'Female'
-        else 'Unknown'
+                    when 'M' then 'Male'
+                    when 'F' then 'Female'
+                    else 'Unknown'
         end
         row # must be returned
       end
@@ -61,28 +62,27 @@ Mary,Johnson,Female
 Cindy,Backgammon,Female
 CSV
   end
-  
+
   def test_variable_access
     message = nil
-    
+
     control = Kiba.parse do
       source TestEnumerableSource, [1, 2, 3]
-      
+
       count = 0
-      
+
       transform do |r|
         count += 1
         r
       end
-      
+
       post_process do
         message = "#{count} rows processed"
       end
     end
-    
+
     Kiba.run(control)
-    
+
     assert_equal '3 rows processed', message
   end
-  
 end
