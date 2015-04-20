@@ -6,19 +6,19 @@ module Kiba
     end
 
     def source(klass, *initialization_params)
-      @control.sources << {klass: klass, args: initialization_params}
+      @control.sources << { klass: klass, args: initialization_params }
     end
 
     def transform(klass = nil, *initialization_params, &block)
       if klass
-        @control.transforms << {klass: klass, args: initialization_params}
+        @control.transforms << { klass: klass, args: initialization_params }
       else
         @control.transforms << block
       end
     end
 
     def destination(klass, *initialization_params)
-      @control.destinations << {klass: klass, args: initialization_params}
+      @control.destinations << { klass: klass, args: initialization_params }
     end
 
     def post_process(&block)

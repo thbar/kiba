@@ -9,7 +9,7 @@ module Kiba
 
       sources.each do |source|
         source.each do |row|
-          transforms.each_with_index do |transform, index|
+          transforms.each do |transform|
             if transform.is_a?(Proc)
               row = transform.call(row)
             else
@@ -32,10 +32,10 @@ module Kiba
       definitions.map do |d|
         case d
         when Proc
-          raise "Block form is not allowed here" unless allow_block
+          fail 'Block form is not allowed here' unless allow_block
           d
         else
-          raise "Class form is not allowed here" unless allow_class
+          fail 'Class form is not allowed here' unless allow_class
           d[:klass].new(*d[:args])
         end
       end
