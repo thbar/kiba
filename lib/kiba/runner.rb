@@ -5,7 +5,6 @@ module Kiba
       sources = to_instances(control.sources)
       destinations = to_instances(control.destinations)
       transforms = to_instances(control.transforms, true)
-      # not using keyword args because JRuby defaults to 1.9 syntax currently
       post_processes = to_instances(control.post_processes, true, false)
 
       pre_processes.each(&:call)
@@ -31,6 +30,7 @@ module Kiba
       post_processes.each(&:call)
     end
 
+    # not using keyword args because JRuby defaults to 1.9 syntax currently
     def to_instances(definitions, allow_block = false, allow_class = true)
       definitions.map do |d|
         case d
