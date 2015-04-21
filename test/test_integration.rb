@@ -69,20 +69,28 @@ CSV
     control = Kiba.parse do
       source TestEnumerableSource, [1, 2, 3]
 
+      # assign a first value at parsing time
       count = 0
+      
+      pre_process do
+        # then change it from there (run time)
+        count += 100
+      end
 
       transform do |r|
+        # increase it once per row
         count += 1
         r
       end
 
       post_process do
-        message = "#{count} rows processed"
+        # and save so we can assert
+        message = "Count is now #{count}"
       end
     end
 
     Kiba.run(control)
 
-    assert_equal '3 rows processed', message
+    assert_equal 'Count is now 103', message
   end
 end

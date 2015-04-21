@@ -3,12 +3,19 @@ require_relative 'helper'
 require_relative 'support/test_enumerable_source'
 
 class TestRunner < Kiba::Test
+  let(:rows) do
+    [
+      { field: 'value' },
+      { field: 'other-value' }
+    ]
+  end
+  
   let(:control) do
     control = Kiba::Control.new
     # this will yield a single row for testing
     control.sources << {
       klass: TestEnumerableSource,
-      args: [[{ field: 'value' }]]
+      args: [rows]
     }
     control
   end
@@ -27,10 +34,12 @@ class TestRunner < Kiba::Test
     assert_nil @called
   end
 
-  def test_post_process_runs
-    control.post_processes << lambda { @called = true }
+  def test_post_process_runs_once
+    assert_equal 2, rows.size
+    @called = 0
+    control.post_processes << lambda { @called += 1 }
     Kiba.run(control)
-    assert_equal true, @called
+    assert_equal 1, @called
   end
 
   def test_post_process_not_called_after_row_failure
@@ -38,5 +47,13 @@ class TestRunner < Kiba::Test
     control.post_processes << lambda { @called = true }
     assert_raises(RuntimeError, 'FAIL') { Kiba.run(control) }
     assert_nil @called
+  end
+  
+  def test_pre_process_runs_once
+    assert_equal 2, rows.size
+    @called = 0
+    control.pre_processes << lambda { @called += 1 }
+    Kiba.run(control)
+    assert_equal 1, @called
   end
 end

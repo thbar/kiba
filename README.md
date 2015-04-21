@@ -24,6 +24,11 @@ end
 # eg: commonly used sources / destinations / transforms, under unit-test
 require_relative 'common'
 
+# declare a pre-processor: a block called before the first row is read
+pre_process do
+  # do something
+end
+
 # declare a source where to take data from (you implement it - see notes below)
 source MyCsvSource, 'input.csv'
 
@@ -54,7 +59,7 @@ post_process do
 end
 ```
 
-The combination of sources, transforms, destinations and post-processors defines the data processing pipeline.
+The combination of pre-processors, sources, transforms, destinations and post-processors defines the data processing pipeline.
 
 Note: you are advised to store your ETL definitions as files with the extension `.etl` (rather than `.rb`). This will make sure you do not end up loading them by mistake from another component (eg: a Rails app).
 
@@ -195,13 +200,31 @@ class MyCsvDestination
 end
 ```
 
-## Implementing post-processors
+## Implementing pre and post-processors
 
-Post-processors are currently blocks, which get called once, after the ETL
-successfully processed all the rows. It won't get called if an error occurred.
+Pre-processors and post-processors are currently blocks, which get called only once per ETL run:
+- Pre-processors get called before the ETL starts reading rows from the sources.
+- Post-processors get invoked after the ETL successfully processed all the rows.
+
+Note that post-processors won't get called if an error occurred earlier.
 
 ```ruby
 count = 0
+
+def system!(cmd)
+  fail "Command #{cmd} failed" unless system(cmd)
+end
+
+file = 'my_file.csv'
+sample_file = 'my_file.sample.csv'
+
+pre_process do
+  # it's handy to work with a reduced data set. you can
+  # e.g. just keep one line of the CSV files + the headers
+  system! "sed -n \"1p;25706p\" #{file} > #{sample_file}"
+end
+
+source MyCsv, file: sample_file
 
 transform do |row|
   count += 1

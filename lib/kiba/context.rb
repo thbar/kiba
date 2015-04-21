@@ -5,6 +5,10 @@ module Kiba
       @control = control
     end
 
+    def pre_process(&block)
+      @control.pre_processes << block
+    end
+
     def source(klass, *initialization_params)
       @control.sources << { klass: klass, args: initialization_params }
     end

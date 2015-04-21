@@ -1,5 +1,9 @@
 module Kiba
   class Control
+    def pre_processes
+      @pre_processes ||= []
+    end
+
     def sources
       @sources ||= []
     end

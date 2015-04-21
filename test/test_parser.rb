@@ -48,6 +48,14 @@ class TestParser < Kiba::Test
 
     assert_instance_of Proc, control.post_processes[0]
   end
+  
+  def test_block_pre_process_definition
+    control = Kiba.parse do
+      pre_process {}
+    end
+
+    assert_instance_of Proc, control.pre_processes[0]
+  end
 
   def test_source_as_string_parsing
     control = Kiba.parse <<RUBY

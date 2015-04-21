@@ -1,11 +1,14 @@
 module Kiba
   module Runner
     def run(control)
+      pre_processes = to_instances(control.pre_processes, true, false)
       sources = to_instances(control.sources)
       destinations = to_instances(control.destinations)
       transforms = to_instances(control.transforms, true)
       # not using keyword args because JRuby defaults to 1.9 syntax currently
       post_processes = to_instances(control.post_processes, true, false)
+
+      pre_processes.each(&:call)
 
       sources.each do |source|
         source.each do |row|
