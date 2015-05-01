@@ -83,7 +83,7 @@ Kiba.run(job_definition)
 `Kiba.parse` evaluates your ETL Ruby code to register sources, transforms, destinations and post-processors in a job definition. It is important to understand that you can use Ruby logic at the DSL parsing time. This means that such code is possible, provided the CSV files are available at parsing time:
 
 ```ruby
-Dir['to_be_processed/*.csv'].each do |f|
+Dir['to_be_processed/*.csv'].each do |file|
   source MyCsvSource, file
 end
 ```
