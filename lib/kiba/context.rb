@@ -1,7 +1,6 @@
 module Kiba
   class Context
     def initialize(control)
-      # TODO: forbid access to control from context? use cleanroom?
       @control = control
     end
 
