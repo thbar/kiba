@@ -3,6 +3,7 @@ require_relative 'helper'
 require_relative 'support/test_csv_source'
 require_relative 'support/test_csv_destination'
 require_relative 'support/test_rename_field_transform'
+require_relative 'support/test_enumerable_source'
 
 # End-to-end tests go here
 class TestIntegration < Kiba::Test
