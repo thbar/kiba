@@ -4,7 +4,7 @@ module Kiba
     class AliasingProc < Proc
       alias_method :process, :call
     end
-    
+
     def run(control)
       # instantiate early so that error are raised before any processing occurs
       pre_processes = to_instances(control.pre_processes, true, false)
@@ -18,7 +18,7 @@ module Kiba
       destinations.each(&:close)
       post_processes.each(&:call)
     end
-    
+
     def process_rows(sources, transforms, destinations)
       sources.each do |source|
         source.each do |row|
