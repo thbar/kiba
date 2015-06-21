@@ -1,5 +1,10 @@
 module Kiba
   module Runner
+    # allow to handle a block form just like a regular transform
+    class AliasingProc < Proc
+      alias_method :process, :call
+    end
+    
     def run(control)
       # instantiate early so that error are raised before any processing occurs
       pre_processes = to_instances(control.pre_processes, true, false)
@@ -18,13 +23,7 @@ module Kiba
       sources.each do |source|
         source.each do |row|
           transforms.each do |transform|
-            # TODO: avoid the case completely by e.g. subclassing Proc
-            # and aliasing `process` to `call`. Benchmark needed first though.
-            if transform.is_a?(Proc)
-              row = transform.call(row)
-            else
-              row = transform.process(row)
-            end
+            row = transform.process(row)
             break unless row
           end
           next unless row
@@ -38,13 +37,13 @@ module Kiba
     # not using keyword args because JRuby defaults to 1.9 syntax currently
     def to_instances(definitions, allow_block = false, allow_class = true)
       definitions.map do |d|
-        case d
-        when Proc
-          fail 'Block form is not allowed here' unless allow_block
-          d
-        else
+        # TODO: support block passing to a class form definition?
+        if d.is_a?(Hash)
           fail 'Class form is not allowed here' unless allow_class
           d[:klass].new(*d[:args])
+        else
+          fail 'Block form is not allowed here' unless allow_block
+          AliasingProc.new(&d)
         end
       end
     end
