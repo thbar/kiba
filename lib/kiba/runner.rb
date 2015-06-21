@@ -36,17 +36,24 @@ module Kiba
 
     # not using keyword args because JRuby defaults to 1.9 syntax currently
     def to_instances(definitions, allow_block = false, allow_class = true)
-      definitions.map do |d|
-        if d[:klass]
-          fail 'Class form is not allowed here' unless allow_class
-          d[:klass].new(*d[:args])
-        elsif d[:block]
-          fail 'Block form is not allowed here' unless allow_block
-          AliasingProc.new(&d[:block])
-        else
-          # TODO: support block passing to a class form definition?
-          fail "Class and block form cannot be used together at the moment"
-        end
+      definitions.map do |definition|
+        to_instance(
+          *definition.values_at(:klass, :args, :block),
+          allow_block, allow_class
+        )
+      end
+    end
+
+    def to_instance(klass, args, block, allow_block, allow_class)
+      if klass
+        fail 'Class form is not allowed here' unless allow_class
+        klass.new(*args)
+      elsif block
+        fail 'Block form is not allowed here' unless allow_block
+        AliasingProc.new(&block)
+      else
+        # TODO: support block passing to a class form definition?
+        fail 'Class and block form cannot be used together at the moment'
       end
     end
   end
