@@ -43,8 +43,8 @@ class TestRunner < Kiba::Test
   end
 
   def test_post_process_not_called_after_row_failure
-    control.transforms << lambda { |_| fail 'FAIL' }
-    control.post_processes << lambda { @called = true }
+    control.transforms << { block: lambda { |_| fail 'FAIL' } }
+    control.post_processes << { block: lambda { @called = true } }
     assert_raises(RuntimeError, 'FAIL') { Kiba.run(control) }
     assert_nil @called
   end
