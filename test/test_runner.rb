@@ -22,14 +22,14 @@ class TestRunner < Kiba::Test
 
   def test_block_transform_processing
     # is there a better way to assert a block was called in minitest?
-    control.transforms << lambda { |r| @called = true; r }
+    control.transforms << { block: lambda { |r| @called = true; r } }
     Kiba.run(control)
     assert_equal true, @called
   end
 
   def test_dismissed_row_not_passed_to_next_transform
-    control.transforms << lambda { |_| nil }
-    control.transforms << lambda { |_| @called = true; nil }
+    control.transforms << { block: lambda { |_| nil } }
+    control.transforms << { block: lambda { |_| @called = true; nil } }
     Kiba.run(control)
     assert_nil @called
   end
@@ -37,7 +37,7 @@ class TestRunner < Kiba::Test
   def test_post_process_runs_once
     assert_equal 2, rows.size
     @called = 0
-    control.post_processes << lambda { @called += 1 }
+    control.post_processes << { block: lambda { @called += 1 } }
     Kiba.run(control)
     assert_equal 1, @called
   end
@@ -52,7 +52,7 @@ class TestRunner < Kiba::Test
   def test_pre_process_runs_once
     assert_equal 2, rows.size
     @called = 0
-    control.pre_processes << lambda { @called += 1 }
+    control.pre_processes << { block: lambda { @called += 1 } }
     Kiba.run(control)
     assert_equal 1, @called
   end

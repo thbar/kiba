@@ -20,7 +20,7 @@ class TestParser < Kiba::Test
       transform { |row| row }
     end
 
-    assert_instance_of Proc, control.transforms[0]
+    assert_instance_of Proc, control.transforms[0][:block]
   end
 
   def test_class_transform_definition
@@ -46,7 +46,7 @@ class TestParser < Kiba::Test
       post_process {}
     end
 
-    assert_instance_of Proc, control.post_processes[0]
+    assert_instance_of Proc, control.post_processes[0][:block]
   end
   
   def test_block_pre_process_definition
@@ -54,7 +54,7 @@ class TestParser < Kiba::Test
       pre_process {}
     end
 
-    assert_instance_of Proc, control.pre_processes[0]
+    assert_instance_of Proc, control.pre_processes[0][:block]
   end
 
   def test_source_as_string_parsing

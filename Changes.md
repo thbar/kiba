@@ -1,6 +1,8 @@
 Unreleased
 ----------
 
+- Internal refactoring of processing engine (should not affect regular use)
+
 0.6.0
 -----
 

@@ -6,7 +6,7 @@ module Kiba
     end
 
     def pre_process(&block)
-      @control.pre_processes << block
+      @control.pre_processes << { block: block }
     end
 
     def source(klass, *initialization_params)
@@ -14,11 +14,7 @@ module Kiba
     end
 
     def transform(klass = nil, *initialization_params, &block)
-      if klass
-        @control.transforms << { klass: klass, args: initialization_params }
-      else
-        @control.transforms << block
-      end
+      @control.transforms << { klass: klass, args: initialization_params, block: block }
     end
 
     def destination(klass, *initialization_params)
@@ -26,7 +22,7 @@ module Kiba
     end
 
     def post_process(&block)
-      @control.post_processes << block
+      @control.post_processes << { block: block }
     end
   end
 end
