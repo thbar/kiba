@@ -6,7 +6,7 @@ module Kiba
     end
 
     def run(control)
-      # instantiate early so that error are raised before any processing occurs
+      # instantiate components early so that errors are raised before any processing occurs
       pre_processes = to_instances(control.pre_processes, true, false)
       sources = to_instances(control.sources)
       destinations = to_instances(control.destinations)
