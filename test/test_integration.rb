@@ -4,6 +4,7 @@ require_relative 'support/test_csv_source'
 require_relative 'support/test_csv_destination'
 require_relative 'support/test_rename_field_transform'
 require_relative 'support/test_enumerable_source'
+require_relative 'support/test_source_that_reads_at_instantiation_time'
 
 # End-to-end tests go here
 class TestIntegration < Kiba::Test
@@ -20,13 +21,17 @@ Patrick,McWire,M
 CSV
   end
 
+  def clean
+    remove_files(*Dir['test/tmp/*.csv'])
+  end
+
   def setup
-    remove_files(input_file, output_file)
+    clean
     IO.write(input_file, sample_csv_data)
   end
 
   def teardown
-    remove_files(input_file, output_file)
+    clean
   end
 
   def test_csv_to_csv
@@ -72,7 +77,7 @@ CSV
 
       # assign a first value at parsing time
       count = 0
-      
+
       pre_process do
         # then change it from there (run time)
         count += 100
@@ -93,5 +98,19 @@ CSV
     Kiba.run(control)
 
     assert_equal 'Count is now 103', message
+  end
+
+  def test_file_created_by_pre_process_can_be_read_by_source_at_instantiation_time
+    remove_files('test/tmp/eager.csv')
+
+    control = Kiba.parse do
+      pre_process do
+        IO.write('test/tmp/eager.csv', 'something')
+      end
+
+      source SourceThatReadsAtInstantionTime, 'test/tmp/eager.csv'
+    end
+
+    Kiba.run(control)
   end
 end

@@ -1,5 +1,5 @@
 require_relative 'helper'
-
+require 'minitest/mock'
 require_relative 'support/test_enumerable_source'
 
 class TestRunner < Kiba::Test
@@ -55,5 +55,21 @@ class TestRunner < Kiba::Test
     control.pre_processes << { block: lambda { @called += 1 } }
     Kiba.run(control)
     assert_equal 1, @called
+  end
+
+  def test_pre_process_runs_before_source_is_instantiated
+    calls = []
+
+    mock_source_class = MiniTest::Mock.new
+    mock_source_class.expect(:new, TestEnumerableSource.new([1, 2, 3])) do
+      calls << :source_instantiated
+    end
+
+    control = Kiba::Control.new
+    control.pre_processes << { block: lambda { calls << :pre_processor_executed } }
+    control.sources << { klass: mock_source_class }
+    Kiba.run(control)
+
+    assert_equal [:pre_processor_executed, :source_instantiated], calls
   end
 end

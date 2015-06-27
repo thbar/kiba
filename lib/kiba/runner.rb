@@ -6,17 +6,26 @@ module Kiba
     end
 
     def run(control)
-      # instantiate components early so that errors are raised before any processing occurs
-      pre_processes = to_instances(control.pre_processes, true, false)
-      sources = to_instances(control.sources)
-      destinations = to_instances(control.destinations)
-      transforms = to_instances(control.transforms, true)
-      post_processes = to_instances(control.post_processes, true, false)
+      # TODO: add a dry-run (not instantiating mode) to_instances call
+      # that will validate the job definition from a syntax pov before
+      # going any further. This could be shared with the parser.
+      run_pre_processes(control)
+      process_rows(
+        to_instances(control.sources),
+        to_instances(control.transforms, true),
+        to_instances(control.destinations)
+      )
+      # TODO: when I add post processes as class, I'll have to add a test to
+      # make sure instantiation occurs after the main processing is done (#16)
+      run_post_processes(control)
+    end
 
-      pre_processes.each(&:call)
-      process_rows(sources, transforms, destinations)
-      destinations.each(&:close)
-      post_processes.each(&:call)
+    def run_pre_processes(control)
+      to_instances(control.pre_processes, true, false).each(&:call)
+    end
+
+    def run_post_processes(control)
+      to_instances(control.post_processes, true, false).each(&:call)
     end
 
     def process_rows(sources, transforms, destinations)
@@ -32,6 +41,7 @@ module Kiba
           end
         end
       end
+      destinations.each(&:close)
     end
 
     # not using keyword args because JRuby defaults to 1.9 syntax currently
