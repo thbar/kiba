@@ -12,6 +12,8 @@ Learn more on the [Kiba blog](http://thibautbarrere.com) and on [StackOverflow](
  
 **If you need help**: please [ask your question with tag kiba-etl on StackOverflow](http://stackoverflow.com/questions/ask?tags=kiba-etl). I monitor this specific tag and will reply to you!
 
+**Kiba Pro**: I'm working on a Pro version ([read more here](https://github.com/thbar/kiba/issues/20)) which will provide more advanced features and built-in goodies in exchange for a yearly subscription. This will also make sure I can support Kiba for the many years to come. [Chime in](https://github.com/thbar/kiba/issues/20) if your company is interested!
+
 [![Gem Version](https://badge.fury.io/rb/kiba.svg)](http://badge.fury.io/rb/kiba)
 [![Build Status](https://travis-ci.org/thbar/kiba.svg?branch=master)](https://travis-ci.org/thbar/kiba) [![Code Climate](https://codeclimate.com/github/thbar/kiba/badges/gpa.svg)](https://codeclimate.com/github/thbar/kiba) [![Dependency Status](https://gemnasium.com/thbar/kiba.svg)](https://gemnasium.com/thbar/kiba)
 
