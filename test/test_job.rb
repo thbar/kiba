@@ -100,4 +100,33 @@ CSV
     remove_files('test/tmp/eager.csv')
     FileCreationJob.new.run
   end
+
+  class OptionsAccessJob
+    include Kiba::Job
+    source TestCsvSource, 'test/tmp/input.csv'
+    pre_process do
+      print "pre_process:#{options.inspect}"
+    end
+    transform do |row|
+      print "transform:#{options.inspect}"
+    end
+    post_process do
+      print "post_process:#{options.inspect}"
+    end
+    def initialize(more_options = {})
+      @options ||= {}
+      @options = @options.merge(more_options)
+    end
+  end
+
+
+  def test_options_access
+    real_stdout = $stdout
+    $stdout = StringIO.new
+    OptionsAccessJob.new(a: 1, b: 1).run(b: 2)
+    output = $stdout.string
+    $stdout = real_stdout
+    assert_equal output, "pre_process:{:a=>1, :b=>2}transform:{:a=>1, :b=>2}transform:{:a=>1, :b=>2}transform:{:a=>1, :b=>2}transform:{:a=>1, :b=>2}post_process:{:a=>1, :b=>2}"
+  end
+
 end

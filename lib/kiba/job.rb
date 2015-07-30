@@ -28,7 +28,8 @@ module Kiba
 
     module InstanceMethods
       def run(options = {})
-        @options = options
+        @options ||= {}
+        @options = @options.merge(options)
         super self.class.control
       end
     end
