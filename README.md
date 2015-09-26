@@ -9,7 +9,8 @@ Learn more on the [Kiba blog](http://thibautbarrere.com) and on [StackOverflow](
 * [How to reformat CSV files with Kiba](http://thibautbarrere.com/2015/06/04/how-to-reformat-csv-files-with-kiba/) (in-depth, hands-on tutorial)
 * [How to explode multivalued attributes with Kiba ETL?](http://thibautbarrere.com/2015/06/25/how-to-explode-multivalued-attributes-with-kiba/)
 * [Common techniques to compute aggregates with Kiba](https://stackoverflow.com/questions/31145715/how-to-do-a-aggregation-transformation-in-a-kiba-etl-script-kiba-gem)
- 
+* [How to run Kiba in a Rails environment?](http://thibautbarrere.com/2015/09/26/how-to-run-kiba-in-a-rails-environment/)
+
 **If you need help**: please [ask your question with tag kiba-etl on StackOverflow](http://stackoverflow.com/questions/ask?tags=kiba-etl). I monitor this specific tag and will reply to you!
 
 **Kiba Pro**: I'm working on a Pro version ([read more here](https://github.com/thbar/kiba/issues/20)) which will provide more advanced features and built-in goodies in exchange for a yearly subscription. This will also make sure I can support Kiba for the many years to come. [Chime in](https://github.com/thbar/kiba/issues/20) if your company is interested!
