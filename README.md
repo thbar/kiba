@@ -4,6 +4,7 @@ Kiba lets you define and run such high-quality ETL ([Extract-Transform-Load](htt
 
 Learn more on the [Kiba blog](http://thibautbarrere.com) and on [StackOverflow](http://stackoverflow.com/questions/tagged/kiba-etl):
 
+* [Live Coding Session - Processing data with Kiba ETL](http://thibautbarrere.com/2015/11/09/video-processing-data-with-kiba-etl/)
 * [Rubyists - are you doing ETL unknowningly?](http://thibautbarrere.com/2015/03/25/rubyists-are-you-doing-etl-unknowingly/)
 * [How to write solid data processing code](http://thibautbarrere.com/2015/04/05/how-to-write-solid-data-processing-code/)
 * [How to reformat CSV files with Kiba](http://thibautbarrere.com/2015/06/04/how-to-reformat-csv-files-with-kiba/) (in-depth, hands-on tutorial)
@@ -12,6 +13,8 @@ Learn more on the [Kiba blog](http://thibautbarrere.com) and on [StackOverflow](
 * [How to run Kiba in a Rails environment?](http://thibautbarrere.com/2015/09/26/how-to-run-kiba-in-a-rails-environment/)
 
 **If you need help**: please [ask your question with tag kiba-etl on StackOverflow](http://stackoverflow.com/questions/ask?tags=kiba-etl). I monitor this specific tag and will reply to you!
+
+**Consulting services**: if your organization needs to leverage data processing to solve a given business problem, I'm available to help you out via consulting sessions. [More information](http://thibautbarrere.com/hire-me/).
 
 **Kiba Pro**: I'm working on a Pro version ([read more here](https://github.com/thbar/kiba/issues/20)) which will provide more advanced features and built-in goodies in exchange for a yearly subscription. This will also make sure I can support Kiba for the many years to come. [Chime in](https://github.com/thbar/kiba/issues/20) if your company is interested!
 
