@@ -184,7 +184,7 @@ Like the block form, it can return `nil` to dismiss the row. The class form allo
 Like sources, destinations are classes that you are providing. Destinations must implement:
 - a constructor (to which Kiba will pass the provided arguments in the DSL)
 - a `write(row)` method that will be called for each non-dismissed row
-- a `close` method that will be called at the end of the processing
+- an optional `close` method that will be called, if present, at the end of the processing (useful to tear down resources such as connections)
 
 Here is an example destination:
 

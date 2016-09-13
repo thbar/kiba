@@ -1,6 +1,8 @@
 Unreleased
 ----------
 
+- `close` becomes optional in destinations.
+
 0.6.1
 -----
 
