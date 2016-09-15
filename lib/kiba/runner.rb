@@ -41,7 +41,7 @@ module Kiba
           end
         end
       end
-      destinations.each(&:close)
+      destinations.find_all { |d| d.respond_to?(:close) }.each(&:close)
     end
 
     # not using keyword args because JRuby defaults to 1.9 syntax currently
