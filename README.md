@@ -265,7 +265,7 @@ Make sure to subscribe to my [Ruby ETL blog](http://thibautbarrere.com) where I'
 
 ## Supported Ruby versions
 
-Kiba currently supports Ruby 2.0+, JRuby (with its default 1.9 syntax) and Rubinius (see [test matrix](https://travis-ci.org/thbar/kiba)).
+Kiba currently supports Ruby 2.0+ and JRuby (with its default 1.9 syntax). See [test matrix](https://travis-ci.org/thbar/kiba).
 
 ## History & Credits
 
