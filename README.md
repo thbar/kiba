@@ -16,7 +16,7 @@ Learn more on the [Kiba blog](http://thibautbarrere.com) and on [StackOverflow](
 
 **Consulting services**: if your organization needs to leverage data processing to solve a given business problem, I'm available to help you out via consulting sessions. [More information](http://thibautbarrere.com/hire-me/).
 
-**Kiba Pro**: I'm working on a Pro version ([read more here](https://github.com/thbar/kiba/issues/20)) which will provide more advanced features and built-in goodies in exchange for a yearly subscription. This will also make sure I can support Kiba for the many years to come. [Chime in](https://github.com/thbar/kiba/issues/20) if your company is interested!
+**Kiba Pro**: for more features & goodies, check out Kiba Pro ([Changelog & contact info](Pro-Changes.md)).
 
 [![Gem Version](https://badge.fury.io/rb/kiba.svg)](http://badge.fury.io/rb/kiba)
 [![Build Status](https://travis-ci.org/thbar/kiba.svg?branch=master)](https://travis-ci.org/thbar/kiba) [![Code Climate](https://codeclimate.com/github/thbar/kiba/badges/gpa.svg)](https://codeclimate.com/github/thbar/kiba) [![Dependency Status](https://gemnasium.com/thbar/kiba.svg)](https://gemnasium.com/thbar/kiba)
