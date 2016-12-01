@@ -1,7 +1,8 @@
-Unreleased
-----------
+1.0.0
+-----
 
 - `close` becomes optional in destinations.
+- Bumping to 1.0.0 since Kiba is in wide production use.
 
 0.6.1
 -----
