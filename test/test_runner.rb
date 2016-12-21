@@ -28,6 +28,7 @@ class TestRunner < Kiba::Test
   end
 
   def test_dismissed_row_not_passed_to_next_transform
+    @called = nil
     control.transforms << { block: lambda { |_| nil } }
     control.transforms << { block: lambda { |_| @called = true; nil } }
     Kiba.run(control)
@@ -43,6 +44,7 @@ class TestRunner < Kiba::Test
   end
 
   def test_post_process_not_called_after_row_failure
+    @called = nil
     control.transforms << { block: lambda { |_| fail 'FAIL' } }
     control.post_processes << { block: lambda { @called = true } }
     assert_raises(RuntimeError, 'FAIL') { Kiba.run(control) }
