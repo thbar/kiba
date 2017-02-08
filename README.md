@@ -154,6 +154,30 @@ To dismiss a row from the pipeline, simply return `nil` from a transform:
 transform { |row| row[:index] % 2 == 0 ? row : nil }
 ```
 
+#### Tip: use Ruby's `next` to exit early from a block transform
+
+While you cannot call `return` from a Ruby block, you can 
+[return early](http://stackoverflow.com/questions/2518075/how-can-i-return-something-early-from-a-block) from a block by using `next`:
+
+```ruby
+transform do |row|
+  # remove a row with `next`
+  if row.fetch(:index) % 2 == 0
+    next # the row will be removed from the pipeline
+  end
+    
+  # return a modified row
+  if row.fetch(:index) % 3 == 0
+    next {great_index: row.fetch(:index) * 10}
+  end
+  
+  # otherwise return the row as is
+  row
+end
+```
+
+This is very useful to avoid nested `if` statements inside a single block.
+
 ### Row transform as a class
 
 If you implement the transform as a class, it must respond to `process(row)`:
