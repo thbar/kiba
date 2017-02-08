@@ -45,7 +45,7 @@ source MyCsvSource, 'input.csv'
 
 # declare a row transform to process a given field
 transform do |row|
-  row[:birth_date] = parse_french_date(row[:birth_date])
+  row[:birth_date] = parse_french_date(row.fetch(:birth_date))
   # return to keep in the pipeline
   row
 end
@@ -142,16 +142,18 @@ When writing a row transform as a block, it will be passed the row as parameter:
 
 ```ruby
 transform do |row|
-  row[:this_field] = row[:that_field] * 10
+  row[:this_field] = row.fetch(:that_field) * 10
   # make sure to return the row to keep it in the pipeline
   row
 end
 ```
 
+NOTE: using `Hash#fetch` is a good practice when working with Hash rows. It makes sure you'll get an exception if the key your program expects suddenly becomes missing.
+
 To dismiss a row from the pipeline, simply return `nil` from a transform:
 
 ```ruby
-transform { |row| row[:index] % 2 == 0 ? row : nil }
+transform { |row| row.fetch(:index) % 2 == 0 ? row : nil }
 ```
 
 #### Tip: use Ruby's `next` to exit early from a block transform
