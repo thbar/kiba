@@ -94,7 +94,7 @@ class TestRunner < Kiba::Test
     b = lambda do |row|
       if row.fetch(:identifier) == 'first-row'
         # demonstrate how to remove a row from the pipeline via next
-        next nil
+        next
       else
         # demonstrate how you can reformat via next
         next({new_identifier: row.fetch(:identifier)})
