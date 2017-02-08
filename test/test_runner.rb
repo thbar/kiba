@@ -5,8 +5,8 @@ require_relative 'support/test_enumerable_source'
 class TestRunner < Kiba::Test
   let(:rows) do
     [
-      { field: 'value' },
-      { field: 'other-value' }
+      { identifier: 'first-row' },
+      { identifier: 'second-row' }
     ]
   end
   
@@ -85,5 +85,33 @@ class TestRunner < Kiba::Test
     control = Kiba::Control.new
     control.destinations << { klass: mock_destination_class }
     Kiba.run(control)
+  end
+  
+  def test_use_next_to_exit_early_from_block_transform
+    assert_equal 2, rows.size
+
+    # calling "return row" from a block is forbidden, but you can use "next" instead
+    b = lambda do |row|
+      if row.fetch(:identifier) == 'first-row'
+        # demonstrate how to remove a row from the pipeline via next
+        next nil
+      else
+        # demonstrate how you can reformat via next
+        next({new_identifier: row.fetch(:identifier)})
+      end
+      fail "This should not be called"
+    end
+    control.transforms << { block: b }
+
+    # keep track of the rows
+    @remaining_rows = []
+    checker = lambda { |row| @remaining_rows << row; row }
+    control.transforms << { block: checker }
+
+    Kiba.run(control)
+    
+    # the first row should have been removed
+    # and the second row should have been reformatted
+    assert_equal [{new_identifier: 'second-row'}], @remaining_rows
   end
 end
