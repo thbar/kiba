@@ -83,6 +83,8 @@ You can use the provided command-line:
 bundle exec kiba my-data-processing-script.etl
 ```
 
+If you need to pass parameters to your kiba command-line, check out this [StackOverflow answer](http://stackoverflow.com/questions/32959692/how-to-pass-parameters-into-your-etl-job).
+
 This command essentially starts a two-step process:
 
 ```ruby
