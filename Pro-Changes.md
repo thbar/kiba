@@ -6,6 +6,15 @@ Kiba Pro is the commercial extension for Kiba. [Get in touch](mailto:thibaut.bar
 HEAD
 -------
 
+1.0.0.rc1
+---------
+
+NOTE: documentation & requirements/compatibility will be published soon.
+
+- New: `SQLUpsert` destination allowing row-by-row "insert or update".
+- New: `SQL` source allowing efficient streaming of large volumes of SQL rows while controlling memory consumption.
+- Improvement: `SQLBulkInsert` can now be used from a Sidekiq job.
+
 0.9.0
 -----
 
