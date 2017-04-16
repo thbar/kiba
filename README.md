@@ -9,9 +9,14 @@ Learn more on the [Wiki](https://github.com/thbar/kiba/wiki), on my [blog](http:
 [![Gem Version](https://badge.fury.io/rb/kiba.svg)](http://badge.fury.io/rb/kiba)
 [![Build Status](https://travis-ci.org/thbar/kiba.svg?branch=master)](https://travis-ci.org/thbar/kiba) [![Build status](https://ci.appveyor.com/api/projects/status/v05jcyhpp1mueq9i?svg=true)](https://ci.appveyor.com/project/thbar/kiba) [![Code Climate](https://codeclimate.com/github/thbar/kiba/badges/gpa.svg)](https://codeclimate.com/github/thbar/kiba) [![Dependency Status](https://gemnasium.com/thbar/kiba.svg)](https://gemnasium.com/thbar/kiba)
 
-## Kiba Common
+## Getting Started
 
-I'm starting to add commonly used reusable helpers in a separate gem called [kiba-common](https://github.com/thbar/kiba-common), check it out (work-in-progress).
+* [How do you define ETL jobs with Kiba?](https://github.com/thbar/kiba/wiki/How-do-you-define-ETL-jobs-with-Kiba%3F)
+* [How do you run your ETL jobs?](https://github.com/thbar/kiba/wiki/How-do-you-run-your-ETL-jobs%3F)
+* [Implementing ETL sources](https://github.com/thbar/kiba/wiki/Implementing-ETL-sources).
+* [Implementing ETL transforms](https://github.com/thbar/kiba/wiki/Implementing-ETL-transforms).
+* [Implementing ETL destinations](https://github.com/thbar/kiba/wiki/Implementing-ETL-destinations).
+* [Implementing pre and post-processors](https://github.com/thbar/kiba/wiki/Implementing-pre-and-post-processors).
 
 ## Useful links
 
@@ -28,6 +33,10 @@ I'm starting to add commonly used reusable helpers in a separate gem called [kib
 
 Kiba currently supports Ruby 2.0+ and JRuby (with its default 1.9 syntax). See [test matrix](https://travis-ci.org/thbar/kiba).
 
+## Kiba Common
+
+I'm starting to add commonly used reusable helpers in a separate gem called [kiba-common](https://github.com/thbar/kiba-common), check it out (work-in-progress).
+
 ## ETL consulting & commercial version
 
 **Consulting services**: if your organization needs help to implement a data pipeline or to build a data-intensive application, I provide consulting services. [More information](http://thibautbarrere.com/hire-me/).
@@ -36,11 +45,8 @@ Kiba currently supports Ruby 2.0+ and JRuby (with its default 1.9 syntax). See [
 
 ## License
 
-Copyright (c) LoGeek SARL.
-
-Kiba is an Open Source project licensed under the terms of
-the LGPLv3 license.  Please see <http://www.gnu.org/licenses/lgpl-3.0.html>
-for license text.
+Copyright (c) LoGeek SARL. Kiba is an Open Source project licensed under the terms of
+the LGPLv3 license.  Please see <http://www.gnu.org/licenses/lgpl-3.0.html> for license text.
 
 ## Contributing & Legal
 
