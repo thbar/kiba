@@ -26,88 +26,19 @@ Learn more on the [Kiba blog](http://thibautbarrere.com) and on [StackOverflow](
 
 ## How do you define ETL jobs with Kiba?
 
-See wiki page: [How do you define ETL jobs with Kiba?](https://github.com/thbar/kiba/wiki/How-do-you-define-ETL-jobs-with-Kiba%3F).
+See wiki page: [How do you define ETL jobs with Kiba?](https://github.com/thbar/kiba/wiki/How-do-you-define-ETL-jobs-with-Kiba%3F)
 
 ## How do you run your ETL jobs?
 
-See wiki page: [How do you run your ETL jobs?](https://github.com/thbar/kiba/wiki/How-do-you-run-your-ETL-jobs%3F).
+See wiki page: [How do you run your ETL jobs?](https://github.com/thbar/kiba/wiki/How-do-you-run-your-ETL-jobs%3F)
 
 ## Implementing ETL sources
 
 See wiki page: [Implementing ETL sources](https://github.com/thbar/kiba/wiki/Implementing-ETL-sources).
 
-## Implementing row transforms
+## Implementing ETL transforms
 
-Row transforms can implemented in two ways: as blocks, or as classes.
-
-### Row transform as a block
-
-When writing a row transform as a block, it will be passed the row as parameter:
-
-```ruby
-transform do |row|
-  row[:this_field] = row.fetch(:that_field) * 10
-  # make sure to return the row to keep it in the pipeline
-  row
-end
-```
-
-NOTE: using `Hash#fetch` is a good practice when working with Hash rows. It makes sure you'll get an exception if the key your program expects suddenly becomes missing.
-
-To dismiss a row from the pipeline, simply return `nil` from a transform:
-
-```ruby
-transform { |row| row.fetch(:index) % 2 == 0 ? row : nil }
-```
-
-#### Tip: use Ruby's `next` to exit early from a block transform
-
-While you cannot call `return` from a Ruby block, you can 
-[return early](http://stackoverflow.com/questions/2518075/how-can-i-return-something-early-from-a-block) from a block by using `next`:
-
-```ruby
-transform do |row|
-  # remove a row with `next`
-  if row.fetch(:index) % 2 == 0
-    next # the row will be removed from the pipeline
-  end
-    
-  # return a modified row
-  if row.fetch(:index) % 3 == 0
-    next {great_index: row.fetch(:index) * 10}
-  end
-  
-  # otherwise return the row as is
-  row
-end
-```
-
-This is very useful to avoid nested `if` statements inside a single block.
-
-### Row transform as a class
-
-If you implement the transform as a class, it must respond to `process(row)`:
-
-```ruby
-class SamplingTransform
-  def initialize(modulo_value)
-    @modulo_value = modulo_value
-  end
-
-  def process(row)
-    row[:index] % @modulo_value == 0 ? row : nil
-  end
-end
-```
-
-You'll use it this way in your ETL declaration (the parameters will be passed to initialize):
-
-```ruby
-# only keep 1 row over 10
-transform SamplingTransform, 10
-```
-
-Like the block form, it can return `nil` to dismiss the row. The class form allows better testability and reusability across your(s) ETL script(s).
+See wiki page: [Implementing ETL transforms](https://github.com/thbar/kiba/wiki/Implementing-ETL-transforms).
 
 ## Implementing ETL destinations
 
