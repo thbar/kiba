@@ -26,56 +26,7 @@ Learn more on the [Kiba blog](http://thibautbarrere.com) and on [StackOverflow](
 
 ## How do you define ETL jobs with Kiba?
 
-Kiba provides you with a DSL to define ETL jobs:
-
-```ruby
-# declare a ruby method here, for quick reusable logic
-def parse_french_date(date)
-  Date.strptime(date, '%d/%m/%Y')
-end
-
-# or better, include a ruby file which loads reusable assets
-# eg: commonly used sources / destinations / transforms, under unit-test
-require_relative 'common'
-
-# declare a pre-processor: a block called before the first row is read
-pre_process do
-  # do something
-end
-
-# declare a source where to take data from (you implement it - see notes below)
-source MyCsvSource, 'input.csv'
-
-# declare a row transform to process a given field
-transform do |row|
-  row[:birth_date] = parse_french_date(row.fetch(:birth_date))
-  # return to keep in the pipeline
-  row
-end
-
-# declare another row transform, dismissing rows conditionally by returning nil
-transform do |row|
-  row[:birth_date].year < 2000 ? row : nil
-end
-
-# declare a row transform as a class, which can be tested properly
-transform ComplianceCheckTransform, eula: 2015
-
-# before declaring a definition, maybe you'll want to retrieve credentials
-config = YAML.load(IO.read('config.yml'))
-
-# declare a destination - like source, you implement it (see below)
-destination MyDatabaseDestination, config['my_database']
-
-# declare a post-processor: a block called after all rows are successfully processed
-post_process do
-  # do something
-end
-```
-
-The combination of pre-processors, sources, transforms, destinations and post-processors defines the data processing pipeline.
-
-Note: you are advised to store your ETL definitions as files with the extension `.etl` (rather than `.rb`). This will make sure you do not end up loading them by mistake from another component (eg: a Rails app).
+See wiki page: [How do you define ETL jobs with Kiba?](https://github.com/thbar/kiba/wiki/How-do-you-define-ETL-jobs-with-Kiba%3F)
 
 ## How do you run your ETL jobs?
 
