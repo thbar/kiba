@@ -42,71 +42,11 @@ See wiki page: [Implementing ETL transforms](https://github.com/thbar/kiba/wiki/
 
 ## Implementing ETL destinations
 
-Like sources, destinations are classes that you are providing. Destinations must implement:
-- a constructor (to which Kiba will pass the provided arguments in the DSL)
-- a `write(row)` method that will be called for each non-dismissed row
-- an optional `close` method that will be called, if present, at the end of the processing (useful to tear down resources such as connections)
-
-Here is an example destination:
-
-```ruby
-require 'csv'
-
-# simple destination assuming all rows have the same fields
-class MyCsvDestination
-  def initialize(output_file)
-    @csv = CSV.open(output_file, 'w')
-  end
-
-  def write(row)
-    unless @headers_written
-      @headers_written = true
-      @csv << row.keys
-    end
-    @csv << row.values
-  end
-
-  def close
-    @csv.close
-  end
-end
-```
+See wiki page: [Implementing ETL destinations](https://github.com/thbar/kiba/wiki/Implementing-ETL-destinations).
 
 ## Implementing pre and post-processors
 
-Pre-processors and post-processors are currently blocks, which get called only once per ETL run:
-- Pre-processors get called before the ETL starts reading rows from the sources.
-- Post-processors get invoked after the ETL successfully processed all the rows.
-
-Note that post-processors won't get called if an error occurred earlier.
-
-```ruby
-count = 0
-
-def system!(cmd)
-  fail "Command #{cmd} failed" unless system(cmd)
-end
-
-file = 'my_file.csv'
-sample_file = 'my_file.sample.csv'
-
-pre_process do
-  # it's handy to work with a reduced data set. you can
-  # e.g. just keep one line of the CSV files + the headers
-  system! "sed -n \"1p;25706p\" #{file} > #{sample_file}"
-end
-
-source MyCsv, file: sample_file
-
-transform do |row|
-  count += 1
-  row
-end
-
-post_process do
-  Email.send(supervisor_address, "#{count} rows successfully processed")
-end
-```
+See wiki page: [Implementing pre and post-processors](https://github.com/thbar/kiba/wiki/Implementing-pre-and-post-processors).
 
 ## Composability, reusability, testability of Kiba components
 
