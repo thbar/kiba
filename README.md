@@ -26,7 +26,7 @@ Learn more on the [Kiba blog](http://thibautbarrere.com) and on [StackOverflow](
 
 ## How do you define ETL jobs with Kiba?
 
-See wiki page: [How do you define ETL jobs with Kiba?](https://github.com/thbar/kiba/wiki/How-do-you-define-ETL-jobs-with-Kiba%3F)
+See wiki page: [How do you define ETL jobs with Kiba?](https://github.com/thbar/kiba/wiki/How-do-you-define-ETL-jobs-with-Kiba%3F).
 
 ## How do you run your ETL jobs?
 
@@ -34,34 +34,7 @@ See wiki page: [How do you run your ETL jobs?](https://github.com/thbar/kiba/wik
 
 ## Implementing ETL sources
 
-In Kiba, you are responsible for implementing the sources that do the extraction of data.
-
-Sources are classes implementing:
-- a constructor (to which Kiba will pass the provided arguments in the DSL)
-- the `each` method (which should yield rows one by one)
-
-Rows are usually `Hash` instances, but could be other structures as long as the rest of your pipeline is expecting it.
-
-Since sources are classes, you can (and are encouraged to) unit test them and reuse them.
-
-Here is a simple CSV source:
-
-```ruby
-require 'csv'
-
-class MyCsvSource
-  def initialize(input_file)
-    @csv = CSV.open(input_file, headers: true, header_converters: :symbol)
-  end
-
-  def each
-    @csv.each do |row|
-      yield(row.to_hash)
-    end
-    @csv.close
-  end
-end
-```
+See wiki page: [Implementing ETL sources](https://github.com/thbar/kiba/wiki/Implementing-ETL-sources).
 
 ## Implementing row transforms
 
