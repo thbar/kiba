@@ -30,32 +30,7 @@ See wiki page: [How do you define ETL jobs with Kiba?](https://github.com/thbar/
 
 ## How do you run your ETL jobs?
 
-You can use the provided command-line:
-
-```
-bundle exec kiba my-data-processing-script.etl
-```
-
-If you need to pass parameters to your kiba command-line, check out this [StackOverflow answer](http://stackoverflow.com/questions/32959692/how-to-pass-parameters-into-your-etl-job).
-
-This command essentially starts a two-step process:
-
-```ruby
-script_content = IO.read(filename)
-# pass the filename to get for line numbers on errors
-job_definition = Kiba.parse(script_content, filename)
-Kiba.run(job_definition)
-```
-
-`Kiba.parse` evaluates your ETL Ruby code to register sources, transforms, destinations and post-processors in a job definition. It is important to understand that you can use Ruby logic at the DSL parsing time. This means that such code is possible, provided the CSV files are available at parsing time:
-
-```ruby
-Dir['to_be_processed/*.csv'].each do |file|
-  source MyCsvSource, file
-end
-```
-
-Once the job definition is loaded, `Kiba.run` will use that information to do the actual row-by-row processing. It currently uses a simple row-by-row, single-threaded processing that will stop at the first error encountered.
+See wiki page: [How do you run your ETL jobs?](https://github.com/thbar/kiba/wiki/How-do-you-run-your-ETL-jobs%3F).
 
 ## Implementing ETL sources
 
