@@ -1,7 +1,7 @@
 Kiba Pro Changelog
 ==================
 
-Kiba Pro is the commercial extension for Kiba. [Get in touch](mailto:thibaut.barrere+kiba@gmail.com) for more info on the pricing & licensing.
+Kiba Pro is the commercial extension for Kiba. Documentation is available on the [Wiki](https://github.com/thbar/kiba/wiki).
 
 HEAD
 -------
