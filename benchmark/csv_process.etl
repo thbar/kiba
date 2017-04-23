@@ -1,0 +1,30 @@
+$LOAD_PATH << File.dirname(__FILE__) + '/../test'
+
+require 'support/test_csv_source'
+require 'support/test_csv_destination'
+
+pre_process do
+  Dir.chdir(File.expand_path(File.dirname(__FILE__))) do
+    file = 'sirene_2017111_E_Q.zip'
+    unless File.exist?(file)
+      puts "Downloading data file"
+      `axel -n 10 http://files.data.gouv.fr/sirene/#{file}`
+      `unzip #{file}`
+      `head -10000 #{file} > extract.csv`
+      puts "Please restart"
+      abort
+    end
+  end
+end
+
+source TestCsvSource, 'benchmark/extract.csv', col_sep: ';', encoding: "ISO-8859-1:UTF-8"
+
+@count = 0
+
+transform do |row|
+  @count += 1
+  if @count % 1000 == 0
+    puts "Read #{@count} rows so far"
+  end
+  row
+end
