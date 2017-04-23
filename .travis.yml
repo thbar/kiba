@@ -2,6 +2,7 @@ language: ruby
 env:
   - JRUBY_OPTS=--2.0
 before_install:
+  - gem install bundler
   - gem update bundler
 rvm:
   - 2.4.0
