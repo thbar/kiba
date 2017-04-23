@@ -1,4 +1,6 @@
 language: ruby
+env:
+  - JRUBY_OPTS=--1.9
 before_install:
   - gem update bundler
 rvm:
