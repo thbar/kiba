@@ -1,10 +1,5 @@
 module Kiba
   module Runner
-    # allow to handle a block form just like a regular transform
-    class AliasingProc < Proc
-      alias_method :process, :call
-    end
-
     def run(control)
       # TODO: add a dry-run (not instantiating mode) to_instances call
       # that will validate the job definition from a syntax pov before
@@ -21,18 +16,28 @@ module Kiba
     end
 
     def run_pre_processes(control)
-      to_instances(control.pre_processes, true, false).each(&:call)
+      to_instances(control.pre_processes, true, false).each do |proc|
+        instance_eval(&proc) rescue proc.call
+      end
     end
 
     def run_post_processes(control)
-      to_instances(control.post_processes, true, false).each(&:call)
+      to_instances(control.post_processes, true, false).each do |proc|
+        instance_eval(&proc) rescue proc.call
+      end
     end
 
     def process_rows(sources, transforms, destinations)
       sources.each do |source|
         source.each do |row|
           transforms.each do |transform|
-            row = transform.process(row)
+            row = if transform.is_a?(Proc)
+              instance_exec row, &transform
+            else
+              transform.method(:process).arity == 2 ?
+                transform.process(row, options) :
+                transform.process(row)
+            end
             break unless row
           end
           next unless row
@@ -60,7 +65,7 @@ module Kiba
         klass.new(*args)
       elsif block
         fail 'Block form is not allowed here' unless allow_block
-        AliasingProc.new(&block)
+        block
       else
         # TODO: support block passing to a class form definition?
         fail 'Class and block form cannot be used together at the moment'
