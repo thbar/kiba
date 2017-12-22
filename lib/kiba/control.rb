@@ -3,6 +3,10 @@ module Kiba
     def pre_processes
       @pre_processes ||= []
     end
+    
+    def config
+      @config ||= {}
+    end
 
     def sources
       @sources ||= []

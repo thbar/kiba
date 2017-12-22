@@ -3,6 +3,10 @@ module Kiba
     def initialize(control)
       @control = control
     end
+    
+    def config(context, context_config)
+      @control.config[context] = @control.config.fetch(context, {}).merge(context_config)
+    end
 
     def pre_process(&block)
       @control.pre_processes << { block: block }
