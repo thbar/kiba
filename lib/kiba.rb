@@ -5,6 +5,7 @@ require 'kiba/control'
 require 'kiba/context'
 require 'kiba/parser'
 require 'kiba/runner'
+require 'kiba/yielding_runner'
 
 Kiba.extend(Kiba::Parser)
 

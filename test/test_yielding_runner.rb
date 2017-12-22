@@ -10,9 +10,7 @@ class TestYieldingRunner < Kiba::Test
   include SharedRunnerTests
   
   def kiba_run(job)
-    runner = Object.new
-    runner.extend(Kiba::YieldingRunner)
-    runner.run(job)
+    Kiba.run(job)
   end
 
   def test_yielding_class_transform
@@ -20,12 +18,14 @@ class TestYieldingRunner < Kiba::Test
     destination_array = []
     
     job = Kiba.parse do
+      config :kiba, runner: Kiba::YieldingRunner
+
       source TestEnumerableSource, [input_row]
       transform TestYieldingTransform
       destination TestArrayDestination, destination_array
     end
     
-    kiba_run(job)
+    Kiba.run(job)
   
     assert_equal [
       {item: 'one'},
