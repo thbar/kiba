@@ -8,7 +8,6 @@ environment:
     - RUBY_VERSION: 23
     - RUBY_VERSION: 22
     - RUBY_VERSION: 21
-    - RUBY_VERSION: 20
 
 install:
   - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
