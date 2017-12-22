@@ -11,8 +11,7 @@ Learn more on the [Wiki](https://github.com/thbar/kiba/wiki), on my [blog](http:
 
 ## Note on Kiba 2
 
-:warning: the `wip-kiba-2` branch is unstable at the moment and I recommend that you do not use
-it for now, except for tinkering / curiosity.
+Kiba 2 (not yet released) will include an improved engine. See #41 for the benefits and #42 for the WIP implementation.
 
 ## Getting Started
 
