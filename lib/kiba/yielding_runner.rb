@@ -1,6 +1,7 @@
 module Kiba
   module YieldingRunner
     include Runner
+    extend self
     
     def lazy_transform(from, t)
       Enumerator::Lazy.new(from) do |yielder, input_row|
