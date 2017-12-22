@@ -11,7 +11,7 @@ Learn more on the [Wiki](https://github.com/thbar/kiba/wiki), on my [blog](http:
 
 ## Note on Kiba 2
 
-Kiba 2 (not yet released) will include an improved engine. See #41 for the benefits and #42 for the WIP implementation.
+Kiba 2 (not yet released) will include an improved engine. See [#41](https://github.com/thbar/kiba/pull/41) for the benefits and [#44](https://github.com/thbar/kiba/pull/44) for the WIP implementation.
 
 ## Getting Started
 
