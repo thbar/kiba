@@ -1,8 +1,8 @@
 require 'csv'
 
 class TestCsvSource
-  def initialize(input_file)
-    @csv = CSV.open(input_file, headers: true, header_converters: :symbol)
+  def initialize(input_file, csv_options = {})
+    @csv = CSV.open(input_file, {headers: true, header_converters: :symbol}.merge(csv_options))
   end
 
   def each

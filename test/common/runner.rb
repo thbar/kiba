@@ -1,3 +1,5 @@
+require 'benchmark'
+
 module SharedRunnerTests
   def rows
     @rows ||= [
@@ -111,5 +113,29 @@ module SharedRunnerTests
     # the first row should have been removed
     # and the second row should have been reformatted
     assert_equal [{new_identifier: 'second-row'}], @remaining_rows
+  end
+  
+  def test_benchmark
+    rows = []
+    job = Kiba.parse do
+      source TestEnumerableSource, (1..100_000)
+      
+      transform do |row|
+        {item: row}
+      end
+      
+      20.times do
+        transform do |row|
+          {item: row.fetch(:item) + 1}
+        end
+      end
+      
+      destination TestArrayDestination, rows
+    end
+    time = Benchmark.measure do
+      kiba_run(job)
+    end.real
+    puts "\n#{self} : #{time.real.round(2)} sec"
+    assert_equal 100_000, rows.size
   end
 end
