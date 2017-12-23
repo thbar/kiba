@@ -15,8 +15,9 @@ module Kiba
       process_rows(
         to_instances(control.sources),
         to_instances(control.transforms, true),
-        to_instances(control.destinations)
+        destinations = to_instances(control.destinations)
       )
+      close_destinations(destinations)
       # TODO: when I add post processes as class, I'll have to add a test to
       # make sure instantiation occurs after the main processing is done (#16)
       run_post_processes(control)
@@ -28,6 +29,12 @@ module Kiba
 
     def run_post_processes(control)
       to_instances(control.post_processes, true, false).each(&:call)
+    end
+
+    def close_destinations(destinations)
+      destinations
+      .find_all { |d| d.respond_to?(:close) }
+      .each(&:close)
     end
 
     def process_rows(sources, transforms, destinations)
@@ -43,7 +50,6 @@ module Kiba
           end
         end
       end
-      destinations.find_all { |d| d.respond_to?(:close) }.each(&:close)
     end
 
     # not using keyword args because JRuby defaults to 1.9 syntax currently
