@@ -94,6 +94,19 @@ module SharedRunnerTests
     assert_mock mock_destination_class
   end
   
+  def test_destination_close_called_if_defined
+    destination_instance = MiniTest::Mock.new
+    destination_instance.expect(:close, nil)
+    mock_destination_class = MiniTest::Mock.new
+    mock_destination_class.expect(:new, destination_instance)
+
+    control = Kiba::Control.new
+    control.destinations << { klass: mock_destination_class }
+    kiba_run(control)
+    assert_mock destination_instance
+    assert_mock mock_destination_class
+  end
+  
   def test_use_next_to_exit_early_from_block_transform
     assert_equal 2, rows.size
 
