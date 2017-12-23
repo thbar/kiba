@@ -71,6 +71,7 @@ module SharedRunnerTests
     kiba_run(control)
 
     assert_equal [:pre_processor_executed, :source_instantiated], calls
+    assert_mock mock_source_class
   end
   
   def test_no_error_raised_if_destination_close_not_implemented
@@ -83,6 +84,7 @@ module SharedRunnerTests
     control = Kiba::Control.new
     control.destinations << { klass: mock_destination_class }
     kiba_run(control)
+    assert_mock mock_destination_class
   end
   
   def test_use_next_to_exit_early_from_block_transform
