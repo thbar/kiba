@@ -30,7 +30,6 @@ module Kiba
           destination.write(row)
         end
       end
-      destinations.find_all { |d| d.respond_to?(:close) }.each(&:close)
     end
   end
 end
