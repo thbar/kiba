@@ -11,15 +11,17 @@ module Kiba
         yielder << final_row if final_row
       end
     end
-
-    def process_rows(sources, transforms, destinations)
-      source_rows = Enumerator::Lazy.new(sources) do |yielder, source|
+    
+    def lazy_source_rows(sources)
+      Enumerator::Lazy.new(sources) do |yielder, source|
         source.each do |row|
           yielder << row
         end
-      end
+      end.lazy
+    end
 
-      rows = source_rows.lazy
+    def process_rows(sources, transforms, destinations)
+      rows = lazy_source_rows(sources)
       
       transforms.each do |transform|
         rows = lazy_transform(rows, transform)
