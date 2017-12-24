@@ -5,10 +5,10 @@ module Kiba
     
     def lazy_transform(from, t)
       Enumerator::Lazy.new(from) do |yielder, input_row|
-        final_row = t.process(input_row) do |yielded_row|
+        returned_row = t.process(input_row) do |yielded_row|
           yielder << yielded_row
         end
-        yielder << final_row if final_row
+        yielder << returned_row if returned_row
       end
     end
     
