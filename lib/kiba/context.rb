@@ -3,7 +3,7 @@ module Kiba
     def initialize(control)
       @control = control
     end
-    
+
     def pre_process(&block)
       @control.pre_processes << { block: block }
     end
