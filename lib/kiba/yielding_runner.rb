@@ -3,7 +3,7 @@ module Kiba
     include Runner
     extend self
     
-    def lazy_transform(from, t)
+    def transform_stream(from, t)
       Enumerator::Lazy.new(from) do |yielder, input_row|
         returned_row = t.process(input_row) do |yielded_row|
           yielder << yielded_row
@@ -12,15 +12,15 @@ module Kiba
       end
     end
     
-    def lazy_source_rows(sources)
+    def source_stream(sources)
       Enumerator::Lazy.new(sources) do |yielder, source|
         source.each { |r| yielder << r }
       end.lazy
     end
 
     def process_rows(sources, transforms, destinations)
-      stream = lazy_source_rows(sources)
-      recurser = lambda { |stream,t| lazy_transform(stream, t) }
+      stream = source_stream(sources)
+      recurser = lambda { |stream,t| transform_stream(stream, t) }
       transforms.inject(stream, &recurser).each do |r|
         destinations.each { |d| d.write(r) }
       end
