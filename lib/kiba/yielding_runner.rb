@@ -19,16 +19,10 @@ module Kiba
     end
 
     def process_rows(sources, transforms, destinations)
-      rows = lazy_source_rows(sources)
-      
-      transforms.each do |transform|
-        rows = lazy_transform(rows, transform)
-      end
-      
-      rows.each do |row|
-        destinations.each do |destination|
-          destination.write(row)
-        end
+      stream = lazy_source_rows(sources)
+      recurser = lambda { |stream,t| lazy_transform(stream, t) }
+      transforms.inject(stream, &recurser).each do |r|
+        destinations.each { |d| d.write(r) }
       end
     end
   end
