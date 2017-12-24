@@ -3,18 +3,22 @@ module Kiba
     include Runner
     extend self
     
-    def transform_stream(from, t)
-      Enumerator::Lazy.new(from) do |yielder, input_row|
-        returned_row = t.process(input_row) do |yielded_row|
-          yielder << yielded_row
+    def transform_stream(stream, t)
+      Enumerator.new do |y|
+        stream.each do |input_row|
+          returned_row = t.process(input_row) do |yielded_row|
+            y << yielded_row
+          end
+          y << returned_row if returned_row
         end
-        yielder << returned_row if returned_row
       end
     end
     
     def source_stream(sources)
-      Enumerator::Lazy.new(sources) do |yielder, source|
-        source.each { |r| yielder << r }
+      Enumerator.new do |y|
+        sources.each do |source|
+          source.each { |r| y << r }
+        end
       end
     end
 
