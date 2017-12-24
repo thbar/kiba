@@ -103,6 +103,8 @@ RUBY
   
   def test_config
     control = Kiba.parse do
+      extend Kiba::DSLExtensions::Config
+      
       config :context, key: "value", other_key: "other_value"
     end
     
@@ -114,6 +116,8 @@ RUBY
   
   def test_config_override
     control = Kiba.parse do
+      extend Kiba::DSLExtensions::Config
+
       config :context, key: "value", other_key: "other_value"
       config :context, key: "new_value"
     end

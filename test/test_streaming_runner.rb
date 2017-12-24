@@ -12,6 +12,8 @@ class TestStreamingRunner < Kiba::Test
     destination_array = []
     
     job = Kiba.parse do
+      extend Kiba::DSLExtensions::Config
+
       config :kiba, runner: Kiba::StreamingRunner
 
       source TestEnumerableSource, [input_row]

@@ -6,6 +6,7 @@ require 'kiba/context'
 require 'kiba/parser'
 require 'kiba/runner'
 require 'kiba/streaming_runner'
+require 'kiba/dsl_extensions/config'
 
 Kiba.extend(Kiba::Parser)
 
