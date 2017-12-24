@@ -15,7 +15,7 @@ module Kiba
     def source_stream(sources)
       Enumerator::Lazy.new(sources) do |yielder, source|
         source.each { |r| yielder << r }
-      end.lazy
+      end
     end
 
     def process_rows(sources, transforms, destinations)
