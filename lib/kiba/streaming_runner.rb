@@ -1,5 +1,5 @@
 module Kiba
-  module YieldingRunner
+  module StreamingRunner
     include Runner
     extend self
     

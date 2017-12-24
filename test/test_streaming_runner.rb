@@ -4,7 +4,7 @@ require_relative 'support/test_array_destination'
 require_relative 'support/test_yielding_transform'
 require_relative 'common/runner'
 
-class TestYieldingRunner < Kiba::Test
+class TestStreamingRunner < Kiba::Test
   include SharedRunnerTests
   
   def test_yielding_class_transform
@@ -12,7 +12,7 @@ class TestYieldingRunner < Kiba::Test
     destination_array = []
     
     job = Kiba.parse do
-      config :kiba, runner: Kiba::YieldingRunner
+      config :kiba, runner: Kiba::StreamingRunner
 
       source TestEnumerableSource, [input_row]
       transform TestYieldingTransform
