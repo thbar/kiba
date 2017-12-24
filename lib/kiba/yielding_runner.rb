@@ -14,9 +14,7 @@ module Kiba
     
     def lazy_source_rows(sources)
       Enumerator::Lazy.new(sources) do |yielder, source|
-        source.each do |row|
-          yielder << row
-        end
+        source.each { |r| yielder << r }
       end.lazy
     end
 
