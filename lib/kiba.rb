@@ -5,6 +5,15 @@ require 'kiba/control'
 require 'kiba/context'
 require 'kiba/parser'
 require 'kiba/runner'
+require 'kiba/streaming_runner'
+require 'kiba/dsl_extensions/config'
 
 Kiba.extend(Kiba::Parser)
-Kiba.extend(Kiba::Runner)
+
+module Kiba
+  def self.run(job)
+    # NOTE: use Hash#dig when Ruby 2.2 reaches EOL
+    runner = job.config.fetch(:kiba, {}).fetch(:runner, Kiba::Runner)
+    runner.run(job)
+  end
+end

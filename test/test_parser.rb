@@ -100,4 +100,31 @@ RUBY
   ensure
     remove_files('test/tmp/etl-common.rb', 'test/tmp/etl-main.rb')
   end
+  
+  def test_config
+    control = Kiba.parse do
+      extend Kiba::DSLExtensions::Config
+      
+      config :context, key: "value", other_key: "other_value"
+    end
+    
+    assert_equal({ context: {
+      key: "value",
+      other_key: "other_value"
+    }}, control.config)
+  end
+  
+  def test_config_override
+    control = Kiba.parse do
+      extend Kiba::DSLExtensions::Config
+
+      config :context, key: "value", other_key: "other_value"
+      config :context, key: "new_value"
+    end
+    
+    assert_equal({ context: {
+      key: "new_value",
+      other_key: "other_value"
+    }}, control.config)
+  end
 end

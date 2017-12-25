@@ -1,5 +1,7 @@
 module Kiba
   module Runner
+    extend self
+
     # allow to handle a block form just like a regular transform
     class AliasingProc < Proc
       alias_method :process, :call
