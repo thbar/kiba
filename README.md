@@ -11,7 +11,7 @@ Learn more on the [Wiki](https://github.com/thbar/kiba/wiki), on my [blog](http:
 
 ## Note on upcoming Kiba 2.0.0
 
-Kiba 2.0.0 (available on `master`) includes an improved engine called the `StreamingRunner`, which allows transforms to generate more than one output row for each input row. See #44 for documentation on benefits & how to activate.
+Kiba 2.0.0 (available on `master`) includes an improved engine called the `StreamingRunner`, which allows transforms to generate more than one output row for each input row. See [#44](https://github.com/thbar/kiba/pull/44) for documentation on benefits & how to activate.
 
 ## Getting Started
 
