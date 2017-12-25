@@ -9,7 +9,7 @@ HEAD
 1.0.0.rc1
 ---------
 
-NOTE: documentation & requirements/compatibility will be published soon.
+NOTE: documentation & requirements/compatibility are available on the [wiki](https://github.com/thbar/kiba/wiki).
 
 - New: `SQLUpsert` destination allowing row-by-row "insert or update".
 - New: `SQL` source allowing efficient streaming of large volumes of SQL rows while controlling memory consumption.
