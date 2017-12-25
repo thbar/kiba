@@ -24,7 +24,7 @@ module Kiba
 
     def process_rows(sources, transforms, destinations)
       stream = source_stream(sources)
-      recurser = lambda { |stream,t| transform_stream(stream, t) }
+      recurser = lambda { |s,t| transform_stream(s, t) }
       transforms.inject(stream, &recurser).each do |r|
         destinations.each { |d| d.write(r) }
       end
