@@ -1,3 +1,8 @@
+2.0.0.rc1 (unreleased)
+----------------------
+
+- New (opt-in) StreamingRunner allows class transforms to generate more than one row. See #44 for rationale & how to activate.
+
 1.0.0
 -----
 
