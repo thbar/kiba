@@ -1,0 +1,3 @@
+require_relative 'some_extension'
+
+extend DSLExtensions::SomeExtension
