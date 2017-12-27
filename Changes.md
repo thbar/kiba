@@ -2,6 +2,7 @@
 ----------------------
 
 - New (opt-in) StreamingRunner allows class transforms to generate more than one row. See [#44](https://github.com/thbar/kiba/pull/44) for rationale & how to activate.
+- Potentially breaking change if you were using the internal class `Kiba::Parser` directly: ETL jobs parsing has been modified to improve the isolation between the evaluation scope and the Kiba classes. See [#46](https://github.com/thbar/kiba/pull/46) for more information.
 
 1.0.0
 -----
