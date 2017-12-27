@@ -9,9 +9,9 @@ Learn more on the [Wiki](https://github.com/thbar/kiba/wiki), on my [blog](http:
 [![Gem Version](https://badge.fury.io/rb/kiba.svg)](http://badge.fury.io/rb/kiba)
 [![Build Status](https://travis-ci.org/thbar/kiba.svg?branch=master)](https://travis-ci.org/thbar/kiba) [![Build status](https://ci.appveyor.com/api/projects/status/v05jcyhpp1mueq9i?svg=true)](https://ci.appveyor.com/project/thbar/kiba) [![Code Climate](https://codeclimate.com/github/thbar/kiba/badges/gpa.svg)](https://codeclimate.com/github/thbar/kiba) [![Dependency Status](https://gemnasium.com/thbar/kiba.svg)](https://gemnasium.com/thbar/kiba)
 
-## Note on upcoming Kiba 2.0.0
+## Kiba 2.0.0.rc1
 
-Kiba 2.0.0 (available on `master`) includes an improved engine called the `StreamingRunner`, which allows transforms to generate more than one output row for each input row. See [#44](https://github.com/thbar/kiba/pull/44) for documentation on benefits & how to activate.
+Kiba 2.0.0.rc1 (available via `gem install kiba --prerelease`) includes an improved engine called the `StreamingRunner`, which allows transforms to generate more than one output row for each input row. See [#44](https://github.com/thbar/kiba/pull/44) for documentation on benefits & how to activate.
 
 ## Getting Started
 
