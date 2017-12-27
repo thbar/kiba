@@ -1,3 +1,9 @@
-require_relative 'some_extension'
+fail "Context should not be visible without Kiba namespace" if defined?(Context)
+fail "Control should not be visible without Kiba namespace" if defined?(Control)
+fail "Parser should not be visible without Kiba namespace" if defined?(Parser)
+fail "Config should not be visible without Kiba namespace" if defined?(DSLExtensions::Config)
 
+# verify Kiba config (namespaced under Kiba::DSLExtensions::Config)
+# isn't causing troubles to implementers using a top-level DSLExtensions module
+require_relative 'some_extension'
 extend DSLExtensions::SomeExtension
