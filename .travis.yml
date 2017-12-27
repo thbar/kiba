@@ -1,5 +1,7 @@
 language: ruby
 before_install:
+  # https://stackoverflow.com/a/47972768
+  - gem update --system
   - gem update bundler
 rvm:
   - ruby-head
