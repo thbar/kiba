@@ -11,7 +11,40 @@ Learn more on the [Wiki](https://github.com/thbar/kiba/wiki), on my [blog](http:
 
 ## Kiba 2.0.0.rc1
 
-Kiba 2.0.0.rc1 (available via `gem install kiba --prerelease`) includes an improved engine called the `StreamingRunner`, which allows transforms to generate more than one output row for each input row. See [#44](https://github.com/thbar/kiba/pull/44) for documentation on benefits & how to activate.
+Kiba 2.0.0.rc1 (available via `gem install kiba --prerelease`) is available for testing.
+
+### New StreamingRunner engine
+
+Kiba 2 introduces a new, opt-in engine called the `StreamingRunner`, which allows to generate an arbitrary number of rows inside transforms. This drastically improves the reusability & composability of Kiba components (see [#44](https://github.com/thbar/kiba/pull/44) for some background).
+
+To use the `StreamingRunner`, use the following code:
+
+```ruby
+# activate the new Kiba internal config system
+extend Kiba::DSLExtensions::Config
+# opt-in for the new engine
+config :kiba, runner: Kiba::StreamingRunner
+
+# write transform class able to yield an arbitrary number of rows
+class MyYieldingTransform
+  def process(row)
+    yield {key: 1}
+    yield {key: 2}
+    {key: 3}
+  end
+end
+```
+
+The improved runner is compatible with Ruby 2.0+.
+
+### Compatibility with Kiba 1
+
+Kiba 2 is expected to be compatible with existing Kiba scripts as long as you did not use internal API.
+
+Internal changes include:
+
+* An opt-in, Elixir's mix-inspired `config` system, currently only used to select the runner you want at job declaration time
+* A stronger isolation in the `Parser`, to reduces the chances that ETL scripts could conflict with Kiba internal classes
 
 ## Getting Started
 
