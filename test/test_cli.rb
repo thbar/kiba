@@ -14,4 +14,8 @@ class TestCli < Kiba::Test
     assert_match(/uninitialized constant(.*)UnknownThing/, exception.message)
     assert_includes exception.backtrace.to_s, 'test/fixtures/bogus.etl:2:in'
   end
+
+  def test_namespace_conflict
+    Kiba::Cli.run([fixture('namespace_conflict.etl')])
+  end
 end
