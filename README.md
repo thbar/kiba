@@ -9,42 +9,13 @@ Learn more on the [Wiki](https://github.com/thbar/kiba/wiki), on my [blog](http:
 [![Gem Version](https://badge.fury.io/rb/kiba.svg)](http://badge.fury.io/rb/kiba)
 [![Build Status](https://travis-ci.org/thbar/kiba.svg?branch=master)](https://travis-ci.org/thbar/kiba) [![Build status](https://ci.appveyor.com/api/projects/status/v05jcyhpp1mueq9i?svg=true)](https://ci.appveyor.com/project/thbar/kiba) [![Code Climate](https://codeclimate.com/github/thbar/kiba/badges/gpa.svg)](https://codeclimate.com/github/thbar/kiba) [![Dependency Status](https://gemnasium.com/thbar/kiba.svg)](https://gemnasium.com/thbar/kiba)
 
-## Kiba 2.0.0.rc1
+## Kiba 2.0.0
 
-Kiba 2.0.0.rc1 (available via `gem install kiba --prerelease`) is available for testing.
+Kiba 2.0.0 has been recently released with one major improvement for ETL components developers.
 
-### New StreamingRunner engine
+Please check out the [release notes](https://github.com/thbar/kiba/releases/tag/v2.0.0).
 
-Kiba 2 introduces a new, opt-in engine called the `StreamingRunner`, which allows to generate an arbitrary number of rows inside transforms. This drastically improves the reusability & composability of Kiba components (see [#44](https://github.com/thbar/kiba/pull/44) for some background).
-
-To use the `StreamingRunner`, use the following code:
-
-```ruby
-# activate the new Kiba internal config system
-extend Kiba::DSLExtensions::Config
-# opt-in for the new engine
-config :kiba, runner: Kiba::StreamingRunner
-
-# write transform class able to yield an arbitrary number of rows
-class MyYieldingTransform
-  def process(row)
-    yield {key: 1}
-    yield {key: 2}
-    {key: 3}
-  end
-end
-```
-
-The improved runner is compatible with Ruby 2.0+.
-
-### Compatibility with Kiba 1
-
-Kiba 2 is expected to be compatible with existing Kiba scripts as long as you did not use internal API.
-
-Internal changes include:
-
-* An opt-in, Elixir's mix-inspired `config` system, currently only used to select the runner you want at job declaration time
-* A stronger isolation in the `Parser`, to reduces the chances that ETL scripts could conflict with Kiba internal classes
+[Subscribe to my newsletter](https://tinyletter.com/kiba-etl) to get the upcoming detailed article on Kiba 2 benefits.
 
 ## Getting Started
 
