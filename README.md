@@ -20,7 +20,8 @@ Please check out the [release notes](https://github.com/thbar/kiba/releases/tag/
 ## Getting Started
 
 * [How do you define ETL jobs with Kiba?](https://github.com/thbar/kiba/wiki/How-do-you-define-ETL-jobs-with-Kiba%3F)
-* [How do you run your ETL jobs?](https://github.com/thbar/kiba/wiki/How-do-you-run-your-ETL-jobs%3F)
+* [Running Kiba jobs from the command line](https://github.com/thbar/kiba/wiki/Running-Kiba-jobs-from-the-command-line)
+* [Considerations for running Kiba jobs programmatically (from Sidekiq, Faktory, Rake, ...)](https://github.com/thbar/kiba/wiki/Considerations-for-running-Kiba-jobs-programmatically-(from-Sidekiq,-Faktory,-Rake,-...))
 * [Implementing ETL sources](https://github.com/thbar/kiba/wiki/Implementing-ETL-sources).
 * [Implementing ETL transforms](https://github.com/thbar/kiba/wiki/Implementing-ETL-transforms).
 * [Implementing ETL destinations](https://github.com/thbar/kiba/wiki/Implementing-ETL-destinations).
