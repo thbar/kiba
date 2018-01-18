@@ -5,13 +5,16 @@ cache:
 
 environment:
   matrix:
-    - RUBY_VERSION: 24
-    - RUBY_VERSION: 23
-    - RUBY_VERSION: 22
-    - RUBY_VERSION: 21
+    # NOTE: not yet available, will have to install ourselves
+    # - RUBY_PATH: C:\Ruby25
+    - RUBY_PATH: C:\Ruby24
+    - RUBY_PATH: C:\Ruby23
+    - RUBY_PATH: C:\Ruby22
+    - RUBY_PATH: C:\Ruby21
+    - RUBY_PATH: C:\jruby-9.0.0.0
 
 install:
-  - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
+  - set PATH=%RUBY_PATH%\bin;%PATH%
   - bundle config --local path vendor/bundle
   - bundle install
 
