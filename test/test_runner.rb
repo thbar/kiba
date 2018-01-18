@@ -1,5 +1,5 @@
 require_relative 'helper'
-require_relative 'common/runner'
+require_relative 'shared_runner_tests'
 
 class TestRunner < Kiba::Test
   include SharedRunnerTests
