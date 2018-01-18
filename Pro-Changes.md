@@ -6,8 +6,8 @@ Kiba Pro is the commercial extension for Kiba. Documentation is available on the
 HEAD
 -------
 
-1.0.0.rc1
----------
+1.0.0
+-----
 
 NOTE: documentation & requirements/compatibility are available on the [wiki](https://github.com/thbar/kiba/wiki).
 
