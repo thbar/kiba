@@ -144,7 +144,7 @@ module SharedRunnerTests
     control = Kiba.parse do
       source TestEnumerableSource, [{key: 'value'}]
       2.times do
-        destination TestDestinationReturningNil, on_init: -> (d) { destinations << d }
+        destination TestDestinationReturningNil, on_init: lambda { |d| destinations << d }
       end
     end
     kiba_run(control)
