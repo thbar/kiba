@@ -5,7 +5,8 @@ cache:
 
 environment:
   matrix:
-    - RUBY_PATH: C:\Ruby25
+    # NOTE: not yet available, will have to install ourselves
+    # - RUBY_PATH: C:\Ruby25
     - RUBY_PATH: C:\Ruby24
     - RUBY_PATH: C:\Ruby23
     - RUBY_PATH: C:\Ruby22
