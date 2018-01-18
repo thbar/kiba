@@ -12,6 +12,8 @@ environment:
     - RUBY_VERSION: 21
 
 install:
+  # debugging
+  - dir C:\
   - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
   - bundle config --local path vendor/bundle
   - bundle install
