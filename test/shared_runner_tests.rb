@@ -1,5 +1,6 @@
 require 'minitest/mock'
 require_relative 'support/test_enumerable_source'
+require_relative 'support/test_destination_returning_nil'
 
 module SharedRunnerTests
   def kiba_run(job)
@@ -133,5 +134,22 @@ module SharedRunnerTests
     # the first row should have been removed
     # and the second row should have been reformatted
     assert_equal [{new_identifier: 'second-row'}], @remaining_rows
+  end
+  
+  def test_destination_returning_nil_does_not_remove_row_from_pipeline
+    # safeguard to avoid modification on the support code
+    assert_nil TestDestinationReturningNil.new.write("FOOBAR")
+
+    destinations = []
+    control = Kiba.parse do
+      source TestEnumerableSource, [{key: 'value'}]
+      2.times do
+        destination TestDestinationReturningNil, on_init: -> (d) { destinations << d }
+      end
+    end
+    kiba_run(control)
+    2.times do |i|
+      assert_equal [{key: 'value'}], destinations[i].instance_variable_get(:@written_rows)
+    end
   end
 end
