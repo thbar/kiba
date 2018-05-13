@@ -8,10 +8,10 @@ require_relative 'support/test_source_that_reads_at_instantiation_time'
 
 # End-to-end tests go here
 class TestIntegration < Kiba::Test
-  let(:output_file) { 'test/tmp/output.csv' }
-  let(:input_file) { 'test/tmp/input.csv' }
+  def output_file; 'test/tmp/output.csv'; end
+  def input_file; 'test/tmp/input.csv'; end
 
-  let(:sample_csv_data) do
+  def sample_csv_data
     <<CSV
 first_name,last_name,sex
 John,Doe,M
