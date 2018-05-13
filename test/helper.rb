@@ -3,6 +3,10 @@ require 'minitest/pride'
 require 'minitest/focus'
 require 'kiba'
 
+if ENV['CI'] == 'true'
+  puts "Running with MiniTest version #{MiniTest::VERSION}"
+end
+
 class Kiba::Test < Minitest::Test
   extend Minitest::Spec::DSL
 
