@@ -15,4 +15,10 @@ class Kiba::Test < Minitest::Test
   def fixture(file)
     File.join(File.dirname(__FILE__), 'fixtures', file)
   end
+  
+  unless self.method_defined?(:assert_mock)
+    def assert_mock(mock)
+      mock.verify
+    end
+  end
 end
