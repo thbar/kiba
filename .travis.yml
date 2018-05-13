@@ -5,9 +5,9 @@ before_install:
   - gem update bundler
 rvm:
   - ruby-head
-  - 2.5.0
-  - 2.4.3
-  - 2.3
+  - 2.5.1
+  - 2.4.4
+  - 2.3.7
   # NOTE: EOL since 2018-03-31
   - 2.2
   # NOTE: EOL since 2017-03-31
@@ -16,4 +16,4 @@ rvm:
   - 2.0
   # NOTE: JRuby 1.7 is now EOL https://github.com/jruby/jruby/issues/4112#issuecomment-346190422
   - jruby-1.7
-  - jruby-9.1.15.0
+  - jruby-9.1.17.0
