@@ -1,6 +1,6 @@
 class AggregateTransform
-  def initialize(aggregate_size: 10)
-    @aggregate_size = aggregate_size
+  def initialize(options)
+    @aggregate_size = options.fetch(:aggregate_size)
   end
   
   def process(row)
