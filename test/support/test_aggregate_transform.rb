@@ -1,5 +1,5 @@
 class AggregateTransform
-  def initialize(aggregate_size:)
+  def initialize(aggregate_size: 10)
     @aggregate_size = aggregate_size
   end
   
