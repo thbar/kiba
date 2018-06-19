@@ -3,18 +3,19 @@ before_install:
   # https://stackoverflow.com/a/47972768
   - gem update --system
   - gem update bundler
+  - rvm get latest # for truffleruby support
 rvm:
-  - ruby-head
-  - 2.5.1
-  - 2.4.4
-  - 2.3.7
-  # NOTE: EOL since 2018-03-31
-  - 2.2
-  # NOTE: EOL since 2017-03-31
-  - 2.1
-  # NOTE: EOL since 2016-02-24
-  - 2.0
-  # NOTE: JRuby 1.7 is now EOL https://github.com/jruby/jruby/issues/4112#issuecomment-346190422
-  - jruby-1.7
-  - jruby-9.1.17.0
+  # - ruby-head
+  # - 2.5.1
+  # - 2.4.4
+  # - 2.3.7
+  # # NOTE: EOL since 2018-03-31
+  # - 2.2
+  # # NOTE: EOL since 2017-03-31
+  # - 2.1
+  # # NOTE: EOL since 2016-02-24
+  # - 2.0
+  # # NOTE: JRuby 1.7 is now EOL https://github.com/jruby/jruby/issues/4112#issuecomment-346190422
+  # - jruby-1.7
+  # - jruby-9.1.17.0
   - truffleruby
