@@ -17,3 +17,4 @@ rvm:
   # NOTE: JRuby 1.7 is now EOL https://github.com/jruby/jruby/issues/4112#issuecomment-346190422
   - jruby-1.7
   - jruby-9.1.17.0
+  - truffleruby
