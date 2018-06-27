@@ -3,7 +3,6 @@ before_install:
   # https://stackoverflow.com/a/47972768
   - gem update --system
   - gem update bundler
-  - rvm get master # for truffleruby support
 rvm:
   # - ruby-head
   # - 2.5.1
@@ -18,4 +17,7 @@ rvm:
   # # NOTE: JRuby 1.7 is now EOL https://github.com/jruby/jruby/issues/4112#issuecomment-346190422
   # - jruby-1.7
   # - jruby-9.1.17.0
-  - truffleruby
+matrix:
+  include:
+    - rvm: truffleruby
+      before_install: rvm get master && rvm install truffleruby && gem install bundler --no-ri --no-rdoc
