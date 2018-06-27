@@ -3,7 +3,7 @@ before_install:
   # https://stackoverflow.com/a/47972768
   - gem update --system
   - gem update bundler
-  - rvm get latest # for truffleruby support
+  - rvm get master # for truffleruby support
 rvm:
   # - ruby-head
   # - 2.5.1
