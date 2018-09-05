@@ -1,8 +1,9 @@
 language: ruby
-before_install:
-  # https://stackoverflow.com/a/47972768
-  - gem update --system
-  - gem update bundler
+# NOTE: disabled for now, since it seems to cause issues with the TruffleRuby installation trick
+# before_install:
+#   # https://stackoverflow.com/a/47972768
+#   - gem update --system
+#   - gem update bundler
 matrix:
   include:
     - rvm: ruby-head
