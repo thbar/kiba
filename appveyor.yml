@@ -5,15 +5,15 @@ cache:
 
 environment:
   matrix:
-    - RUBY_PATH: C:\Ruby25
-    - RUBY_PATH: C:\Ruby24
-    - RUBY_PATH: C:\Ruby23
-    - RUBY_PATH: C:\Ruby22
-    - RUBY_PATH: C:\Ruby21
-    - RUBY_PATH: C:\jruby-9.0.0.0
+    - RUBY_VERSION: 25
+    - RUBY_VERSION: 24
+    - RUBY_VERSION: 23
+    - RUBY_VERSION: 22
+    # NOTE: jruby doesn't seem to be supported on default images
+    # see https://www.appveyor.com/docs/build-environment/#ruby
 
 install:
-  - set PATH=%RUBY_PATH%\bin;%PATH%
+  - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
   - bundle config --local path vendor/bundle
   - bundle install
 
