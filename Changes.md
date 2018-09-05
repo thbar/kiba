@@ -1,3 +1,8 @@
+2.5.0 (to be released)
+------------------------
+
+- Transform's `close` can now yield rows. This is useful to write "aggregating transforms", such as sorting, grouping etc. See [#57](https://github.com/thbar/kiba/pull/57) for more background & explanations.
+
 2.0.0
 -----
 
