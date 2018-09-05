@@ -11,6 +11,11 @@ module Kiba
           end
           y << returned_row if returned_row
         end
+        if t.respond_to?(:close)
+          t.close do |close_row|
+            y << close_row
+          end
+        end
       end
     end
     
