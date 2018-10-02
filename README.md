@@ -17,6 +17,14 @@ Please check out the [release notes](https://github.com/thbar/kiba/releases/tag/
 
 [Subscribe to my newsletter](https://tinyletter.com/kiba-etl) to get the upcoming detailed article on Kiba 2 benefits.
 
+## Installation
+
+Add the gem to your `Gemfile` and run the bundle command:
+
+```ruby
+gem 'kiba'
+```
+
 ## Getting Started
 
 * [How do you define ETL jobs with Kiba?](https://github.com/thbar/kiba/wiki/How-do-you-define-ETL-jobs-with-Kiba%3F)
@@ -50,7 +58,7 @@ I'm starting to add commonly used reusable helpers in a separate gem called [kib
 
 **Consulting services**: if your organization needs help to implement a data pipeline or to build a data-intensive application, I provide consulting services. [More information](http://thibautbarrere.com/hire-me/).
 
-**Kiba Pro**: for more features & goodies, check out Kiba Pro ([Changelog & contact info](Pro-Changes.md)).
+**Kiba Pro**: for more features & goodies, check out [Kiba Pro](https://github.com/thbar/kiba/wiki#kiba-pro).
 
 ## License
 
