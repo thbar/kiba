@@ -37,6 +37,7 @@ gem 'kiba'
 
 ## Useful links
 
+* [Ruby Kaigi 2018 conference - Kiba 2 - Past, present & future of data processing with Ruby](https://www.youtube.com/watch?v=fxVtbog7pIQ) ([slides](https://speakerdeck.com/thbar/kiba-etl-v2-rubykaigi-2018))
 * [Live Coding Session - Processing data with Kiba ETL](http://thibautbarrere.com/2015/11/09/video-processing-data-with-kiba-etl/)
 * [Rubyists - are you doing ETL unknowningly?](http://thibautbarrere.com/2015/03/25/rubyists-are-you-doing-etl-unknowingly/)
 * [How to write solid data processing code](http://thibautbarrere.com/2015/04/05/how-to-write-solid-data-processing-code/)
