@@ -4,6 +4,7 @@ require_relative 'support/test_array_destination'
 require_relative 'support/test_yielding_transform'
 require_relative 'support/test_duplicate_row_transform'
 require_relative 'support/test_close_yielding_transform'
+require_relative 'support/test_non_closing_transform'
 require_relative 'shared_runner_tests'
 
 class TestStreamingRunner < Kiba::Test
