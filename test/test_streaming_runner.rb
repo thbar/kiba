@@ -3,7 +3,8 @@ require_relative 'support/test_enumerable_source'
 require_relative 'support/test_array_destination'
 require_relative 'support/test_yielding_transform'
 require_relative 'support/test_duplicate_row_transform'
-
+require_relative 'support/test_close_yielding_transform'
+require_relative 'support/test_non_closing_transform'
 require_relative 'shared_runner_tests'
 
 class TestStreamingRunner < Kiba::Test
@@ -45,5 +46,28 @@ class TestStreamingRunner < Kiba::Test
       {item: 'classic-return-value'},
       {item: 'classic-return-value'}
     ], destination_array
+  end
+  
+  def test_transform_yielding_from_close
+    destination_array = []
+    job = Kiba.parse do
+      extend Kiba::DSLExtensions::Config
+      config :kiba, runner: Kiba::StreamingRunner
+
+      transform CloseYieldingTransform, yield_on_close: [1, 2]
+      destination TestArrayDestination, destination_array
+    end
+    Kiba.run(job)
+    assert_equal [1, 2], destination_array
+  end
+
+  def test_transform_with_no_close_must_not_raise
+    job = Kiba.parse do
+      extend Kiba::DSLExtensions::Config
+      config :kiba, runner: Kiba::StreamingRunner
+
+      transform NonClosingTransform
+    end
+    Kiba.run(job)
   end
 end
