@@ -1,6 +1,6 @@
 class CloseYieldingTransform
-  def initialize(yield_on_close:)
-    @yield_on_close = yield_on_close
+  def initialize(options)
+    @yield_on_close = options.fetch(:yield_on_close)
   end
 
   def close
