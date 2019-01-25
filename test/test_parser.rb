@@ -14,16 +14,28 @@ class TestParser < Kiba::Test
     assert_equal DummyClass, control.sources[0][:klass]
     assert_equal %w(has args), control.sources[0][:args]
   end
-  
+
   # NOTE: useful for anything not using the CLI (e.g. sidekiq)
   def test_block_parsing_with_reference_to_outside_variable
     some_variable = Object.new
-    
+
     control = Kiba.parse do
       source DummyClass, some_variable
     end
-    
+
     assert_equal [some_variable], control.sources[0][:args]
+  end
+
+  def some_method
+    'some_method'
+  end
+
+  def test_block_parsing_with_reference_to_outside_method
+    control = Kiba.parse do
+      source DummyClass, some_method
+    end
+
+    assert_equal [some_method], control.sources[0][:args]
   end
 
   def test_block_transform_definition
@@ -59,7 +71,7 @@ class TestParser < Kiba::Test
 
     assert_instance_of Proc, control.post_processes[0][:block]
   end
-  
+
   def test_block_pre_process_definition
     control = Kiba.parse do
       pre_process {}
@@ -100,20 +112,20 @@ RUBY
   ensure
     remove_files('test/tmp/etl-common.rb', 'test/tmp/etl-main.rb')
   end
-  
+
   def test_config
     control = Kiba.parse do
       extend Kiba::DSLExtensions::Config
-      
+
       config :context, key: "value", other_key: "other_value"
     end
-    
+
     assert_equal({ context: {
       key: "value",
       other_key: "other_value"
     }}, control.config)
   end
-  
+
   def test_config_override
     control = Kiba.parse do
       extend Kiba::DSLExtensions::Config
@@ -121,7 +133,7 @@ RUBY
       config :context, key: "value", other_key: "other_value"
       config :context, key: "new_value"
     end
-    
+
     assert_equal({ context: {
       key: "new_value",
       other_key: "other_value"

@@ -1,5 +1,7 @@
 module Kiba
   class Context
+    attr_accessor :block_self
+
     def initialize(control)
       @control = control
     end
@@ -22,6 +24,22 @@ module Kiba
 
     def post_process(&block)
       @control.post_processes << { block: block }
+    end
+
+    def method_missing(method, *args, &block)
+      if block_self
+        block_self.send(method, *args, &block)
+      else
+        super
+      end
+    end
+
+    def respond_to_missing?(method, *)
+      if block_self
+        block_self.respond_to?(method)
+      else
+        super
+      end
     end
   end
 end

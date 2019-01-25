@@ -19,6 +19,7 @@ module Kiba::Parser
       # this somewhat weird construct allows to remove a nil source_file
       context.instance_eval(*[source_as_string, source_file].compact)
     else
+      context.block_self = eval('self', source_as_block.binding, __FILE__, __LINE__)
       context.instance_eval(&source_as_block)
     end
     control
