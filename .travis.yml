@@ -20,7 +20,7 @@ matrix:
     # NOTE: JRuby 1.7 is now EOL https://github.com/jruby/jruby/issues/4112#issuecomment-346190422
     - rvm: jruby-1.7
     - rvm: jruby-9.1.17.0
-    - rvm: jruby-9.2.3.0
+    - rvm: jruby-9.2.5.0
     # See https://github.com/oracle/truffleruby/blob/master/doc/user/standalone-distribution.md#testing-truffleruby-in-travisci
     - name: truffleruby
       rvm: system
