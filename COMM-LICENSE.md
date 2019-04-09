@@ -23,3 +23,27 @@ In this Agreement, the terms used hereunder shall have the following meaning unl
 * “**Agreement**“: means these Terms and the corresponding Order.
 
 * “**Data Protection Laws**”: means, with respect to European Union member countries, the EU General Protection Regulation 2016/679 (the “**Regulation**”) and any applicable subordinate legislation, save that in the event of any conflict between the provisions of the EU General Protection Regulation and data protection laws, the Regulation shall prevail. For other countries, “Data Protection Laws” means laws similar to or addressing the same subject matter as the Regulation.
+
+* “**Documentation**”: means the related user documentation for the Software.
+
+* “**Error**”: means any material failure of the Software to conform substantially to the Documentation applicable to the Software at the time the Software was delivered to the Licensee.
+
+* “**Gem Server**”: means the server which provides the Software Releases online, protected behind an authentication token.
+
+* “**(License) Fees**”: means the applicable fees for the Software License set forth on the Order.
+
+* “**Licensee Product**”: means any application, framework or element developed by Licensee with which the Software is integrated for marketing and distribution to end users under Licensee’s own trademarks and product names.
+
+* “**Order**”: means the order mentioned in the recitals of the present terms and conditions.
+
+* “**Party(ies)**”: means individually or collectively the Licensee and/or LoGeek.
+
+* “**Patches**”: means changes made to the Software that restore substantial conformity with the applicable Documentation.
+
+* “**Release(s)**”: means any maintenance release relating to the Software including but not limited to Error fixes and Patches.
+
+* “**Representative**”: means the representative of the Licensee identified in the Order.
+
+* “**Software**”: means package of the software programs and/or libraries named and described on the Order, including the Releases that may be provided by LoGeek to the Licensee. Unless otherwise specified in the Order, the Software corresponds to Kiba Pro.
+
+* “**Use**”: means access, install, store, load, execute and display one copy on one device at a time.
