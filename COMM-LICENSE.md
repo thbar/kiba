@@ -296,3 +296,39 @@ LoGeek may without any further formality (ipso jure) and without any indemnity t
 Upon expiration or termination of the Agreement for any reason, the Licensee shall, upon effective termination date of the Agreement, cease any Use of the Software, and destroy it, or upon LoGeek’s request, deliver to LoGeek, any and all copies of the Software. 
 
 All sums paid by the Licensee to LoGeek shall remain acquired by the latter.
+
+## ARTICLE 13 - MODIFICATION OF THE TERMS
+
+LoGeek reserves the right to change or modify these Terms or any other LoGeek terms, conditions, or policies related to use of the Software at any time and at its sole discretion by posting revisions on the GitHub Kiba repository, at the following url:
+
+[https://github.com/thbar/kiba/blob/master/COMM-LICENSE.md](https://github.com/thbar/kiba/blob/master/COMM-LICENSE.md)
+
+Continued use of the Software following the posting of these changes or modifications will constitute the Licensee’s acknowledgement and agreement to such changes or modifications. 
+
+## ARTICLE 14 - MISCELLANEOUS
+
+**Insurance**. At all times during the term of this Agreement, each Party shall maintain adequate insurance policies with a reputable insurance company.
+
+**Communication**. The Licensee hereby authorizes LoGeek to mention it as a business reference, to make public reference, in general terms, to the Software provided to the Licensee and to reproduce its trademark and logo for such communication and promotion purposes. 
+
+**Waiver**. No omission, delay or forbearance on the part of a Party in enforcing any right or remedy arising in connection with the Agreement will be construed or operate as a waiver of either that or any other right or remedy. 
+
+No waiver by a Party will be valid unless in writing and signed by a duly authorized representative of that Party.
+
+**Transfer**. LoGeek may at any time sublicense, assign, novate or deal in any other manner with any or all of its rights and obligations under the Agreement provided it gives written notice to the Licensee.
+
+This Agreement may not be transferred, in whole or in part, with or without valuable consideration, by the Licensee, whether such transfer occurs due to a merger, absorption, acquisition, scission, or any other operation without prior written consent from LoGeek.
+
+**Subcontracting**. LoGeek reserves the right to subcontract the execution of the services to third parties qualified by LoGeek. LoGeek will however remain primarily responsible for the execution of the services.
+
+**Applicable laws and export control**. Licensee agrees to comply with all applicable laws and regulations, including laws, regulations, orders or other restrictions on export, re-export or redistribution of Software and particularly with export controls imposed by the United States.
+
+**Survival**. Those provisions that by their nature should survive termination of the Agreement will survive termination of the Agreement.
+
+**Remainder**. The invalidity, illegality or unenforceability of any of the provisions of the Agreement shall not affect or impair the continuation in force of the remainder the Agreement.
+
+**Indemnification**. The Licensee agrees to defend, indemnify, and hold harmless LoGeek from and against any lawsuits, claims, losses, damages, fines and expenses (including attorneys' fees and costs) arising out of Licensee’s use of the Software or breach of this Agreement.
+
+**Attorneys’ fees and costs**. The prevailing party in any action to enforce this Agreement will be entitled to recover its attorneys’ fees and costs in connection with such action.
+
+**Entirety**. This Agreement contains the whole agreement between the Parties relating to the subject matter of this Agreement at the date of this Agreement to the exclusion of any terms implied by law which may be excluded by contract and supersedes any previous written or oral agreement between the Parties in relation to the matters dealt with in this Agreement.
