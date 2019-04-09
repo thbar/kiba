@@ -332,3 +332,17 @@ This Agreement may not be transferred, in whole or in part, with or without valu
 **Attorneys’ fees and costs**. The prevailing party in any action to enforce this Agreement will be entitled to recover its attorneys’ fees and costs in connection with such action.
 
 **Entirety**. This Agreement contains the whole agreement between the Parties relating to the subject matter of this Agreement at the date of this Agreement to the exclusion of any terms implied by law which may be excluded by contract and supersedes any previous written or oral agreement between the Parties in relation to the matters dealt with in this Agreement.
+
+## ARTICLE 15 - DISPUTE RESOLUTION
+
+In the event of a dispute arising out of or in connection with the Agreement, the Parties undertake to set up a diligent, good faith attempt to resolve amicably all disputes in accordance with the following principles.
+
+In this respect, as soon as a Party considers there is a dispute with the other Party, it will summon a meeting with chief executive level representatives of both Parties in order to discuss possible settlement of the said dispute. Such meeting shall be summoned by registered letter, return receipt requested, and shall take place within 15 days of receipt of the said letter by the recipient Party.
+
+Should, within the aforementioned 15-day time period, the dispute not be settled or the meeting not be held, then each Party will be free to submit the dispute to a court of competent jurisdiction.
+
+## ARTICLE 16 - APPLICABLE LAW AND JURISDICTION
+
+The Agreement shall in all respects be governed by and construed exclusively (save for any applicable mandatory laws) in accordance with the laws of France. 
+
+If the Parties fail to settle a dispute in accordance with the dispute resolution process set forth in section “Dispute resolution” above, any dispute arising from or relating to the Agreement shall be submitted to the courts of **PARIS (FRANCE)**.
