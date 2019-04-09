@@ -274,3 +274,25 @@ For the avoidance of doubt, the provisions of this Article will survive the expi
 Regardless of any statute or law to the contrary, any claim or cause of action arising out of or related to use of the Services must be filed within one year after such claim or cause of action arose or be forever barred.
 
 The Licensee acknowledges that by entering into and performing its obligations under the Agreement, LoGeek will not assume and should not be exposed to the business and operational risks associated with the Licensee’s business, and the Licensee therefore agrees to indemnify and defend LoGeek from any and all losses arising out of, under or in connection with any third-party claim, including any claim from direct or indirect user of the Software.
+
+## ARTICLE 12 - TERMINATION
+
+### 12.1 - Termination at the end of the contractual period
+
+Each Party can terminate the Agreement at the end of the contractual period by informing (e.g. by email) the other Party in writing, at least 2 weeks before the end of the contractual period, of its intention not to renew. 
+
+If neither Party has informed the other of its intention not to renew, within the 2-week period, the Agreement will be automatically renewed.
+
+If confirmation of payment is not received by the end of a 14-day period following the renewal date, LoGeek retains the right, without prejudice to its other rights or remedies, to automatically and without any further formality (_ipso jure_) terminate the Agreement. In such case the consequences of termination described below shall apply.
+
+### 12.2 - Termination for cause
+
+Each Party shall have the right, without prejudice to its other rights or remedies, to terminate the Agreement immediately and without any further formality (ipso jure) by written notice to the other Party if the other Party is in material breach of any of its obligations under the Agreement and either such breach is incapable of remedy or is capable of remedy and the defaulting Party shall have failed substantially to remedy that breach within 30 days of written notice to the defaulting Party specifying the breach and requiring its remedy.
+
+LoGeek may without any further formality (ipso jure) and without any indemnity terminate the Agreement if the Software is used in a manner not compliant with the applicable Documentation or with this Agreement. 
+
+### 12.3 - Consequences of termination
+
+Upon expiration or termination of the Agreement for any reason, the Licensee shall, upon effective termination date of the Agreement, cease any Use of the Software, and destroy it, or upon LoGeek’s request, deliver to LoGeek, any and all copies of the Software. 
+
+All sums paid by the Licensee to LoGeek shall remain acquired by the latter.
