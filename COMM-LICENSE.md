@@ -172,3 +172,19 @@ versions of Software other than the most recent Release provided by LoGeek to th
 * Software damaged by external physical factors, natural disaster, act of nature, act of God, deliberate act, misuse, accident.
 
 The Licensee is responsible for making and keeping adequate backup copies of data, databases and application programs and agrees that (i) it is solely responsible for any and all restoration and re-creation of damaged, altered or lost data and programs and (ii) LoGeek shall not be liable for any direct or indirect corresponding loss or damage.
+
+## ARTICLE 4 - PRIORITY EMAIL SUPPORT
+
+An active Agreement gives access to “Priority Support”. 
+
+Priority Support covers one (1) email request per quarter. LoGeek will use reasonable endeavours to answer within two (2) French working days. Scope is limited to Kiba and Kiba Pro features and APIs, not the application or infrastructure. For support, email thibaut.barrere+kiba@gmail.com. Please email using the same domain as the original license email or explain your connection to the licensed company. 
+
+## ARTICLE 5 - CUSTOM SUPPORT AND MAINTENANCE
+
+This Agreement does not include custom support or maintenance or other services. If the Licensee wishes to benefit from such services, a separate contract shall be put into place.
+
+Notwithstanding the foregoing, LoGeek may, at its discretion, decide to provide the Licensee with Releases, being understood that LoGeek makes no commitment under this Agreement to provide such Patches or other Releases.
+
+Releases of the Software that may be provided by LoGeek to the Licensee are subject to the terms of this License Agreement. When the Licensee receives a Release that replaces previously licensed Software, its rights under this Agreement with regard to the previously licensed Software automatically ends when it deploys the Release.
+
+Notwithstanding the foregoing, LoGeek may also, at its discretion, decide to provide an email address for assistance to Licensee, being understood that such assistance shall be delivered only if deemed appropriate by LoGeek and without commitment nor warranty of any kind.
