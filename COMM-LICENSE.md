@@ -188,3 +188,15 @@ Notwithstanding the foregoing, LoGeek may, at its discretion, decide to provide 
 Releases of the Software that may be provided by LoGeek to the Licensee are subject to the terms of this License Agreement. When the Licensee receives a Release that replaces previously licensed Software, its rights under this Agreement with regard to the previously licensed Software automatically ends when it deploys the Release.
 
 Notwithstanding the foregoing, LoGeek may also, at its discretion, decide to provide an email address for assistance to Licensee, being understood that such assistance shall be delivered only if deemed appropriate by LoGeek and without commitment nor warranty of any kind.
+
+## ARTICLE 6 - LIMITED WARRANTY
+
+IN SO FAR AS PERMITTED BY LAW, THE SOFTWARE SHALL BE DELIVERED “AS IS” WITHOUT ANY WARRANTY OR GUARANTEE WHATSOEVER, WRITTEN OR ORAL, EXPRESS OR IMPLIED. LOGEEK EXPRESSLY DECLINES ANY IMPLICIT WARRANTY OR GUARANTEE REGARDING COMMERCIAL QUALITY, SATISFACTORY QUALITY, PERFORMANCE, AND/OR SUITABILITY FOR A PARTICULAR USE.
+
+LOGEEK IS NOT RESPONSIBLE FOR THE RESULTS OBTAINED FROM THE USE OF THE SOFTWARE.
+
+UNDER NO CIRCUMSTANCES SHALL LOGEEK BE HELD LIABLE FOR ANY LOSS OF PROFITS, LOSS OF COMMERCIAL OPPORTUNITY, LOSS OF DATA, INTERRUPTION OF WORK, BODILY HARM, OR ANY INDIRECT, SPECIAL, INCIDENTAL, PUNITIVE, FORTUITOUS, CONSECUTIVE, OR DAMAGE OF ANY KIND WHATSOEVER RESULTING FROM THE USE, THE IMPOSSIBILITY OF USING, OR RESULTS OF THE USE OF THE SOFTWARE, EVEN IF LOGEEK WAS INFORMED OF THE POSSIBILITY OF SUCH DAMAGE. THE USE OF THE SOFTWARE BY THE LICENSEE SHALL BE ENTIRELY AT ITS OWN RISKS AND PERILS. SHOULD THE SOFTWARE BE FOUND DEFECTIVE, THE LICENSEE SHALL BEAR ALL COSTS FOR SERVICING, REPAIRS, OR CORRECTIONS AND, IN SO FAR AS ALLOWED BY LAW, THE LICENSEE SHALL UNCONDITIONALLY RENOUNCE ALL RIGHTS, LEGAL OR OTHERWISE, IT MAY HAVE AGAINST LOGEEK FOLLOWING SUCH FAULTS OR DEFAULTS.
+
+Notwithstanding the foregoing, these presents shall not be construed as to limit the legal rights which may not be renounced according to applicable laws. IN SUCH CASE, THE CORRESPONDING GUARANTEES SHALL BE LIMITED TO THE DURATION OF THE CONTRACTUAL WARRANTY PERIOD OR THE MINIMUM PERIOD REQUIRED BY APPLICABLE REGULATIONS.
+
+Any lawsuit originating from using the Software shall be prescribed after one (1) year from the last delivery of the Software to the Licensee.
