@@ -200,3 +200,19 @@ UNDER NO CIRCUMSTANCES SHALL LOGEEK BE HELD LIABLE FOR ANY LOSS OF PROFITS, LOSS
 Notwithstanding the foregoing, these presents shall not be construed as to limit the legal rights which may not be renounced according to applicable laws. IN SUCH CASE, THE CORRESPONDING GUARANTEES SHALL BE LIMITED TO THE DURATION OF THE CONTRACTUAL WARRANTY PERIOD OR THE MINIMUM PERIOD REQUIRED BY APPLICABLE REGULATIONS.
 
 Any lawsuit originating from using the Software shall be prescribed after one (1) year from the last delivery of the Software to the Licensee.
+
+## ARTICLE 7 - INTELLECTUAL PROPERTY WARRANTY
+
+LoGeek warrants the Licensee that the delivery of the Software shall not infringe any intellectual property (copyright, patent right, trademark right) of any third party.
+
+LoGeek shall indemnify and hold the Licensee harmless from and against any third party claims and/or actions and/or proceedings relating to any item provided by LoGeek to the Licensee, based on an infringement of intellectual property rights, and shall bear, subject to the provisions of the article “Liability”, all related definitive damages and indemnities which may result from such claims and/or actions and/or proceedings in relation to this Agreement, provided that: (i) the Licensee promptly notifies LoGeek in writing of the claim, action or proceeding and provides LoGeek with all information useful for defending its interests; (ii) the Licensee agrees that LoGeek shall have sole and exclusive control of the defense of the claim, action or proceeding, should LoGeek so desire and (iii) the Licensee makes no admission or statement of any kind whatsoever that may prejudice LoGeek’s defense. 
+
+The indemnification referred to in this section is limited to the payment by LoGeek of all damages and costs finally awarded for the claim, based on the demonstration of a counterfeit exclusively under LoGeek’s responsibility, or settlements costs approved in writing by LoGeek.
+
+If the Software infringes a third party’s intellectual property right or if LoGeek reasonably believes it is likely to infringe a third party’s intellectual property right, LoGeek may, at its discretion (i) procure the right for the Licensee to continue using the Software or (ii) replace or modify the Software and to make its use non-infringing.
+
+If LoGeek cannot do either of the above, LoGeek or the Licensee may terminate automatically and without judicial formalities this Agreement (ipso jure) subject to LoGeek reimbursing the Licensee the residual value of the non-compliant Software purchase price, with prorata temporis amortization over a maximum period of three (3) years from the date the Software was delivered.
+
+The foregoing warranty does not apply (i) if the Software has been altered, modified, customized, except by LoGeek; (ii) in case of unauthorized use of the Software or of use of the Software in excess of the License Software granted to the Licensee; (iii) to any unsupported Release of the Software or if the Licensee does not use the latest Release provided by LoGeek or (iv) to any open source software or to any other third party code embedded in the Software which may be subject to specific terms and conditions provided to the Licensee.
+
+The preceding provisions set LoGeek’s liability limits with respect to the Licensee with regard to intellectual property rights infringement. Therefore, LoGeek shall not provide any guarantee other than that described in the present article regarding counterfeit.
