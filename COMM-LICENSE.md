@@ -111,3 +111,64 @@ Licensee must not remove, obscure or interfere with any copyright, acknowledgmen
 Licensee must inform LoGeek of Licensee’s knowledge of any infringing use of the Software by any of Licensee’s customers. Licensee is liable for compliance by those third parties with the terms and conditions of this Agreement applicable to the Software Standard License. 
 
 Licensee will not owe LoGeek any royalties for the distribution of the Software in accordance with this Agreement, other than the Appliance License Fees.
+
+## ARTICLE 3 - REQUIREMENTS, DELIVERY, MODIFICATIONS AND RESTRICTIONS
+
+### 3.1 - Software requirements
+
+The Licensee must ensure that the Software is installed on a technical environment that meets the minimum required specification as set out by LoGeek in the Documentation.
+
+The Licensee shall:
+
+* Use the Software and all other materials provided hereunder only in accordance with the terms of the License Agreement;
+* Promptly install all Releases distributed by LoGeek if applicable and especially if the Release has been provided by LoGeek for security or safety reasons. The Licensee acknowledges that any failure to do so may result in Licensee’s inability to benefit fully from the Software and/or that the Software may operate in a degraded mode. 
+
+### 3.2 - Delivery process
+
+All Software and Documentation shall be delivered by digital means, unless otherwise specified on the applicable Order. Software shall be deemed delivered when it is made available to download by Licensee (“**Delivery**”).
+
+The purchase gets the Licensee unique access credentials for downloading the Software gem. These credentials allow the Licensee to access the Gem Server (bundle install) during the duration of the Agreement. The Licensee must keep these access credentials private.
+
+If LoGeek finds the Licensee access credentials are ever publicized, a request to remove them will be sent via email to the Licensee and the credentials will be revoked. LoGeek reserves the right to permanently remove access and terminate the Agreement for cause if the situation happens again.
+
+### 3.3 - Modifications
+
+#### 3.3.1 - Modifications to the Software
+
+LoGeek shall provide the Licensee with source code so Licensee can create modifications to the original Software (“**Modifications**”). Modifications include but are not limited to: 
+* Any addition to or deletion from the content of a file included in the Software or previous Modifications created by Licensee; or
+* Any new file that contains any part of the Software or previous Modifications.
+
+Should Licensee create any Modification, Licensee shall inform promptly LoGeek of such Modification and shall put at LoGeek’s disposal such Modification.
+
+Licensee hereby assigns to LoGeek the most extensive intellectual property rights in relation to the Modifications. The rights so assigned include the rights of use, reproduction, modification and distribution. They are assigned to LoGeek and its licensees and successors free of charge, on a worldwide basis and for the longest period of legal protection. These rights are assigned on a non-exclusive basis, Licensee retaining the right to freely make use of the said Modifications.
+
+Such assignment of rights is governed not only by the paragraph hereabove but also by the Contribution License Agreement. By signing the Agreement, the Licensee agrees with the terms of the Contribution License Agreement.
+
+#### 3.3.2 - Modifications to the open source version of the Software
+
+Following the signing of this Agreement, and for as long as this Agreement is valid, the terms corresponding to the license purchased by the Licensee and object of this Agreement may be extended, at the discretion of the Licensee, to the version of the Software as put by LoGeek in the open source community.
+
+It is the Licensee’s responsibility to inform Logeek in the event the Licensee decides to Use the open source version of the Software under the terms of this Agreement. 
+
+Should the Licensee make such a decision, any Modifications to the open source version of the Software will be subject to the provisions of the article “Modifications to the Software”.
+
+### 3.4 - Third party programs or libraries
+
+The Software may include third party software programs or libraries that are subject to open source, freeware or other commercial licenses and/or notices that LoGeek is required to distribute with the Software. These licenses and notices are available to the Licensee in files in the Software directory, in documentation that accompanies the Software or via a supplementary list provided by LoGeek. The Licensee shall comply with these agreements and notices. 
+
+This Agreement does not modify any rights or obligations that the Licensee may have under the third party licenses and notices applicable to such programs. Any use of such program is subject to the rights and obligations under the applicable license.
+
+### 3.5 - Responsibilities
+
+LoGeek will assume no liability nor grant any warranty with respect to Errors, trouble or damages that have been caused by:
+* Modifications, alterations or customizations of the Software not made by LoGeek;
+* Use of the Software in a manner that is in violation of this Agreement, or that is contrary to the Documentation or to instructions given by LoGeek;
+* Use of the Software with hardware, operating systems or other supporting environment other than the ones specified by LoGeek as being compatible with the Software;
+* Use of the Software in a manner for which it was not designed;
+versions of Software other than the most recent Release provided by LoGeek to the Licensee;
+* Failure caused by components or technology on which the Software are installed and/or by programs used in conjunction with the Software;
+* Open source software or any other third-party software and products, even included in the Software;
+* Software damaged by external physical factors, natural disaster, act of nature, act of God, deliberate act, misuse, accident.
+
+The Licensee is responsible for making and keeping adequate backup copies of data, databases and application programs and agrees that (i) it is solely responsible for any and all restoration and re-creation of damaged, altered or lost data and programs and (ii) LoGeek shall not be liable for any direct or indirect corresponding loss or damage.
