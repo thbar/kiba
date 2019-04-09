@@ -216,3 +216,61 @@ If LoGeek cannot do either of the above, LoGeek or the Licensee may terminate au
 The foregoing warranty does not apply (i) if the Software has been altered, modified, customized, except by LoGeek; (ii) in case of unauthorized use of the Software or of use of the Software in excess of the License Software granted to the Licensee; (iii) to any unsupported Release of the Software or if the Licensee does not use the latest Release provided by LoGeek or (iv) to any open source software or to any other third party code embedded in the Software which may be subject to specific terms and conditions provided to the Licensee.
 
 The preceding provisions set LoGeek’s liability limits with respect to the Licensee with regard to intellectual property rights infringement. Therefore, LoGeek shall not provide any guarantee other than that described in the present article regarding counterfeit.
+
+## ARTICLE 8 - PAYMENT OF CHARGES
+
+### 8.1 - License Fees
+
+The Licensee shall pay the Fees set forth on the Order. 
+
+LoGeek will, unless otherwise stated on the Order, invoice the Licensee on the date of validation by LoGeek of the Order. Any Fees paid will not be refunded.
+
+All fees set forth herein exclude value added tax, sales tax, use and excise taxes, and any other similar taxes, duties and charges of any kind imposed by any federal, state or local governmental entity. All fees will be heightened by any prevailing rights or taxes on the billing date. The Licensee is responsible for any taxes and the Licensee will pay LoGeek for the Software License without any reduction for these amounts.
+
+### 8.2 - Payment terms
+
+All invoices must be paid by the Licensee in full under 14 days after the date of issuance of the applicable invoice. 
+
+Any late payment shall automatically result, on the day following the settlement date shown in the invoice, in the payability of late payment interests in an amount equal to the interest rate applied by the European Central Bank to its latest refinancing transaction increased by ten (10) percentage points.
+
+LoGeek shall also be entitled to recover all costs including reasonable expenses, legal fees and cost of collection, in an amount equal to actual collection costs ant that, in any event, shall not be less than the flat fee provided for in French Code of commerce (40 euros).
+
+If the Licensee contests part of an invoice, it will only be entitled to withhold payment of this part until the dispute on this part has been solved. In no case it will be entitled to suspend payment of the non-contested parts of the invoice.
+
+## ARTICLE 9 - DATA PROTECTION
+
+Each Party warrants and undertakes that it will duly observe all its respective obligations under the applicable Data Protection Laws. 
+
+LoGeek is responsible for processing personal data regarding managing contractual relationships with its clients including the Licensee.
+
+Personal data collected by LoGeek is needed for its processing and is intended for LoGeek’s relevant departments and, where appropriate, its subcontractors and co-contractors, for the requirements of executing the Agreement.
+
+Pursuant to the legal provisions regarding protecting personal data, and under the conditions and to the extent provided by the applicable regulation, each Licensee’s employee concerned shall have a right to query, access, rectify, oppose, obtain erasure or restriction of processing   regarding its personal data – rights which may be exercised by mail sent to the attention of thibaut.barrere+kiba@gmail.com, accompanied, if deemed appropriate by Logeek, by a copy of the relevant person’s identification papers.
+
+## ARTICLE 10 - AUDIT
+
+LoGeek shall be permitted to audit (at least once annually and in accordance with LoGeek standard procedures, which may include on-site and/or remote audit) the usage of the Software.
+
+The Licensee shall cooperate reasonably in the conduct of such audits. 
+
+Notwithstanding any other rights LoGeek may have, in the event an audit reveals that (i) the Licensee underpaid license fees and/or Services fees to LoGeek and/or (ii) that the Licensee has used the Software in excess of the rights granted or license quantities stated in the Order Form, Licensee shall pay such underpaid fees and/or for such excess usage based on the applicable rates in effect at the time of the audit. 
+
+Notwithstanding Logeek’s rights to claim for damages and to terminate the Agreement, reasonable costs of LoGeek’s audit shall be paid by the Licensee if the audit results indicate usage non-compliant with this Agreement.
+
+## ARTICLE 11 - LIABILITY
+
+The Licensee acknowledges and agrees that it has accepted the terms of this Agreement in the knowledge that LoGeek’s liability is limited and that the prices and charges payable have been calculated so as to reflect such limitations and thus represent a reasonable and commercial allocation of risk between the Parties.
+
+In no event shall LoGeek be liable for indirect damages, loss of profits, loss of goodwill, loss of business, loss of revenue, loss of contracts, loss of anticipated savings, loss of data, damage to or corruption of data or business information arising out of this Agreement or arising out of the use of or inability to use the Software, even if LoGeek has been advised of, knew or should have known of the possibility of such damages, and whether in a cause of action sounding in contract, tort, strict liability or otherwise.
+
+LoGeek’s total aggregate liability, for the period of this Agreement, for all claims and damages arising from negligence, breach of contract, warranty or indemnity, or any other legal theory of liability or otherwise, under or in connection with this Agreement, shall not exceed  an amount equivalent to fifty percent of the Fees (excluding taxes) payable or paid by the Licensee to LoGeek under this Agreement, during the year of occurrence of the (most serious) act or omission giving rise to the liability.
+
+The limitation of liability has effect in relation both to any liability expressly provided for under this Agreement and to any liability arising by reason of the invalidity or unenforceability of any term of this Agreement.
+
+The Licensee has a duty to mitigate the damages that would otherwise be recoverable from LoGeek pursuant to the Agreement by taking appropriate and reasonable actions to reduce or limit the amount of such damages.
+
+For the avoidance of doubt, the provisions of this Article will survive the expiration or termination of the Agreement for any reason.
+
+Regardless of any statute or law to the contrary, any claim or cause of action arising out of or related to use of the Services must be filed within one year after such claim or cause of action arose or be forever barred.
+
+The Licensee acknowledges that by entering into and performing its obligations under the Agreement, LoGeek will not assume and should not be exposed to the business and operational risks associated with the Licensee’s business, and the Licensee therefore agrees to indemnify and defend LoGeek from any and all losses arising out of, under or in connection with any third-party claim, including any claim from direct or indirect user of the Software.
