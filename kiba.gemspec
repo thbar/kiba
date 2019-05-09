@@ -13,6 +13,10 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
   gem.version       = Kiba::VERSION
   gem.executables   = ['kiba']
+  gem.metadata      = {
+    'source_code_uri'   => 'https://github.com/thbar/kiba',
+    'documentation_uri' => 'https://github.com/thbar/kiba/wiki',
+  }
 
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'minitest', '~> 5.9'
