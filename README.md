@@ -49,7 +49,7 @@ gem 'kiba'
 
 ## Supported Ruby versions
 
-Kiba currently supports Ruby 2.0+ and JRuby (with its default 1.9 syntax). See [test matrix](https://travis-ci.org/thbar/kiba).
+Kiba currently supports Ruby 2.3+, JRuby 9.1+ and TruffleRuby. See [test matrix](https://travis-ci.org/thbar/kiba).
 
 ## Kiba Common
 

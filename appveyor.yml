@@ -5,10 +5,10 @@ cache:
 
 environment:
   matrix:
+    - RUBY_VERSION: 26
     - RUBY_VERSION: 25
     - RUBY_VERSION: 24
     - RUBY_VERSION: 23
-    - RUBY_VERSION: 22
     # NOTE: jruby doesn't seem to be supported on default images
     # see https://www.appveyor.com/docs/build-environment/#ruby
 
