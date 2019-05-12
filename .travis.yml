@@ -1,6 +1,7 @@
 language: ruby
 matrix:
   include:
+    # see https://www.ruby-lang.org/en/downloads/branches/
     - rvm: ruby-head
     - rvm: 2.6.0
     - rvm: 2.5.3
