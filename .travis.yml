@@ -8,8 +8,6 @@ matrix:
     - rvm: 2.4.5
     # NOTE: EOL since 2019-03-31
     - rvm: 2.3.8
-    # NOTE: JRuby 1.7 is now EOL https://github.com/jruby/jruby/issues/4112#issuecomment-346190422
-    - rvm: jruby-1.7
     - rvm: jruby-9.1.17.0
     - rvm: jruby-9.2.5.0
     - rvm: truffleruby
