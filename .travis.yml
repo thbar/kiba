@@ -6,6 +6,7 @@ matrix:
     - rvm: 2.6.0
     - rvm: 2.5.3
     - rvm: 2.4.5
+    # NOTE: EOL since 2019-03-31
     - rvm: 2.3.8
     # NOTE: EOL since 2018-03-31
     - rvm: 2.2
