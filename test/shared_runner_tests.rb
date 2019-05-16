@@ -152,4 +152,11 @@ module SharedRunnerTests
       assert_equal [{key: 'value'}], destinations[i].instance_variable_get(:@written_rows)
     end
   end
+
+  def test_nil_transform_error_message
+    control = Kiba.parse do
+      transform
+    end
+    assert_raises(RuntimeError, 'Nil parameters not allowed here') { kiba_run(control) }
+  end
 end
