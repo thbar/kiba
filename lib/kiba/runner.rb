@@ -63,15 +63,16 @@ module Kiba
     end
 
     def to_instance(klass, args, block, allow_block, allow_class)
-      if klass
+      if klass && block
+        fail 'Class and block form cannot be used together at the moment'
+      elsif klass
         fail 'Class form is not allowed here' unless allow_class
         klass.new(*args)
       elsif block
         fail 'Block form is not allowed here' unless allow_block
         AliasingProc.new(&block)
-      else
-        # TODO: support block passing to a class form definition?
-        fail 'Class and block form cannot be used together at the moment'
+      elsif
+        fail 'Nil parameters not allowed here'
       end
     end
   end
