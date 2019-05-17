@@ -6,6 +6,8 @@ Kiba lets you define and run such high-quality ETL ([Extract-Transform-Load](htt
 
 Learn more on the [Wiki](https://github.com/thbar/kiba/wiki), on my [blog](http://thibautbarrere.com) and on [StackOverflow](http://stackoverflow.com/questions/tagged/kiba-etl).
 
+A new [kiba-blueprints](https://github.com/thbar/kiba-blueprints) repo has been also created to showcase the use of Kiba OSS and Kiba Pro. More examples are planned!
+
 [![Gem Version](https://badge.fury.io/rb/kiba.svg)](http://badge.fury.io/rb/kiba)
 [![Build Status](https://travis-ci.org/thbar/kiba.svg?branch=master)](https://travis-ci.org/thbar/kiba) [![Build status](https://ci.appveyor.com/api/projects/status/v05jcyhpp1mueq9i?svg=true)](https://ci.appveyor.com/project/thbar/kiba) [![Code Climate](https://codeclimate.com/github/thbar/kiba/badges/gpa.svg)](https://codeclimate.com/github/thbar/kiba)
 
