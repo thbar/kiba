@@ -6,6 +6,11 @@ Kiba Pro is the commercial extension for Kiba. Documentation is available on the
 HEAD
 -------
 
+1.1.0
+-----
+
+- Improvement: `SQLBulkInsert` now supports Postgres `INSERT ON CONFLICT` for batch operations (bulk upsert, conditional upserts, ignore if exist etc) via new `dataset` keyword. See [documentation](https://github.com/thbar/kiba/wiki/SQL-Bulk-Insert-Destination).
+
 1.0.0
 -----
 
