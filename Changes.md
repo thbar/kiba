@@ -1,5 +1,5 @@
-2.5.0 (to be released)
-------------------------
+2.5.0
+-----
 
 - Transform's `close` can now yield rows. This is useful to write "aggregating transforms", such as sorting, grouping etc. See [#57](https://github.com/thbar/kiba/pull/57) for more background & explanations.
 - Kiba now requires MRI Ruby 2.3+, JRuby 9.1+ or TruffleRuby.
