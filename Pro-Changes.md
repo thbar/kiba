@@ -36,7 +36,7 @@ HEAD
 
   - Add specs around streaming support (for both MySQL and Postgres).
   
-    For Postgres, streaming via  was [recommended by the author of Sequel](https://groups.google.com/d/msg/sequel-talk/olznPcmEf8M/hd5Ris0pYNwJ) over `use_cursor: true` (but do compare on your actual cases!). To enable streaming for Postgres:
+    For Postgres, streaming was [recommended by the author of Sequel](https://groups.google.com/d/msg/sequel-talk/olznPcmEf8M/hd5Ris0pYNwJ) over `use_cursor: true` (but do compare on your actual cases!). To enable streaming for Postgres:
     - Add `sequel_pg` to your `Gemfile`
     - Enable the extension in your `db` instance & add `.stream` to your dataset e.g.:
     
