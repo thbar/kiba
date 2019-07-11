@@ -6,6 +6,53 @@ Kiba Pro is the commercial extension for Kiba. Documentation is available on the
 HEAD
 -------
 
+1.2.0
+-----
+
+- `SQL` source improvements:
+  - Deprecate use_cursor in favor of block query construct. The source could previously be configured with:
+
+    ```ruby
+    source Kiba::Pro::Sources::SQL,
+      query: "SELECT * FROM items",
+      use_cursor: true
+    ```
+
+    The `use_cursor` keyword is now deprecated. You can use the more powerful block query construct:
+
+    ```ruby
+    source Kiba::Pro::Sources::SQL,
+      query: -> (db) { db["SELECT * FROM items"].use_cursor },
+    ```
+
+  - Avoid bogus nested SQL calls when configuring the query via block/proc. A call with:
+  
+    ```ruby
+    source Kiba::Pro::Sources::SQL,
+      query: -> (db) { db["SELECT * FROM items"] },
+    ```
+    
+    would have previously generated a `SELECT * FROM (SELECT * FROM "items")`. This is now fixed.
+
+  - Add specs around streaming support (for both MySQL and Postgres).
+  
+    For Postgres, streaming via  was [recommended by the author of Sequel](https://groups.google.com/d/msg/sequel-talk/olznPcmEf8M/hd5Ris0pYNwJ) over `use_cursor: true` (but do compare on your actual cases!). To enable streaming for Postgres:
+    - Add `sequel_pg` to your `Gemfile`
+    - Enable the extension in your `db` instance & add `.stream` to your dataset e.g.:
+    
+    ```ruby
+    Sequel.connect(ENV.fetch('DATABASE_URL')) do |db|
+      db.extension(:pg_streaming)
+      Kiba.run(Kiba.parse do
+        source Kiba::Pro::Sources::SQL,
+          db: db,
+          query: -> (db) { db[:items].stream }
+        # SNIP
+      end)
+    ```
+    
+    For MySQL, just add `.stream` to your dataset like above (no extension required).
+
 1.1.0
 -----
 
