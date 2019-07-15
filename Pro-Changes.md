@@ -6,6 +6,19 @@ Kiba Pro is the commercial extension for Kiba. Documentation is available on the
 HEAD
 -------
 
+- BREAKING CHANGE: non-bulk `Kiba::Pro::Destinations::SQLUpsert` has been removed. Please use `Kiba::Pro::Destinations::SQLBulkInsert` instead, which supports all the scenarios supported by `SQLUpsert` (including bulk upserts, or even row-by-row insert if you need it via `buffer_size: 1`).
+- BREAKING CHANGE: deprecate non-live Sequel connection passing (https://github.com/thbar/kiba/issues/79). Do not use `database: "connection_string"`, instead pass your Sequel connection directly. This moves the connection management out of the destination, which is a better pattern & provides better (block-based) resources closing.
+- Official MySQL support:
+  - While the compatibility was already here, it is now tested for in our QA testing suite.
+  - MySQL 5.5-8.0 is supported & tested
+  - MariaDB should be supported (although not tested against in the QA testing suite)
+  - Amazon Aurora MySQL is also supposed to work (although not tested)
+  - `Kiba::Pro::Sources::SQL` supports for non-streaming + streaming use
+  - `Kiba::Pro::Destinatinons::SQLBulkInsert` supports:
+    - Bulk insert
+    - Bulk insert with ignore
+    - Bulk upsert (including with dynamically computed columns) via `ON DUPLICATE KEY UPDATE`
+
 1.2.0
 -----
 
