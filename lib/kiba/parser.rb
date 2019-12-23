@@ -16,6 +16,7 @@ module Kiba::Parser
     control = Kiba::Control.new
     context = Kiba::Context.new(control)
     if source_as_string
+      puts "WARNING: kiba command will be removed in Kiba v3. See #74. Please migrate to new programmatic API."
       # this somewhat weird construct allows to remove a nil source_file
       context.instance_eval(*[source_as_string, source_file].compact)
     else
