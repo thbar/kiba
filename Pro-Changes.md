@@ -18,6 +18,7 @@ HEAD
     - Bulk insert
     - Bulk insert with ignore
     - Bulk upsert (including with dynamically computed columns) via `ON DUPLICATE KEY UPDATE`
+  - Note that the `Kiba::Pro::Destinations::SQLUpsert` (row-by-row) is not MySQL compatible at the moment
 
 1.2.0
 -----
