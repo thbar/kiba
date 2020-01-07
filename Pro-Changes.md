@@ -7,6 +7,7 @@ HEAD
 -------
 
 - BREAKING CHANGE: deprecate non-live Sequel connection passing (https://github.com/thbar/kiba/issues/79). Do not use `database: "connection_string"`, instead pass your Sequel connection directly. This moves the connection management out of the destination, which is a better pattern & provides better (block-based) resources closing.
+- Compatibility with Kiba v3
 - Official MySQL support:
   - While the compatibility was already here, it is now tested for in our QA testing suite.
   - MySQL 5.5-8.0 is supported & tested
