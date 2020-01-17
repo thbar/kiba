@@ -13,7 +13,7 @@ Kiba.extend(Kiba::Parser)
 module Kiba
   def self.run(job)
     # NOTE: use Hash#dig when Ruby 2.2 reaches EOL
-    runner = job.config.fetch(:kiba, {}).fetch(:runner, Kiba::Runner)
+    runner = job.config.fetch(:kiba, {}).fetch(:runner, Kiba::StreamingRunner)
     runner.run(job)
   end
 end
