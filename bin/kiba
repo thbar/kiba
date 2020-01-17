@@ -1,5 +1,15 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/kiba/cli'
+STDERR.puts <<DOC
 
-Kiba::Cli.run(ARGV)
+##########################################################################
+
+The 'kiba' CLI is deprecated and has been removed in Kiba ETL v3.
+
+See https://github.com/thbar/kiba/issues/74 and v3 release notes for help.
+
+##########################################################################
+
+DOC
+
+exit(1)
