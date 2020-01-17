@@ -8,6 +8,11 @@ require_relative 'support/test_non_closing_transform'
 require_relative 'shared_runner_tests'
 
 class TestStreamingRunner < Kiba::Test
+  def kiba_run(job)
+    job.config[:kiba] = {runner: Kiba::StreamingRunner}
+    Kiba.run(job)
+  end
+
   include SharedRunnerTests
   
   def test_yielding_class_transform

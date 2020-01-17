@@ -3,10 +3,6 @@ require_relative 'support/test_enumerable_source'
 require_relative 'support/test_destination_returning_nil'
 
 module SharedRunnerTests
-  def kiba_run(job)
-    Kiba.run(job)
-  end
-
   def rows
     @rows ||= [
       { identifier: 'first-row' },
