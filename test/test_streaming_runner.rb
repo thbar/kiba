@@ -15,10 +15,6 @@ class TestStreamingRunner < Kiba::Test
     destination_array = []
     
     job = Kiba.parse do
-      extend Kiba::DSLExtensions::Config
-
-      config :kiba, runner: Kiba::StreamingRunner
-
       # provide a single row as the input
       source TestEnumerableSource, [input_row]
 
@@ -51,9 +47,6 @@ class TestStreamingRunner < Kiba::Test
   def test_transform_yielding_from_close
     destination_array = []
     job = Kiba.parse do
-      extend Kiba::DSLExtensions::Config
-      config :kiba, runner: Kiba::StreamingRunner
-
       transform CloseYieldingTransform, yield_on_close: [1, 2]
       destination TestArrayDestination, destination_array
     end
@@ -63,9 +56,6 @@ class TestStreamingRunner < Kiba::Test
 
   def test_transform_with_no_close_must_not_raise
     job = Kiba.parse do
-      extend Kiba::DSLExtensions::Config
-      config :kiba, runner: Kiba::StreamingRunner
-
       transform NonClosingTransform
     end
     Kiba.run(job)
