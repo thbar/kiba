@@ -14,7 +14,7 @@ Kiba Pro is the commercial extension for Kiba. Documentation is available on the
   - MariaDB should be supported (although not tested against in the QA testing suite)
   - Amazon Aurora MySQL is also supposed to work (although not tested)
   - `Kiba::Pro::Sources::SQL` supports for non-streaming + streaming use
-  - `Kiba::Pro::Destinatinons::SQLBulkInsert` supports:
+  - `Kiba::Pro::Destinations::SQLBulkInsert` supports:
     - Bulk insert
     - Bulk insert with ignore
     - Bulk upsert (including with dynamically computed columns) via `ON DUPLICATE KEY UPDATE`
