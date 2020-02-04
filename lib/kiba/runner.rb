@@ -71,7 +71,7 @@ module Kiba
       elsif block
         fail 'Block form is not allowed here' unless allow_block
         AliasingProc.new(&block)
-      elsif
+      else
         fail 'Nil parameters not allowed here'
       end
     end
