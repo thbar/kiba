@@ -5,6 +5,7 @@ require_relative 'support/test_csv_destination'
 require_relative 'support/test_rename_field_transform'
 require_relative 'support/test_enumerable_source'
 require_relative 'support/test_source_that_reads_at_instantiation_time'
+require_relative 'support/test_keyword_arguments_source'
 
 # End-to-end tests go here
 class TestIntegration < Kiba::Test
@@ -112,5 +113,17 @@ CSV
     end
 
     Kiba.run(control)
+  end
+  
+  def test_ruby_3_keyword_arguments
+    job = Kiba.parse do
+      source TestKeywordArgumentsSource,
+        mandatory: "first"
+    end
+    
+    # NOTE: a Ruby warning would be usually captured here
+    assert_silent do
+      Kiba.run(job)
+    end
   end
 end
