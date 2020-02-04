@@ -6,6 +6,7 @@ require_relative 'support/test_duplicate_row_transform'
 require_relative 'support/test_close_yielding_transform'
 require_relative 'support/test_non_closing_transform'
 require_relative 'shared_runner_tests'
+require_relative 'support/test_keyword_arguments_component'
 
 class TestStreamingRunner < Kiba::Test
   def kiba_run(job)
@@ -64,5 +65,37 @@ class TestStreamingRunner < Kiba::Test
       transform NonClosingTransform
     end
     Kiba.run(job)
+  end
+
+  def test_ruby_3_source_kwargs
+    # NOTE: before Ruby 3 kwargs support, a Ruby warning would 
+    # be captured here with Ruby 2.7 & ensure we fail,
+    # and an error would be raised with Ruby 2.8.0-dev
+    # NOTE: only the first warning will be captured, though, but
+    # having 3 different tests is still better
+    assert_silent do
+      Kiba.run(Kiba.parse do
+        source TestKeywordArgumentsComponent,
+          mandatory: "first"
+      end)
+    end
+  end
+  
+  def test_ruby_3_transform_kwargs
+    assert_silent do
+      Kiba.run(Kiba.parse do
+        transform TestKeywordArgumentsComponent,
+          mandatory: "first"
+      end)
+    end
+  end
+  
+  def test_ruby_3_destination_kwargs
+    assert_silent do
+      Kiba.run(Kiba.parse do
+        destination TestKeywordArgumentsComponent,
+          mandatory: "first"
+      end)
+    end
   end
 end
