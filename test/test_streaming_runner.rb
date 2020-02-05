@@ -7,6 +7,7 @@ require_relative 'support/test_close_yielding_transform'
 require_relative 'support/test_non_closing_transform'
 require_relative 'shared_runner_tests'
 require_relative 'support/test_keyword_arguments_component'
+require_relative 'support/test_mixed_arguments_component'
 
 class TestStreamingRunner < Kiba::Test
   def kiba_run(job)
@@ -97,5 +98,25 @@ class TestStreamingRunner < Kiba::Test
           mandatory: "first"
       end)
     end
+  end
+    
+  def test_ruby_3_mixed_arguments
+    storage = nil
+    assert_silent do
+      Kiba.run(Kiba.parse do
+        source TestMixedArgumentsComponent,
+          "some positional argument",
+          mandatory: "first",
+          on_init: -> (values) {
+            storage = values
+          }
+      end)
+    end
+    
+    assert_equal({
+      some_value: "some positional argument",
+      mandatory: "first",
+      optional: nil
+    }, storage)
   end
 end
