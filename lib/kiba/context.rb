@@ -8,16 +8,16 @@ module Kiba
       @control.pre_processes << { block: block }
     end
 
-    def source(klass, *initialization_params)
-      @control.sources << { klass: klass, args: initialization_params }
+    def source(klass, *initialization_params, **kwargs)
+      @control.sources << { klass: klass, args: initialization_params, kwargs: kwargs }
     end
 
-    def transform(klass = nil, *initialization_params, &block)
-      @control.transforms << { klass: klass, args: initialization_params, block: block }
+    def transform(klass = nil, *initialization_params, **kwargs, &block)
+      @control.transforms << { klass: klass, args: initialization_params, kwargs: kwargs, block: block }
     end
 
-    def destination(klass, *initialization_params)
-      @control.destinations << { klass: klass, args: initialization_params }
+    def destination(klass, *initialization_params, **kwargs)
+      @control.destinations << { klass: klass, args: initialization_params, kwargs: kwargs }
     end
 
     def post_process(&block)

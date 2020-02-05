@@ -56,18 +56,18 @@ module Kiba
     def to_instances(definitions, allow_block = false, allow_class = true)
       definitions.map do |definition|
         to_instance(
-          *definition.values_at(:klass, :args, :block),
+          *definition.values_at(:klass, :args, :kwargs, :block),
           allow_block, allow_class
         )
       end
     end
 
-    def to_instance(klass, args, block, allow_block, allow_class)
+    def to_instance(klass, args, kwargs, block, allow_block, allow_class)
       if klass && block
         fail 'Class and block form cannot be used together at the moment'
       elsif klass
         fail 'Class form is not allowed here' unless allow_class
-        klass.new(*args)
+        klass.new(*args, **(kwargs || {}))
       elsif block
         fail 'Block form is not allowed here' unless allow_block
         AliasingProc.new(&block)
