@@ -1,3 +1,8 @@
+HEAD
+----
+
+- Compatibility with Ruby 3 keyword arguments: this should remove any warning when using Ruby 2.7, and errors when running Ruby 2.8.0-dev.
+
 2.5.0
 -----
 
