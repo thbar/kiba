@@ -1,10 +1,14 @@
-**If you need help**, please [ask your question with tag kiba-etl on StackOverflow](http://stackoverflow.com/questions/ask?tags=kiba-etl) so that other can benefit from your contribution! I monitor this specific tag and will reply to you.
-
 Writing reliable, concise, well-tested & maintainable data-processing code is tricky.
 
 Kiba lets you define and run such high-quality ETL ([Extract-Transform-Load](http://en.wikipedia.org/wiki/Extract,_transform,_load)) jobs using Ruby.
 
-Learn more on the [Wiki](https://github.com/thbar/kiba/wiki), on my [blog](http://thibautbarrere.com) and on [StackOverflow](http://stackoverflow.com/questions/tagged/kiba-etl).
+### Getting Started
+
+Head over to the [Wiki](https://github.com/thbar/kiba/wiki) for up-to-date documentation.
+
+**If you need help**, please [ask your question with tag kiba-etl on StackOverflow](http://stackoverflow.com/questions/ask?tags=kiba-etl) so that other can benefit from your contribution! I monitor this specific tag and will reply to you.
+
+You can also check out the [author blog](https://thibautbarrere.com) and on [StackOverflow](http://stackoverflow.com/questions/tagged/kiba-etl).
 
 [![Gem Version](https://badge.fury.io/rb/kiba.svg)](http://badge.fury.io/rb/kiba)
 [![Build Status](https://travis-ci.org/thbar/kiba.svg?branch=master)](https://travis-ci.org/thbar/kiba) [![Build status](https://ci.appveyor.com/api/projects/status/v05jcyhpp1mueq9i?svg=true)](https://ci.appveyor.com/project/thbar/kiba) [![Code Climate](https://codeclimate.com/github/thbar/kiba/badges/gpa.svg)](https://codeclimate.com/github/thbar/kiba)
@@ -15,7 +19,7 @@ Kiba currently supports Ruby 2.4+, JRuby 9.2+ and TruffleRuby. See [test matrix]
 
 ## ETL consulting & commercial version
 
-**Consulting services**: if your organization needs help to implement a data pipeline or to build a data-intensive application, I provide consulting services. [More information](http://thibautbarrere.com/hire-me/).
+**Consulting services**: if your organization needs help to implement a data pipeline or to build a data-intensive application, I provide consulting services. [More information](https://thibautbarrere.com/hire-me/).
 
 **Kiba Pro**: for more features & goodies, check out [Kiba Pro](https://github.com/thbar/kiba/wiki#kiba-pro).
 
