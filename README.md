@@ -17,11 +17,11 @@ You can also check out the [author blog](https://thibautbarrere.com) and [StackO
 
 ## Supported Ruby versions
 
-Kiba currently supports Ruby 2.4+, JRuby 9.2+ and TruffleRuby. See [test matrix](https://travis-ci.org/thbar/kiba).
+Kiba currently supports Ruby 2.4-2.6 ([2.7 support is in preliminary tests](https://github.com/thbar/kiba/wiki/Ruby-2.7--keyword-arguments-compatibility-note)) JRuby 9.2+ and TruffleRuby. See [test matrix](https://travis-ci.org/thbar/kiba).
 
 ## ETL consulting & commercial version
 
-**Consulting services**: if your organization needs help to implement a data pipeline or to build a data-intensive application, I provide consulting services. [More information](https://thibautbarrere.com/hire-me/).
+**Consulting services**: if your organization needs guidance on Kiba / ETL implementations, we provide consulting services. Contact at [https://www.logeek.fr](https://www.logeek.fr).
 
 **Kiba Pro**: for more features & goodies, check out [Kiba Pro](https://github.com/thbar/kiba/wiki#kiba-pro).
 
