@@ -3,6 +3,11 @@ Kiba Pro Changelog
 
 Kiba Pro is the commercial extension for Kiba. Documentation is available on the [Wiki](https://github.com/thbar/kiba/wiki).
 
+HEAD
+----
+
+- New: `SQLBulkLookup` transform allows to efficiently lookup values in SQL tables. This is particularly useful in datawarehouses scenarios (to replace unique business keys by surrogate keys), or when writing migrations of SQL databases. Instead of looking-up each row individually, it avoids a "N+1" like effect, by working on large batches of rows.
+
 1.5.0
 -----
 
