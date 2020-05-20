@@ -1,7 +1,11 @@
 Kiba Pro Changelog
 ==================
 
-Kiba Pro is the commercial extension for Kiba. Documentation is available on the [Wiki](https://github.com/thbar/kiba/wiki).
+Kiba Pro provides vendor-supported ETL extensions for Kiba. Your subscription funds the Open-Source development, thanks for considering it!
+
+Learn more on the [Kiba website](https://www.kiba-etl.org/kiba-pro).
+
+Documentation is available on the [Wiki](https://github.com/thbar/kiba/wiki#kiba-pro).
 
 2.0.0
 -----
