@@ -13,6 +13,8 @@ Head over to the [Wiki](https://github.com/thbar/kiba/wiki) for up-to-date docum
 
 **If you need help**, please [ask your question with tag kiba-etl on StackOverflow](http://stackoverflow.com/questions/ask?tags=kiba-etl) so that other can benefit from your contribution! I monitor this specific tag and will reply to you.
 
+[Kiba Pro](https://www.kiba-etl.org/kiba-pro) customers get priority private email support.
+
 You can also check out the [author blog](https://thibautbarrere.com) and [StackOverflow answers](http://stackoverflow.com/questions/tagged/kiba-etl).
 
 ## Supported Ruby versions
@@ -23,7 +25,7 @@ Kiba currently supports Ruby 2.4-2.6 ([2.7 support is in preliminary tests](http
 
 **Consulting services**: if your organization needs guidance on Kiba / ETL implementations, we provide consulting services. Contact at [https://www.logeek.fr](https://www.logeek.fr).
 
-**Kiba Pro**: for more features & goodies, check out [Kiba Pro](https://github.com/thbar/kiba/wiki#kiba-pro).
+**Kiba Pro**: for vendor-backed ETL extensions, check out [Kiba Pro](https://www.kiba-etl.org/kiba-pro).
 
 ## License
 
