@@ -177,7 +177,7 @@ The Licensee is responsible for making and keeping adequate backup copies of dat
 
 An active Agreement gives access to “Priority Support”. 
 
-Priority Support covers one (1) email request per quarter. LoGeek will use reasonable endeavours to answer within two (2) French working days. Scope is limited to Kiba and Kiba Pro features and APIs, not the application or infrastructure. For support, email thibaut.barrere+kiba@gmail.com. Please email using the same domain as the original license email or explain your connection to the licensed company. 
+Priority Support covers one (1) email request per quarter. LoGeek will use reasonable endeavours to answer within two (2) French working days. Scope is limited to Kiba and Kiba Pro features and APIs, not the application or infrastructure. For support, email support@logeek.fr. Please email using the same domain as the original license email or explain your connection to the licensed company. 
 
 ## ARTICLE 5 - CUSTOM SUPPORT AND MAINTENANCE
 
@@ -245,7 +245,7 @@ LoGeek is responsible for processing personal data regarding managing contractua
 
 Personal data collected by LoGeek is needed for its processing and is intended for LoGeek’s relevant departments and, where appropriate, its subcontractors and co-contractors, for the requirements of executing the Agreement.
 
-Pursuant to the legal provisions regarding protecting personal data, and under the conditions and to the extent provided by the applicable regulation, each Licensee’s employee concerned shall have a right to query, access, rectify, oppose, obtain erasure or restriction of processing   regarding its personal data – rights which may be exercised by mail sent to the attention of thibaut.barrere+kiba@gmail.com, accompanied, if deemed appropriate by Logeek, by a copy of the relevant person’s identification papers.
+Pursuant to the legal provisions regarding protecting personal data, and under the conditions and to the extent provided by the applicable regulation, each Licensee’s employee concerned shall have a right to query, access, rectify, oppose, obtain erasure or restriction of processing   regarding its personal data – rights which may be exercised by mail sent to the attention of support@logeek.fr, accompanied, if deemed appropriate by Logeek, by a copy of the relevant person’s identification papers.
 
 ## ARTICLE 10 - AUDIT
 
