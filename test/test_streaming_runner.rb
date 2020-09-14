@@ -6,6 +6,8 @@ require_relative 'support/test_duplicate_row_transform'
 require_relative 'support/test_close_yielding_transform'
 require_relative 'support/test_non_closing_transform'
 require_relative 'shared_runner_tests'
+require_relative 'support/test_keyword_arguments_component'
+require_relative 'support/test_mixed_arguments_component'
 
 class TestStreamingRunner < Kiba::Test
   def kiba_run(job)

@@ -155,4 +155,74 @@ module SharedRunnerTests
     end
     assert_raises(RuntimeError, 'Nil parameters not allowed here') { kiba_run(control) }
   end
+
+  def test_ruby_3_source_kwargs
+    # NOTE: before Ruby 3 kwargs support, a Ruby warning would 
+    # be captured here with Ruby 2.7 & ensure we fail,
+    # and an error would be raised with Ruby 2.8.0-dev
+    # NOTE: only the first warning will be captured, though, but
+    # having 3 different tests is still better
+    storage = nil
+    assert_silent do
+      Kiba.run(Kiba.parse do
+        source TestKeywordArgumentsComponent,
+          mandatory: "first",
+          on_init: -> (values) { storage = values }
+      end)
+    end
+    assert_equal({
+      mandatory: "first",
+      optional: nil
+    }, storage)
+  end
+  
+  def test_ruby_3_transform_kwargs
+    storage = nil
+    assert_silent do
+      Kiba.run(Kiba.parse do
+        transform TestKeywordArgumentsComponent,
+          mandatory: "first",
+          on_init: -> (values) { storage = values }
+      end)
+    end
+    assert_equal({
+      mandatory: "first",
+      optional: nil
+    }, storage)
+  end
+  
+  def test_ruby_3_destination_kwargs
+    storage = nil
+    assert_silent do
+      Kiba.run(Kiba.parse do
+        destination TestKeywordArgumentsComponent,
+          mandatory: "first",
+          on_init: -> (values) { storage = values }
+      end)
+    end
+    assert_equal({
+      mandatory: "first",
+      optional: nil
+    }, storage)
+  end
+      
+  def test_positional_plus_keyword_arguments
+    storage = nil
+    assert_silent do
+      Kiba.run(Kiba.parse do
+        source TestMixedArgumentsComponent,
+          "some positional argument",
+          mandatory: "first",
+          on_init: -> (values) {
+            storage = values
+          }
+      end)
+    end
+    
+    assert_equal({
+      some_value: "some positional argument",
+      mandatory: "first",
+      optional: nil
+    }, storage)
+  end
 end
