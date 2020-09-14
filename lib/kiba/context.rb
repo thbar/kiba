@@ -23,5 +23,9 @@ module Kiba
     def post_process(&block)
       @control.post_processes << { block: block }
     end
+
+    [:source, :transform, :destination].each do |m|
+      ruby2_keywords(m) if respond_to?(:ruby2_keywords, true)
+    end
   end
 end
