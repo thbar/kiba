@@ -1,7 +1,18 @@
 Kiba Pro Changelog
 ==================
 
-Kiba Pro is the commercial extension for Kiba. Documentation is available on the [Wiki](https://github.com/thbar/kiba/wiki).
+Kiba Pro provides vendor-supported ETL extensions for Kiba. Your subscription funds the Open-Source development, thanks for considering it!
+
+Learn more on the [Kiba website](https://www.kiba-etl.org/kiba-pro).
+
+Documentation is available on the [Wiki](https://github.com/thbar/kiba/wiki#kiba-pro).
+
+2.0.0
+-----
+
+- New: `SQLBulkLookup` transform allows to efficiently lookup values in SQL tables. This is particularly useful in datawarehouse scenarios (to replace unique business keys by surrogate keys), or when writing migrations of SQL databases. Instead of looking-up each row individually, it avoids a "N+1" like effect, by working on large batches of rows.
+- New: `ParallelTransform` provides an easy way to process a group of ETL rows at the same time using a pool of threads. It can be used to accelerate ETL transforms doing IO operations such as HTTP queries, by going multithreaded.
+- New: `FileLock` adds an easy way to avoid overlapping runs in ETL Jobs using a local file lock.
 
 1.5.0
 -----

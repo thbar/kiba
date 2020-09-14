@@ -3,6 +3,14 @@ HEAD
 
 - Compatibility with Ruby 3 keyword arguments: this should remove any warning when using Ruby 2.7, and errors when running Ruby 2.8.0-dev.
 
+3.0.0
+-----
+
+- Breaking: the `kiba` command line is deprecated to encourage using `Kiba.parse` API. See [#81](https://github.com/thbar/kiba/pull/81) and release notes for details & migration path.
+- Kiba now defaults to `StreamingRunner` (backward compatible & more powerful engine) [#83](https://github.com/thbar/kiba/pull/83).
+- Kiba now officially supports MRI Ruby 2.4+ (although 2.3 will still work for now), JRuby 9.2+ or TruffleRuby.
+- You may get warnings with Ruby 2.7 and errors with Ruby 2.8+. See [#85] for status on Ruby 3 keyword arguments support.
+
 2.5.0
 -----
 

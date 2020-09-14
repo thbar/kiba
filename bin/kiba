@@ -6,7 +6,7 @@ STDERR.puts <<DOC
 
 The 'kiba' CLI is deprecated and has been removed in Kiba ETL v3.
 
-See https://github.com/thbar/kiba/issues/74 and v3 release notes for help.
+See release notes / changelog for help.
 
 ##########################################################################
 

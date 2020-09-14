@@ -7,9 +7,6 @@ matrix:
     - rvm: 2.6
     - rvm: 2.5
     - rvm: 2.4
-    # NOTE: EOL since 2019-03-31
-    - rvm: 2.3
     # see https://www.jruby.org/download
-    - rvm: jruby-9.1
     - rvm: jruby-9.2
     - rvm: truffleruby

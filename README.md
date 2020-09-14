@@ -1,67 +1,31 @@
-**If you need help**, please [ask your question with tag kiba-etl on StackOverflow](http://stackoverflow.com/questions/ask?tags=kiba-etl) so that other can benefit from your contribution! I monitor this specific tag and will reply to you.
+# Kiba ETL
+
+[![Gem Version](https://badge.fury.io/rb/kiba.svg)](http://badge.fury.io/rb/kiba)
+[![Build Status](https://travis-ci.org/thbar/kiba.svg?branch=master)](https://travis-ci.org/thbar/kiba) [![Build status](https://ci.appveyor.com/api/projects/status/v05jcyhpp1mueq9i?svg=true)](https://ci.appveyor.com/project/thbar/kiba) [![Code Climate](https://codeclimate.com/github/thbar/kiba/badges/gpa.svg)](https://codeclimate.com/github/thbar/kiba)
 
 Writing reliable, concise, well-tested & maintainable data-processing code is tricky.
 
 Kiba lets you define and run such high-quality ETL ([Extract-Transform-Load](http://en.wikipedia.org/wiki/Extract,_transform,_load)) jobs using Ruby.
 
-Learn more on the [Wiki](https://github.com/thbar/kiba/wiki), on my [blog](http://thibautbarrere.com) and on [StackOverflow](http://stackoverflow.com/questions/tagged/kiba-etl).
-
-A new [kiba-blueprints](https://github.com/thbar/kiba-blueprints) repo has been also created to showcase the use of Kiba OSS and Kiba Pro. More examples are planned!
-
-[![Gem Version](https://badge.fury.io/rb/kiba.svg)](http://badge.fury.io/rb/kiba)
-[![Build Status](https://travis-ci.org/thbar/kiba.svg?branch=master)](https://travis-ci.org/thbar/kiba) [![Build status](https://ci.appveyor.com/api/projects/status/v05jcyhpp1mueq9i?svg=true)](https://ci.appveyor.com/project/thbar/kiba) [![Code Climate](https://codeclimate.com/github/thbar/kiba/badges/gpa.svg)](https://codeclimate.com/github/thbar/kiba)
-
-## Kiba 2.0.0
-
-Kiba 2.0.0 has been recently released with one major improvement for ETL components developers.
-
-Please check out the [release notes](https://github.com/thbar/kiba/releases/tag/v2.0.0).
-
-[Subscribe to my newsletter](https://tinyletter.com/kiba-etl) to get the upcoming detailed article on Kiba 2 benefits.
-
-## Installation
-
-Add the gem to your `Gemfile` and run the bundle command:
-
-```ruby
-gem 'kiba'
-```
-
 ## Getting Started
 
-* [How do you define ETL jobs with Kiba?](https://github.com/thbar/kiba/wiki/How-do-you-define-ETL-jobs-with-Kiba%3F)
-* [Running Kiba jobs from the command line](https://github.com/thbar/kiba/wiki/Running-Kiba-jobs-from-the-command-line)
-* [Considerations for running Kiba jobs programmatically (from Sidekiq, Faktory, Rake, ...)](https://github.com/thbar/kiba/wiki/Considerations-for-running-Kiba-jobs-programmatically-(from-Sidekiq,-Faktory,-Rake,-...))
-* [Implementing ETL sources](https://github.com/thbar/kiba/wiki/Implementing-ETL-sources).
-* [Implementing ETL transforms](https://github.com/thbar/kiba/wiki/Implementing-ETL-transforms).
-* [Implementing ETL destinations](https://github.com/thbar/kiba/wiki/Implementing-ETL-destinations).
-* [Implementing pre and post-processors](https://github.com/thbar/kiba/wiki/Implementing-pre-and-post-processors).
+Head over to the [Wiki](https://github.com/thbar/kiba/wiki) for up-to-date documentation.
 
-## Useful links
+**If you need help**, please [ask your question with tag kiba-etl on StackOverflow](http://stackoverflow.com/questions/ask?tags=kiba-etl) so that other can benefit from your contribution! I monitor this specific tag and will reply to you.
 
-* [Ruby Kaigi 2018 conference - Kiba 2 - Past, present & future of data processing with Ruby](https://www.youtube.com/watch?v=fxVtbog7pIQ) ([slides](https://speakerdeck.com/thbar/kiba-etl-v2-rubykaigi-2018))
-* [Live Coding Session - Processing data with Kiba ETL](http://thibautbarrere.com/2015/11/09/video-processing-data-with-kiba-etl/)
-* [Rubyists - are you doing ETL unknowningly?](http://thibautbarrere.com/2015/03/25/rubyists-are-you-doing-etl-unknowingly/)
-* [How to write solid data processing code](http://thibautbarrere.com/2015/04/05/how-to-write-solid-data-processing-code/)
-* [How to reformat CSV files with Kiba](http://thibautbarrere.com/2015/06/04/how-to-reformat-csv-files-with-kiba/) (in-depth, hands-on tutorial)
-* [How to explode multivalued attributes with Kiba ETL?](http://thibautbarrere.com/2015/06/25/how-to-explode-multivalued-attributes-with-kiba/)
-* [Common techniques to compute aggregates with Kiba](https://stackoverflow.com/questions/31145715/how-to-do-a-aggregation-transformation-in-a-kiba-etl-script-kiba-gem)
-* [How to run Kiba in a Rails environment?](http://thibautbarrere.com/2015/09/26/how-to-run-kiba-in-a-rails-environment/)
-* [How to pass parameters to the Kiba command line?](http://stackoverflow.com/questions/32959692/how-to-pass-parameters-into-your-etl-job)
+[Kiba Pro](https://www.kiba-etl.org/kiba-pro) customers get priority private email support.
+
+You can also check out the [author blog](https://thibautbarrere.com) and [StackOverflow answers](http://stackoverflow.com/questions/tagged/kiba-etl).
 
 ## Supported Ruby versions
 
-Kiba currently supports Ruby 2.3+, JRuby 9.1+ and TruffleRuby. See [test matrix](https://travis-ci.org/thbar/kiba).
-
-## Kiba Common
-
-I'm starting to add commonly used reusable helpers in a separate gem called [kiba-common](https://github.com/thbar/kiba-common), check it out (work-in-progress).
+Kiba currently supports Ruby 2.4-2.6 ([2.7 support is in preliminary tests](https://github.com/thbar/kiba/wiki/Ruby-2.7--keyword-arguments-compatibility-note)) JRuby 9.2+ and TruffleRuby. See [test matrix](https://travis-ci.org/thbar/kiba).
 
 ## ETL consulting & commercial version
 
-**Consulting services**: if your organization needs help to implement a data pipeline or to build a data-intensive application, I provide consulting services. [More information](http://thibautbarrere.com/hire-me/).
+**Consulting services**: if your organization needs guidance on Kiba / ETL implementations, we provide consulting services. Contact at [https://www.logeek.fr](https://www.logeek.fr).
 
-**Kiba Pro**: for more features & goodies, check out [Kiba Pro](https://github.com/thbar/kiba/wiki#kiba-pro).
+**Kiba Pro**: for vendor-backed ETL extensions, check out [Kiba Pro](https://www.kiba-etl.org/kiba-pro).
 
 ## License
 
