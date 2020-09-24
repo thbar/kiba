@@ -1,5 +1,5 @@
-HEAD
-----
+3.5.0
+-----
 
 - Support for Ruby 2.7+ [#93](https://github.com/thbar/kiba/pull/93). Special thanks to @eregon and @mame for their input.
 
