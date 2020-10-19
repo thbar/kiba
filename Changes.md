@@ -1,3 +1,8 @@
+HEAD
+----
+
+- New: `Kiba.run(job)` can now (instead of a job parameter) take a block to define the job. See [#94](https://github.com/thbar/kiba/pull/94) for more details.
+
 3.5.0
 -----
 
