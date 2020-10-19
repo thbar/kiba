@@ -1,7 +1,7 @@
 HEAD
 ----
 
-- New: `Kiba.run(job)` can now (instead of a job parameter) take a block to define the job. While it is not recommended for general use (jobs should be extracted to modules instead), it is convenient during the initial creation of jobs, or for small one-off scripts.
+- New: `Kiba.run(job)` can now (instead of a job parameter) take a block to define the job. See [#94](https://github.com/thbar/kiba/pull/94) for more details.
 
 3.5.0
 -----
