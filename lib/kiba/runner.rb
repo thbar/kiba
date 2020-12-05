@@ -8,9 +8,6 @@ module Kiba
     end
 
     def run(control)
-      # TODO: add a dry-run (not instantiating mode) to_instances call
-      # that will validate the job definition from a syntax pov before
-      # going any further. This could be shared with the parser.
       run_pre_processes(control)
       process_rows(
         to_instances(control.sources),
@@ -18,8 +15,6 @@ module Kiba
         destinations = to_instances(control.destinations)
       )
       close_destinations(destinations)
-      # TODO: when I add post processes as class, I'll have to add a test to
-      # make sure instantiation occurs after the main processing is done (#16)
       run_post_processes(control)
     end
 
