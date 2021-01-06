@@ -5,10 +5,11 @@ cache:
 
 environment:
   matrix:
+    # TODO: add RUBY_VERSION=30 when available (https://www.appveyor.com/updates/)
+    - RUBY_VERSION: 27
     - RUBY_VERSION: 26
     - RUBY_VERSION: 25
     - RUBY_VERSION: 24
-    - RUBY_VERSION: 23
     # NOTE: jruby doesn't seem to be supported on default images
     # see https://www.appveyor.com/docs/build-environment/#ruby
 
