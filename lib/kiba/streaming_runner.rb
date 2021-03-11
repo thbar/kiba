@@ -28,8 +28,8 @@ module Kiba
 
     def close_destinations(destinations)
       destinations
-      .find_all { |d| d.respond_to?(:close) }
-      .each(&:close)
+        .find_all { |d| d.respond_to?(:close) }
+        .each(&:close)
     end
 
     def transform_stream(stream, t)
@@ -47,7 +47,7 @@ module Kiba
         end
       end
     end
-    
+
     def source_stream(sources)
       Enumerator.new do |y|
         sources.each do |source|
@@ -58,7 +58,7 @@ module Kiba
 
     def process_rows(sources, transforms, destinations)
       stream = source_stream(sources)
-      recurser = lambda { |s,t| transform_stream(s, t) }
+      recurser = lambda { |s, t| transform_stream(s, t) }
       transforms.inject(stream, &recurser).each do |r|
         destinations.each { |d| d.write(r) }
       end
@@ -76,15 +76,15 @@ module Kiba
 
     def to_instance(klass, args, block, allow_block, allow_class)
       if klass && block
-        fail 'Class and block form cannot be used together at the moment'
+        fail "Class and block form cannot be used together at the moment"
       elsif klass
-        fail 'Class form is not allowed here' unless allow_class
+        fail "Class form is not allowed here" unless allow_class
         klass.new(*args)
       elsif block
-        fail 'Block form is not allowed here' unless allow_block
+        fail "Block form is not allowed here" unless allow_block
         AliasingProc.new(&block)
       else
-        fail 'Nil parameters not allowed here'
+        fail "Nil parameters not allowed here"
       end
     end
   end

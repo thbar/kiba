@@ -2,7 +2,7 @@ class AggregateTransform
   def initialize(options)
     @aggregate_size = options.fetch(:aggregate_size)
   end
-  
+
   def process(row)
     @buffer ||= []
     @buffer << row
@@ -12,7 +12,7 @@ class AggregateTransform
     end
     nil
   end
-  
+
   def close
     yield @buffer unless @buffer.empty?
   end

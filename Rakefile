@@ -1,7 +1,7 @@
-require 'rake/testtask'
+require "rake/testtask"
 
 Rake::TestTask.new(:test) do |t|
-  t.pattern = 'test/test_*.rb'
+  t.pattern = "test/test_*.rb"
 end
 
 # A simple check to verify TruffleRuby installation trick is really in effect

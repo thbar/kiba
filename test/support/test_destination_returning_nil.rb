@@ -2,9 +2,9 @@ class TestDestinationReturningNil
   def initialize(options = {})
     on_init = options[:on_init]
     # A little trick to allow outer references to this instance
-    on_init.call(self) if on_init
+    on_init&.call(self)
   end
-  
+
   def write(row)
     (@written_rows ||= []) << row
     nil
