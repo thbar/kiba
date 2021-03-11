@@ -1,4 +1,4 @@
-require 'csv'
+require "csv"
 
 class TestCsvSource
   def initialize(input_file)

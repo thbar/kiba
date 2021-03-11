@@ -1,9 +1,9 @@
-require 'csv'
+require "csv"
 
 # simple destination, not checking that each row has all the fields
 class TestCsvDestination
   def initialize(output_file)
-    @csv = CSV.open(output_file, 'w')
+    @csv = CSV.open(output_file, "w")
     @headers_written = false
   end
 

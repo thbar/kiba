@@ -1,11 +1,11 @@
-require_relative 'helper'
-require 'minitest/mock'
-require_relative 'support/test_enumerable_source'
-require_relative 'support/test_array_destination'
+require_relative "helper"
+require "minitest/mock"
+require_relative "support/test_enumerable_source"
+require_relative "support/test_array_destination"
 
 class TestRun < Kiba::Test
   def test_ensure_kiba_defaults_to_streaming_runner
-    cb = -> (job) { "Streaming runner called" }
+    cb = ->(job) { "Streaming runner called" }
     Kiba::StreamingRunner.stub(:run, cb) do
       job = Kiba::Control.new
       assert_equal "Streaming runner called", Kiba.run(job)
@@ -29,9 +29,8 @@ class TestRun < Kiba::Test
 
   def test_forbids_multiple_args
     assert_raises ArgumentError do
-      job = Kiba.parse { }
+      job = Kiba.parse {}
       Kiba.run(job) do
-        #
       end
     end
   end

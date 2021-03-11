@@ -1,17 +1,16 @@
-# encoding: utf-8
-require 'kiba/version'
+require "kiba/version"
 
-require 'kiba/control'
-require 'kiba/context'
-require 'kiba/parser'
-require 'kiba/streaming_runner'
-require 'kiba/dsl_extensions/config'
+require "kiba/control"
+require "kiba/context"
+require "kiba/parser"
+require "kiba/streaming_runner"
+require "kiba/dsl_extensions/config"
 
 Kiba.extend(Kiba::Parser)
 
 module Kiba
   def self.run(job = nil, &block)
-    unless (job.nil? ^ block.nil?)
+    unless job.nil? ^ block.nil?
       fail ArgumentError.new("Kiba.run takes either one argument (the job) or a block (defining the job)")
     end
 

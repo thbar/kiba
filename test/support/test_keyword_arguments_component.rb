@@ -7,7 +7,7 @@ class TestKeywordArgumentsComponent
     }
     on_init&.call(values)
   end
-  
+
   def each
     # no-op
   end

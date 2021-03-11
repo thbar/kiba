@@ -1,9 +1,9 @@
-require 'minitest/autorun'
-require 'minitest/pride'
-require 'minitest/focus'
-require 'kiba'
+require "minitest/autorun"
+require "minitest/pride"
+require "minitest/focus"
+require "kiba"
 
-if ENV['CI'] == 'true'
+if ENV["CI"] == "true"
   puts "Running with MiniTest version #{MiniTest::VERSION}"
 end
 
@@ -15,10 +15,10 @@ class Kiba::Test < Minitest::Test
   end
 
   def fixture(file)
-    File.join(File.dirname(__FILE__), 'fixtures', file)
+    File.join(File.dirname(__FILE__), "fixtures", file)
   end
-  
-  unless self.method_defined?(:assert_mock)
+
+  unless method_defined?(:assert_mock)
     def assert_mock(mock)
       mock.verify
     end
