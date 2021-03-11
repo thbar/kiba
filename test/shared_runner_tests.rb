@@ -24,7 +24,7 @@ module SharedRunnerTests
 
   def test_block_transform_processing
     # is there a better way to assert a block was called in minitest?
-    control.transforms << {block: lambda { |r| @called = true; r }}
+    control.transforms << {block: lambda { |r| (@called = true) && (return r) }}
     kiba_run(control)
     assert_equal true, @called
   end
@@ -32,7 +32,7 @@ module SharedRunnerTests
   def test_dismissed_row_not_passed_to_next_transform
     @called = nil
     control.transforms << {block: lambda { |_| }}
-    control.transforms << {block: lambda { |_| @called = true; nil }}
+    control.transforms << {block: lambda { |_| (@called = true) && (return nil) }}
     kiba_run(control)
     assert_nil @called
   end
@@ -121,7 +121,7 @@ module SharedRunnerTests
 
     # keep track of the rows
     @remaining_rows = []
-    checker = lambda { |row| @remaining_rows << row; row }
+    checker = lambda { |row| (@remaining_rows << row) && (return row) }
     control.transforms << {block: checker}
 
     kiba_run(control)
