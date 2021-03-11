@@ -24,7 +24,7 @@ jobs:
         ruby-version: ${{ matrix.ruby }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - run: bundle exec rake
-    # NOTE: installing because the cache apparently did not update due to the gemspec injection
+    # NOTE: calling "bundle install" because the cache apparently did not update due to the gemspec injection
     - run: bundle install && bundle exec standardrb
       if: matrix.ruby == '3.0' # not using "head" because rubocop won't work there yet
   # What's below helps having a single "status check" for mergeability, without
