@@ -116,7 +116,6 @@ module SharedRunnerTests
         # demonstrate how you can reformat via next
         next({new_identifier: row.fetch(:identifier)})
       end
-      fail "This should not be called"
     end
     control.transforms << {block: b}
 
