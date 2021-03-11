@@ -64,7 +64,6 @@ module Kiba
       end
     end
 
-    # not using keyword args because JRuby defaults to 1.9 syntax currently
     def to_instances(definitions, allow_block = false, allow_class = true)
       definitions.map do |definition|
         to_instance(
