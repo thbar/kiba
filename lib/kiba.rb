@@ -17,7 +17,6 @@ module Kiba
 
     job ||= Kiba.parse { instance_exec(&block) }
 
-    # NOTE: use Hash#dig when Ruby 2.2 reaches EOL
     runner = job.config.fetch(:kiba, {}).fetch(:runner, Kiba::StreamingRunner)
     runner.run(job)
   end
