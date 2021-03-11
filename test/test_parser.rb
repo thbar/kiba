@@ -15,7 +15,6 @@ class TestParser < Kiba::Test
     assert_equal %w[has args], control.sources[0][:args]
   end
 
-  # NOTE: useful for anything not using the CLI (e.g. sidekiq)
   def test_block_parsing_with_reference_to_outside_variable
     some_variable = Object.new
 
