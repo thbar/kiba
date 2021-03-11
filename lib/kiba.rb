@@ -4,7 +4,6 @@ require 'kiba/version'
 require 'kiba/control'
 require 'kiba/context'
 require 'kiba/parser'
-require 'kiba/runner'
 require 'kiba/streaming_runner'
 require 'kiba/dsl_extensions/config'
 

@@ -1,6 +1,8 @@
 HEAD
 ----
 
+- Breaking: if your jobs use Kiba's "legacy runner" via `config :kiba, runner: Kiba::Runner`, be aware that this legacy runner has been removed in [#96](https://github.com/thbar/kiba/pull/96). The upgrade path is to remove this config line and let Kiba use the more modern `Kiba::StreamingRunner`, which is the default anyway since Kiba v3.0.0 (see [#83](https://github.com/thbar/kiba/pull/83) for context) and is normally fully backward-compatible.
+
 3.6.0
 -----
 
