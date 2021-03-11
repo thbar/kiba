@@ -4,6 +4,7 @@ HEAD
 - Breaking: Ruby 2.4 (EOL since 2020-03-31) is not officially supported anymore.
 - CI changes: moving from Travis CI (EOL) to GitHub actions. The Windows CI has been removed for now (see [#97](https://github.com/thbar/kiba/pull/97))
 - Breaking: if your jobs use Kiba's "legacy runner" via `config :kiba, runner: Kiba::Runner`, be aware that this legacy runner has been removed in [#96](https://github.com/thbar/kiba/pull/96). The upgrade path is to remove this config line and let Kiba use the more modern `Kiba::StreamingRunner`, which is the default anyway since Kiba v3.0.0 (see [#83](https://github.com/thbar/kiba/pull/83) for context) and is normally fully backward-compatible.
+- Cleanup: in Kiba v3, the `kiba` shell command had been deprecated and replaced by a simple stub printing a warning to STDERR. It is now removed for good.
 
 3.6.0
 -----
