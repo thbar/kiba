@@ -1,7 +1,7 @@
 name: CI build
 on: [push, pull_request]
 jobs:
-  test:
+  build:
     strategy:
       fail-fast: false
       matrix:
@@ -32,7 +32,7 @@ jobs:
     if: ${{ always() }}
     runs-on: ubuntu-latest
     name: Build (matrix)
-    needs: test
+    needs: build
     steps:
       - name: Check build matrix status
         if: ${{ needs.build.result != 'success' }}
