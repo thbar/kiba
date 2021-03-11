@@ -1,0 +1,39 @@
+name: CI build
+on: [push, pull_request]
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        ruby:
+          - '2.4'
+          - '2.5'
+          - '2.6'
+          - '2.7'
+          - '3.0'
+          - head
+          - jruby
+          - jruby-head
+          - truffleruby
+          - truffleruby-head
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: ${{ matrix.ruby }}
+        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+    - run: bundle exec rake
+  # What's below helps having a single "status check" for mergeability, without
+  # having to add each new version to the list of expected status checks in GitHub.
+  # See https://github.community/t/status-check-for-a-matrix-jobs/127354/7 
+  global:
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    name: build (matrix)
+    needs: build
+    steps:
+      - name: Check build matrix status
+        if: ${{ needs.build.result != 'success' }}
+        run: exit 1
