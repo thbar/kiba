@@ -31,7 +31,7 @@ jobs:
   global:
     if: ${{ always() }}
     runs-on: ubuntu-latest
-    name: Build (matrix)
+    name: build (matrix)
     needs: build
     steps:
       - name: Check build matrix status
