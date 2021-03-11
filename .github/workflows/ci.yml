@@ -24,6 +24,8 @@ jobs:
         ruby-version: ${{ matrix.ruby }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - run: bundle exec rake
+    - run: bundle exec standardrb
+      if: matrix.ruby == 'head'
   # What's below helps having a single "status check" for mergeability, without
   # having to add each new version to the list of expected status checks in GitHub.
   # See https://github.community/t/status-check-for-a-matrix-jobs/127354/7 
