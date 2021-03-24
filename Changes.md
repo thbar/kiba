@@ -1,5 +1,5 @@
-HEAD
-----
+4.0.0
+-----
 
 - Breaking: Ruby 2.4 (EOL since 2020-03-31) is not officially supported anymore.
 - CI changes: moving from Travis CI (EOL) to GitHub actions. The Windows CI has been removed for now (see [#97](https://github.com/thbar/kiba/pull/97))
