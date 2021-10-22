@@ -7,6 +7,11 @@ Learn more on the [Kiba website](https://www.kiba-etl.org/kiba-pro).
 
 Documentation is available on the [Wiki](https://github.com/thbar/kiba/wiki#kiba-pro).
 
+2.1.0
+-----
+
+- Relax dependency constraint to allow work with Kiba v4
+
 2.0.0
 -----
 
