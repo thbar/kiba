@@ -46,16 +46,16 @@ class TestIntegration < Kiba::Test
 
       transform do |row|
         row[:sex] = case row[:sex]
-                    when "M" then "Male"
-                    when "F" then "Female"
-                    else "Unknown"
+        when "M" then "Male"
+        when "F" then "Female"
+        else "Unknown"
         end
         row # must be returned
       end
 
       # returning nil dismisses the row
       transform do |row|
-        row[:sex] == "Female" ? row : nil
+        (row[:sex] == "Female") ? row : nil
       end
 
       transform TestRenameFieldTransform, :sex, :sex_2015
