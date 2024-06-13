@@ -4,7 +4,7 @@ require "minitest/focus"
 require "kiba"
 
 if ENV["CI"] == "true"
-  puts "Running with MiniTest version #{MiniTest::VERSION}"
+  puts "Running with Minitest version #{Minitest::VERSION}"
 end
 
 class Kiba::Test < Minitest::Test
