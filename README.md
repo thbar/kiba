@@ -1,7 +1,7 @@
 # Kiba ETL
 
 [![Gem Version](https://badge.fury.io/rb/kiba.svg)](http://badge.fury.io/rb/kiba)
-[![Build Status](https://github.com/thbar/kiba/actions/workflows/ci.yml/badge.svg)](https://github.com/thbar/kiba/actions) [![Code Climate](https://codeclimate.com/github/thbar/kiba/badges/gpa.svg)](https://codeclimate.com/github/thbar/kiba)
+[![Build Status](https://github.com/thbar/kiba/actions/workflows/ci.yml/badge.svg)](https://github.com/thbar/kiba/actions)
 
 Writing reliable, concise, well-tested & maintainable data-processing code is tricky.
 
