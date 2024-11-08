@@ -19,7 +19,7 @@ You can also check out the [author blog](https://thibautbarrere.com) and [StackO
 
 ## Supported Ruby versions
 
-Kiba currently supports Ruby 2.5+, JRuby 9.2+ and TruffleRuby. See [test matrix](https://github.com/thbar/kiba/actions).
+Kiba currently supports Ruby 3.0+, JRuby 9.4+ and TruffleRuby. See [test matrix](https://github.com/thbar/kiba/actions).
 
 ## ETL consulting & commercial version
 
