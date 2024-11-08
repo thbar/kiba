@@ -55,7 +55,7 @@ class TestIntegration < Kiba::Test
 
       # returning nil dismisses the row
       transform do |row|
-        row[:sex] == "Female" ? row : nil
+        (row[:sex] == "Female") ? row : nil
       end
 
       transform TestRenameFieldTransform, :sex, :sex_2015
