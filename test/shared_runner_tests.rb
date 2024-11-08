@@ -64,7 +64,7 @@ module SharedRunnerTests
   def test_pre_process_runs_before_source_is_instantiated
     calls = []
 
-    mock_source_class = MiniTest::Mock.new
+    mock_source_class = Minitest::Mock.new
     mock_source_class.expect(:new, TestEnumerableSource.new([1, 2, 3])) do
       calls << :source_instantiated
     end
@@ -80,9 +80,9 @@ module SharedRunnerTests
 
   def test_no_error_raised_if_destination_close_not_implemented
     # NOTE: this fake destination does not implement `close`
-    destination_instance = MiniTest::Mock.new
+    destination_instance = Minitest::Mock.new
 
-    mock_destination_class = MiniTest::Mock.new
+    mock_destination_class = Minitest::Mock.new
     mock_destination_class.expect(:new, destination_instance)
 
     control = Kiba::Control.new
@@ -92,9 +92,9 @@ module SharedRunnerTests
   end
 
   def test_destination_close_called_if_defined
-    destination_instance = MiniTest::Mock.new
+    destination_instance = Minitest::Mock.new
     destination_instance.expect(:close, nil)
-    mock_destination_class = MiniTest::Mock.new
+    mock_destination_class = Minitest::Mock.new
     mock_destination_class.expect(:new, destination_instance)
 
     control = Kiba::Control.new
