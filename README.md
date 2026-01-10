@@ -7,6 +7,8 @@ Writing reliable, concise, well-tested & maintainable data-processing code is tr
 
 Kiba lets you define and run such high-quality ETL ([Extract-Transform-Load](http://en.wikipedia.org/wiki/Extract,_transform,_load)) jobs using Ruby.
 
+:warning: Kiba is considered "done". It works in its current form, and gets maintenance update (mostly ensuring its compatibility with [releases of Ruby](https://www.ruby-lang.org/en/downloads/branches/) and following their EOL lifecycle).
+
 ## Getting Started
 
 Head over to the [Wiki](https://github.com/thbar/kiba/wiki) for up-to-date documentation.
