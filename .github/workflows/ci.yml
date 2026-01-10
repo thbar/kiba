@@ -6,10 +6,12 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
+        # see: https://www.ruby-lang.org/en/downloads/branches/
         ruby:
-          - '3.1'
           - '3.2'
           - '3.3'
+          - '3.4'
+          - '4.0'
           - head
           - jruby
           - jruby-head
@@ -25,7 +27,7 @@ jobs:
     - run: bundle exec rake
     # NOTE: calling "bundle install" because the cache apparently did not update due to the gemspec injection
     - run: bundle install && bundle exec standardrb
-      if: matrix.ruby == '3.3' # not using "head" because rubocop won't work there yet
+      if: matrix.ruby == '4.0' # not using "head" because rubocop won't work there yet
   # What's below helps having a single "status check" for mergeability, without
   # having to add each new version to the list of expected status checks in GitHub.
   # See https://github.community/t/status-check-for-a-matrix-jobs/127354/7 
