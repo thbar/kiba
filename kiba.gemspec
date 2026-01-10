@@ -19,7 +19,7 @@ Gem::Specification.new do |gem|
   }
 
   gem.add_development_dependency "rake"
-  gem.add_development_dependency "minitest", "~> 5.9"
+  gem.add_development_dependency "minitest", "~> 6.0"
   gem.add_development_dependency "awesome_print"
   gem.add_development_dependency "minitest-focus"
   gem.add_development_dependency "standard"
